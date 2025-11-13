@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 6: Exponential Functions - Algebra I Regents Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .academy-name {
+            font-size: 1.2em;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .tagline {
+            font-style: italic;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        .level-section {
+            background: linear-gradient(to right, #f8f9ff 0%, #ffffff 100%);
+            border-left: 5px solid #667eea;
+            padding: 40px 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .level-section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .instructions {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #2196f3;
+        }
+
+        .question {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .question:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .option {
+            padding: 8px 0;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .option:hover {
+            color: #667eea;
+        }
+
+        .work-space {
+            background: #f8f9fa;
+            padding: 30px;
+            margin-top: 15px;
+            border-radius: 8px;
+            min-height: 150px;
+            border: 2px dashed #dee2e6;
+        }
+
+        .work-space-label {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+        }
+
+        .ti84-walkthrough {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .ti84-walkthrough h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .ti84-walkthrough ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .ti84-walkthrough li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .ti84-walkthrough li:before {
+            content: "▸";
+            color: #ffd700;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .desmos-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .desmos-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .answer-key-section {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .answer-key-section h2 {
+            color: #2e7d32;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .answer-key-section h3 {
+            color: #388e3c;
+            margin: 25px 0 15px 0;
+            font-size: 1.5em;
+            border-bottom: 2px solid #4caf50;
+            padding-bottom: 10px;
+        }
+
+        .answer-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #4caf50;
+        }
+
+        .answer-number {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .bonus-section {
+            background: linear-gradient(to right, #fff8e1 0%, #ffffff 100%);
+            border-left: 5px solid #ff9800;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .bonus-section h2 {
+            color: #ef6c00;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .success-section {
+            background: linear-gradient(to right, #e3f2fd 0%, #ffffff 100%);
+            border-left: 5px solid #2196f3;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .success-section h2 {
+            color: #1565c0;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .success-section h3 {
+            color: #1976d2;
+            margin: 25px 0 15px 0;
+            font-size: 1.3em;
+        }
+
+        .strategy-box {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .error-box {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .checklist {
+            background: #e8f5e9;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .checklist li {
+            padding: 5px 0;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .level-section {
+                page-break-before: always;
+            }
+
+            .question {
+                page-break-inside: avoid;
+            }
+
+            .answer-key-section {
+                page-break-before: always;
+            }
+
+            .bonus-section {
+                page-break-before: always;
+            }
+
+            .success-section {
+                page-break-before: always;
+            }
+
+            .ti84-walkthrough {
+                page-break-inside: avoid;
+            }
+
+            /* Preserve checked radio buttons */
+            input[type="radio"]:checked::before {
+                content: "✓";
+                display: inline-block;
+                font-weight: bold;
+            }
+
+            /* Show textarea content */
+            textarea {
+                border: 1px solid #000;
+                background: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header h2 {
+                font-size: 1.3em;
+            }
+
+            .level-section {
+                padding: 20px 15px;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ALGEBRA I REGENTS REVIEW WORKBOOK</h1>
+            <h2>Topic 6: Exponential Functions</h2>
+            <div class="academy-name">D.E.Bs Learning Academy</div>
+            <div class="tagline">Unlocking Brilliance Through Learning</div>
+        </div>
+
+        <!-- LEVEL 1: BASIC EXPONENTIALS -->
+        <div class="level-section">
+            <h2>LEVEL 1: BASIC EXPONENTIALS</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided where indicated.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1. Evaluate: 2⁵</div>
+                <div class="options">
+                    <div class="option">a) 10</div>
+                    <div class="option">b) 16</div>
+                    <div class="option">c) 25</div>
+                    <div class="option">d) 32</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2. Simplify: 3² · 3⁴</div>
+                <div class="options">
+                    <div class="option">a) 3⁶</div>
+                    <div class="option">b) 3⁸</div>
+                    <div class="option">c) 9⁶</div>
+                    <div class="option">d) 6⁶</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3. What is the value of 4⁰?</div>
+                <div class="options">
+                    <div class="option">a) 0</div>
+                    <div class="option">b) 1</div>
+                    <div class="option">c) 4</div>
+                    <div class="option">d) Undefined</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Evaluating Exponential Expressions</h3>
+                <p>To calculate exponential expressions:</p>
+                <ul>
+                    <li>Press number, then [^], then exponent</li>
+                    <li>Or use [2nd] [^] for fractional exponents</li>
+                    <li>Press [ENTER] for result</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4. Calculate 5⁻³ using your TI-84:</div>
+                <div class="options">
+                    <div class="option">a) -15</div>
+                    <div class="option">b) -125</div>
+                    <div class="option">c) 1/125</div>
+                    <div class="option">d) 1/15</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5. Which function represents exponential growth?</div>
+                <div class="options">
+                    <div class="option">a) y = 2x + 3</div>
+                    <div class="option">b) y = 2ˣ</div>
+                    <div class="option">c) y = x²</div>
+                    <div class="option">d) y = 2/x</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6. Simplify: (2³)²</div>
+                <div class="options">
+                    <div class="option">a) 2⁵</div>
+                    <div class="option">b) 2⁶</div>
+                    <div class="option">c) 2⁹</div>
+                    <div class="option">d) 6³</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7. What is the y-intercept of f(x) = 3ˣ?</div>
+                <div class="options">
+                    <div class="option">a) 0</div>
+                    <div class="option">b) 1</div>
+                    <div class="option">c) 3</div>
+                    <div class="option">d) Undefined</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Graphing Exponential Functions</h3>
+                <p>To graph exponential functions:</p>
+                <ul>
+                    <li>Press [Y=]</li>
+                    <li>Enter function (use [^] for exponents)</li>
+                    <li>Press [GRAPH]</li>
+                    <li>Use [TRACE] to explore behavior</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8. Graph y = 2ˣ. What happens as x approaches negative infinity?</div>
+                <div class="options">
+                    <div class="option">a) y approaches 0</div>
+                    <div class="option">b) y approaches 1</div>
+                    <div class="option">c) y approaches 2</div>
+                    <div class="option">d) y approaches infinity</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9. Solve: 2ˣ = 8</div>
+                <div class="options">
+                    <div class="option">a) x = 2</div>
+                    <div class="option">b) x = 3</div>
+                    <div class="option">c) x = 4</div>
+                    <div class="option">d) x = 6</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">10. Which is equivalent to 8^(2/3)?</div>
+                <div class="options">
+                    <div class="option">a) 2</div>
+                    <div class="option">b) 4</div>
+                    <div class="option">c) 16</div>
+                    <div class="option">d) 32</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11. Simplify: 10⁻²</div>
+                <div class="options">
+                    <div class="option">a) -100</div>
+                    <div class="option">b) -20</div>
+                    <div class="option">c) 0.01</div>
+                    <div class="option">d) 0.1</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Exponential Equations</h3>
+                <p>To solve simple exponential equations:</p>
+                <ul>
+                    <li>Rewrite with same base when possible</li>
+                    <li>Graph both sides and find intersection</li>
+                    <li>Use trial and error for integer solutions</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12. Solve: 3ˣ = 27</div>
+                <div class="options">
+                    <div class="option">a) x = 2</div>
+                    <div class="option">b) x = 3</div>
+                    <div class="option">c) x = 6</div>
+                    <div class="option">d) x = 9</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13. Which function decreases as x increases?</div>
+                <div class="options">
+                    <div class="option">a) y = 2ˣ</div>
+                    <div class="option">b) y = (1/2)ˣ</div>
+                    <div class="option">c) y = x²</div>
+                    <div class="option">d) y = 2x</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14. Evaluate: (1/4)⁻²</div>
+                <div class="options">
+                    <div class="option">a) -8</div>
+                    <div class="option">b) -1/16</div>
+                    <div class="option">c) 1/16</div>
+                    <div class="option">d) 16</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15. Explain the difference between exponential and linear functions. Use examples and describe how their graphs differ.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">16. Simplify each expression using exponent rules. Show your work for each step: a) x⁵ · x³  b) (y⁴)³  c) a⁶/a²  d) (2b)³</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Comparing Exponential and Linear Growth</h3>
+                <p>To compare growth rates:</p>
+                <ul>
+                    <li>Graph both functions on same screen</li>
+                    <li>Use TABLE to compare y-values</li>
+                    <li>Observe where exponential overtakes linear</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">17. Compare f(x) = 2ˣ and g(x) = 2x for x = 1, 2, 3, 4, 5. At what point does the exponential function overtake the linear function?</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">18. A bacteria culture doubles every hour. If there are initially 100 bacteria, write an exponential function N(t) for the number of bacteria after t hours. Find the population after 4 hours.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">19. Solve the equation 4ˣ = 64 by expressing both sides with the same base. Show all steps.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">20. The value of a car decreases by 20% each year. If the car is initially worth $25,000, write an exponential decay function V(t) and find its value after 3 years.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL 2: GROWTH & DECAY MODELS -->
+        <div class="level-section">
+            <h2>LEVEL 2: GROWTH & DECAY MODELS</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided where indicated.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1. A population grows according to P(t) = 500(1.03)ᵗ. What is the growth rate?</div>
+                <div class="options">
+                    <div class="option">a) 3%</div>
+                    <div class="option">b) 30%</div>
+                    <div class="option">c) 1.03%</div>
+                    <div class="option">d) 500%</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2. Which function models exponential decay?</div>
+                <div class="options">
+                    <div class="option">a) y = 100(1.5)ˣ</div>
+                    <div class="option">b) y = 100(0.85)ˣ</div>
+                    <div class="option">c) y = 100 + 0.85x</div>
+                    <div class="option">d) y = 100x⁰·⁸⁵</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3. In the function f(t) = a(b)ᵗ, what does 'a' represent?</div>
+                <div class="options">
+                    <div class="option">a) The growth rate</div>
+                    <div class="option">b) The initial value</div>
+                    <div class="option">c) The base</div>
+                    <div class="option">d) The time</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Exponential Regression</h3>
+                <p>To find exponential model from data:</p>
+                <ul>
+                    <li>Press [STAT] [1] to enter data</li>
+                    <li>Enter x-values in L1, y-values in L2</li>
+                    <li>Press [STAT] [CALC] [0] for ExpReg</li>
+                    <li>Use equation for predictions</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4. Data points: (0,5), (1,10), (2,20), (3,40). Find the exponential model:</div>
+                <div class="options">
+                    <div class="option">a) y = 5(2)ˣ</div>
+                    <div class="option">b) y = 2(5)ˣ</div>
+                    <div class="option">c) y = 5x + 5</div>
+                    <div class="option">d) y = 10(2)ˣ</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5. A radioactive substance has a half-life of 6 years. What fraction remains after 18 years?</div>
+                <div class="options">
+                    <div class="option">a) 1/2</div>
+                    <div class="option">b) 1/4</div>
+                    <div class="option">c) 1/8</div>
+                    <div class="option">d) 1/16</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6. If $1000 is invested at 5% annual compound interest, the amount after t years is:</div>
+                <div class="options">
+                    <div class="option">a) A = 1000(0.05)ᵗ</div>
+                    <div class="option">b) A = 1000(1.05)ᵗ</div>
+                    <div class="option">c) A = 1000 + 0.05t</div>
+                    <div class="option">d) A = 1000(1.5)ᵗ</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Compound Interest Calculations</h3>
+                <p>To calculate compound interest:</p>
+                <ul>
+                    <li>Use formula A = P(1 + r)ᵗ</li>
+                    <li>Store values in calculator</li>
+                    <li>Calculate final amount and interest earned</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7. $2000 is invested at 8% compounded annually. Find the amount after 10 years:</div>
+                <div class="options">
+                    <div class="option">a) $4317.85</div>
+                    <div class="option">b) $3600.00</div>
+                    <div class="option">c) $4000.00</div>
+                    <div class="option">d) $2800.00</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8. The equation N = N₀e^(rt) is used for:</div>
+                <div class="options">
+                    <div class="option">a) Simple interest</div>
+                    <div class="option">b) Continuous growth</div>
+                    <div class="option">c) Linear growth</div>
+                    <div class="option">d) Quadratic growth</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9. A car depreciates at 15% per year. Its value after t years is V(t) = 20000(0.85)ᵗ. What was the original value?</div>
+                <div class="options">
+                    <div class="option">a) $15,000</div>
+                    <div class="option">b) $17,000</div>
+                    <div class="option">c) $20,000</div>
+                    <div class="option">d) $23,529</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Half-Life Problems</h3>
+                <p>To solve half-life problems:</p>
+                <ul>
+                    <li>Use N(t) = N₀(1/2)^(t/h) where h is half-life</li>
+                    <li>Solve for time when amount is specific fraction</li>
+                    <li>Use logarithms for non-integer solutions</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">10. Carbon-14 has a half-life of 5,730 years. How long for 25% to remain?</div>
+                <div class="options">
+                    <div class="option">a) 2,865 years</div>
+                    <div class="option">b) 5,730 years</div>
+                    <div class="option">c) 11,460 years</div>
+                    <div class="option">d) 17,190 years</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11. In exponential growth f(x) = ab^x, when b > 1, the function:</div>
+                <div class="options">
+                    <div class="option">a) Increases slowly then rapidly</div>
+                    <div class="option">b) Decreases slowly then rapidly</div>
+                    <div class="option">c) Increases at constant rate</div>
+                    <div class="option">d) Decreases at constant rate</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12. The doubling time for a population growing at 7% per year is approximately:</div>
+                <div class="options">
+                    <div class="option">a) 7 years</div>
+                    <div class="option">b) 10 years</div>
+                    <div class="option">c) 14 years</div>
+                    <div class="option">d) 20 years</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Modeling Real Data</h3>
+                <p>To create exponential models:</p>
+                <ul>
+                    <li>Collect or enter data points</li>
+                    <li>Perform exponential regression</li>
+                    <li>Check correlation coefficient (r)</li>
+                    <li>Make predictions using model</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13. Which correlation coefficient indicates the best exponential fit?</div>
+                <div class="options">
+                    <div class="option">a) r = 0.25</div>
+                    <div class="option">b) r = 0.75</div>
+                    <div class="option">c) r = 0.95</div>
+                    <div class="option">d) r = 1.25</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14. A medicine loses 12% of its potency each month. After 6 months, what percentage of original potency remains?</div>
+                <div class="options">
+                    <div class="option">a) 28%</div>
+                    <div class="option">b) 48%</div>
+                    <div class="option">c) 52%</div>
+                    <div class="option">d) 72%</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15. A city's population is 50,000 and grows at 2.5% annually. Write the exponential growth function and predict the population in 10 years.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">16. An investment of $5,000 grows to $8,000 in 8 years with annual compounding. Find the annual interest rate. Show your setup and solution method.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Exponential vs. Linear Regression Comparison</h3>
+                <p>To compare models:</p>
+                <ul>
+                    <li>Perform both linear and exponential regression</li>
+                    <li>Compare correlation coefficients</li>
+                    <li>Graph both models with data</li>
+                    <li>Choose better fit based on r-values</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">17. Data shows phone users: Year 0: 100, Year 1: 150, Year 2: 225, Year 3: 340. Compare linear vs. exponential models and determine which fits better.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">18. A radioactive isotope decays according to N(t) = 1000e^(-0.0347t), where t is in years. Find the half-life of this isotope.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">19. Newton's Law of Cooling states that T(t) = T_room + (T_initial - T_room)e^(-kt). A coffee at 200°F is placed in a 70°F room. After 10 minutes it's 150°F. Find k and predict the temperature after 20 minutes.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">20. A viral video gets 1,000 views on day 1. If views triple each day for the first week, then increase by only 50% per day thereafter, write piecewise functions for both periods and find total views after 10 days.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL 3: LOGARITHMIC RELATIONSHIPS -->
+        <div class="level-section">
+            <h2>LEVEL 3: LOGARITHMIC RELATIONSHIPS</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 4 credits. Clearly indicate the necessary steps, including appropriate formula substitutions, diagrams, graphs, charts, etc. Utilize the information provided for each question to determine your answer.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1. Convert to logarithmic form: 2⁵ = 32</div>
+                <div class="options">
+                    <div class="option">a) log₂ 32 = 5</div>
+                    <div class="option">b) log₅ 32 = 2</div>
+                    <div class="option">c) log₃₂ 2 = 5</div>
+                    <div class="option">d) log₃₂ 5 = 2</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2. Evaluate: log₃ 81</div>
+                <div class="options">
+                    <div class="option">a) 3</div>
+                    <div class="option">b) 4</div>
+                    <div class="option">c) 27</div>
+                    <div class="option">d) 243</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Using Logarithms to Solve Exponential Equations</h3>
+                <p>To solve exponential equations with logs:</p>
+                <ul>
+                    <li>Take log of both sides</li>
+                    <li>Use properties: log(aˣ) = x·log(a)</li>
+                    <li>Solve for x algebraically</li>
+                    <li>Check solution in original equation</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3. Solve: 3ˣ = 50</div>
+                <div class="options">
+                    <div class="option">a) x ≈ 3.56</div>
+                    <div class="option">b) x ≈ 4.12</div>
+                    <div class="option">c) x ≈ 2.75</div>
+                    <div class="option">d) x ≈ 1.85</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4. Which is equivalent to log(xy)?</div>
+                <div class="options">
+                    <div class="option">a) log x + log y</div>
+                    <div class="option">b) log x · log y</div>
+                    <div class="option">c) log x - log y</div>
+                    <div class="option">d) (log x)^y</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5. If log₂ x = 3, then x equals:</div>
+                <div class="options">
+                    <div class="option">a) 6</div>
+                    <div class="option">b) 8</div>
+                    <div class="option">c) 9</div>
+                    <div class="option">d) 23</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Change of Base Formula</h3>
+                <p>To evaluate logs with different bases:</p>
+                <ul>
+                    <li>Use change of base: log_b(x) = ln(x)/ln(b) or log(x)/log(b)</li>
+                    <li>Calculate using natural log or common log</li>
+                    <li>Verify using exponential form</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6. Calculate log₅ 30:</div>
+                <div class="options">
+                    <div class="option">a) 2.11</div>
+                    <div class="option">b) 2.54</div>
+                    <div class="option">c) 1.95</div>
+                    <div class="option">d) 1.48</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7. The inverse of f(x) = 2ˣ is:</div>
+                <div class="options">
+                    <div class="option">a) f⁻¹(x) = x²</div>
+                    <div class="option">b) f⁻¹(x) = log₂ x</div>
+                    <div class="option">c) f⁻¹(x) = 1/2ˣ</div>
+                    <div class="option">d) f⁻¹(x) = 2⁻ˣ</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8. Simplify: log₄(16) + log₄(4)</div>
+                <div class="options">
+                    <div class="option">a) 2</div>
+                    <div class="option">b) 3</div>
+                    <div class="option">c) 4</div>
+                    <div class="option">d) 5</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Logarithmic Regression</h3>
+                <p>To find logarithmic models:</p>
+                <ul>
+                    <li>Enter data in L1 and L2</li>
+                    <li>Use [STAT] [CALC] [9] for LnReg</li>
+                    <li>Model form: y = a + b·ln(x)</li>
+                    <li>Check fit with correlation coefficient</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9. Data follows logarithmic pattern. Which model form is appropriate?</div>
+                <div class="options">
+                    <div class="option">a) y = abˣ</div>
+                    <div class="option">b) y = a + b·ln(x)</div>
+                    <div class="option">c) y = ax² + bx + c</div>
+                    <div class="option">d) y = a/x + b</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">10. Solve: log(x) + log(x-3) = 1</div>
+                <div class="options">
+                    <div class="option">a) x = 5</div>
+                    <div class="option">b) x = 2</div>
+                    <div class="option">c) x = 4</div>
+                    <div class="option">d) x = 7</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11. The pH of a solution is defined as pH = -log[H⁺]. If [H⁺] = 10⁻⁶, what is the pH?</div>
+                <div class="options">
+                    <div class="option">a) -6</div>
+                    <div class="option">b) 6</div>
+                    <div class="option">c) 10</div>
+                    <div class="option">d) 16</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Exponential and Logarithmic Applications</h3>
+                <p>For real-world applications:</p>
+                <ul>
+                    <li>Identify whether exponential or logarithmic model fits</li>
+                    <li>Use appropriate regression technique</li>
+                    <li>Interpret parameters in context</li>
+                    <li>Make predictions within reasonable range</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12. Sound intensity follows I = I₀ · 10^(dB/10). If I₀ = 10⁻¹² W/m², find intensity at 60 dB:</div>
+                <div class="options">
+                    <div class="option">a) 10⁻⁶ W/m²</div>
+                    <div class="option">b) 10⁻⁹ W/m²</div>
+                    <div class="option">c) 10⁻³ W/m²</div>
+                    <div class="option">d) 10⁻¹² W/m²</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13. Which property is used to solve 2^(x+1) = 32?</div>
+                <div class="options">
+                    <div class="option">a) Product rule</div>
+                    <div class="option">b) Quotient rule</div>
+                    <div class="option">c) Power rule</div>
+                    <div class="option">d) Same base property</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14. The domain of f(x) = log(x - 5) is:</div>
+                <div class="options">
+                    <div class="option">a) x > 0</div>
+                    <div class="option">b) x > 5</div>
+                    <div class="option">c) x ≥ 5</div>
+                    <div class="option">d) All real numbers</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15. Use logarithms to solve 4ˣ⁺¹ = 20. Show all steps including the use of logarithm properties.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">16. The Richter scale for earthquake magnitude is M = log(I/I₀), where I is the intensity and I₀ is a reference intensity. If one earthquake measures 6.2 and another measures 7.4, how many times more intense is the second earthquake?</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Solving Complex Exponential Equations</h3>
+                <p>For equations like a·bˣ + c = d:</p>
+                <ul>
+                    <li>Isolate exponential term</li>
+                    <li>Take logarithm of both sides</li>
+                    <li>Solve for x using log properties</li>
+                    <li>Check solution makes sense</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">17. Solve: 3·2ˣ - 5 = 19. Show the complete solution process.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">18. A bacterial population follows the model P(t) = 1000e^(0.2t). Use logarithms to find when the population reaches 5,000. Verify your answer.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">19. Prove that log_b(x/y) = log_b(x) - log_b(y) using the definition of logarithms and properties of exponents. Show each step clearly.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">20. Challenge Problem: The formula for compound interest with continuous compounding is A = Pe^(rt). If $1,000 grows to $2,500 in 8 years with continuous compounding, find the interest rate. Then determine how long it would take to reach $10,000 at this rate.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMBINED ANSWER KEY -->
+        <div class="answer-key-section">
+            <h2>TOPIC 6: COMBINED ANSWER KEY</h2>
+
+            <h3>LEVEL 1 - BASIC EXPONENTIALS</h3>
+
+            <div class="answer-item">
+                <span class="answer-number">1.</span> <strong>d) 32</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">2.</span> <strong>a) 3⁶</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">3.</span> <strong>b) 1</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">4.</span> <strong>c) 1/125</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">5.</span> <strong>b) y = 2ˣ</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">6.</span> <strong>b) 2⁶</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">7.</span> <strong>b) 1</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">8.</span> <strong>a) y approaches 0</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">9.</span> <strong>b) x = 3</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">10.</span> <strong>b) 4</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">11.</span> <strong>c) 0.01</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">12.</span> <strong>b) x = 3</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">13.</span> <strong>b) y = (1/2)ˣ</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">14.</span> <strong>d) 16</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">15.</span> <strong>Extended Response Solution:</strong><br>
+                Exponential functions have constant ratios between consecutive terms, while linear functions have constant differences. Exponential graphs curve upward (growth) or downward (decay), while linear graphs are straight lines.
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">16.</span> <strong>Extended Response Solution:</strong><br>
+                a) x⁸<br>
+                b) y¹²<br>
+                c) a⁴<br>
+                d) 8b³
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">17.</span> <strong>Extended Response Solution:</strong><br>
+                At x = 4: f(4) = 16, g(4) = 8. Exponential overtakes linear at x = 3.
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">18.</span> <strong>Extended Response Solution:</strong><br>
+                N(t) = 100(2)ᵗ; After 4 hours: N(4) = 1,600 bacteria
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">19.</span> <strong>Extended Response Solution:</strong><br>
+                4ˣ = 64 → (2²)ˣ = 2⁶ → 2²ˣ = 2⁶ → 2x = 6 → x = 3
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">20.</span> <strong>Extended Response Solution:</strong><br>
+                V(t) = 25000(0.8)ᵗ; After 3 years: V(3) = $12,800
+            </div>
+
+            <h3>LEVEL 2 - GROWTH & DECAY MODELS</h3>
+
+            <div class="answer-item">
+                <span class="answer-number">1.</span> <strong>a) 3%</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">2.</span> <strong>b) y = 100(0.85)ˣ</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">3.</span> <strong>b) The initial value</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">4.</span> <strong>a) y = 5(2)ˣ</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">5.</span> <strong>c) 1/8</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">6.</span> <strong>b) A = 1000(1.05)ᵗ</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">7.</span> <strong>a) $4317.85</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">8.</span> <strong>b) Continuous growth</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">9.</span> <strong>c) $20,000</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">10.</span> <strong>c) 11,460 years</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">11.</span> <strong>a) Increases slowly then rapidly</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">12.</span> <strong>b) 10 years</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">13.</span> <strong>c) r = 0.95</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">14.</span> <strong>b) 48%</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">15.</span> <strong>Extended Response Solution:</strong><br>
+                P(t) = 50000(1.025)ᵗ; After 10 years: P(10) ≈ 64,005 people
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">16.</span> <strong>Extended Response Solution:</strong><br>
+                5000(1 + r)⁸ = 8000; (1 + r)⁸ = 1.6; r = 1.6^(1/8) - 1 ≈ 6.0%
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">17.</span> <strong>Extended Response Solution:</strong><br>
+                Linear: r ≈ 0.94; Exponential: r ≈ 0.998; Exponential fits better
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">18.</span> <strong>Extended Response Solution:</strong><br>
+                Half-life = ln(2)/0.0347 ≈ 20 years
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">19.</span> <strong>Extended Response Solution:</strong><br>
+                k ≈ 0.0405; After 20 minutes: T(20) ≈ 118°F
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">20.</span> <strong>Extended Response Solution:</strong><br>
+                Days 1-7: V(t) = 1000(3)ᵗ⁻¹; Days 8+: V(t) = 729000(1.5)ᵗ⁻⁷; Total after 10 days ≈ 2.47 million views
+            </div>
+
+            <h3>LEVEL 3 - LOGARITHMIC RELATIONSHIPS</h3>
+
+            <div class="answer-item">
+                <span class="answer-number">1.</span> <strong>a) log₂ 32 = 5</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">2.</span> <strong>b) 4</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">3.</span> <strong>a) x ≈ 3.56</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">4.</span> <strong>a) log x + log y</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">5.</span> <strong>b) 8</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">6.</span> <strong>a) 2.11</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">7.</span> <strong>b) f⁻¹(x) = log₂ x</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">8.</span> <strong>b) 3</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">9.</span> <strong>b) y = a + b·ln(x)</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">10.</span> <strong>a) x = 5</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">11.</span> <strong>b) 6</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">12.</span> <strong>a) 10⁻⁶ W/m²</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">13.</span> <strong>d) Same base property</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">14.</span> <strong>b) x > 5</strong>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">15.</span> <strong>Extended Response Solution:</strong><br>
+                4ˣ⁺¹ = 20;<br>
+                (x+1)log(4) = log(20);<br>
+                x+1 = log(20)/log(4) ≈ 2.161;<br>
+                x ≈ 1.161
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">16.</span> <strong>Extended Response Solution:</strong><br>
+                Intensity ratio = 10^(7.4-6.2) = 10^1.2 ≈ 15.85 times more intense
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">17.</span> <strong>Extended Response Solution:</strong><br>
+                3·2ˣ - 5 = 19;<br>
+                3·2ˣ = 24;<br>
+                2ˣ = 8; x = 3
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">18.</span> <strong>Extended Response Solution:</strong><br>
+                5000 = 1000e^(0.2t);<br>
+                e^(0.2t) = 5;<br>
+                0.2t = ln(5);<br>
+                t = ln(5)/0.2 ≈ 8.05 years
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">19.</span> <strong>Extended Response Solution:</strong><br>
+                Let log_b(x) = m and log_b(y) = n, then bᵐ = x and bⁿ = y.<br>
+                Therefore x/y = bᵐ/bⁿ = bᵐ⁻ⁿ,<br>
+                so log_b(x/y) = m - n = log_b(x) - log_b(y)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">20.</span> <strong>Extended Response Solution:</strong><br>
+                2500 = 1000e^(8r); e^(8r) = 2.5; r = ln(2.5)/8 ≈ 11.45%<br>
+                For $10,000: t = ln(10)/0.1145 ≈ 20.1 years
+            </div>
+        </div>
+
+        <!-- BONUS REGENTS PRACTICE -->
+        <div class="bonus-section">
+            <h2>BONUS REGENTS PRACTICE</h2>
+
+            <div class="instructions">
+                <strong>Directions (1-6):</strong> Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided.
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 1:</div>
+                <p>Which expression is equivalent to 3⁴ · 3²?</p>
+                <div class="options">
+                    <div class="option">(1) 3⁶</div>
+                    <div class="option">(2) 3⁸</div>
+                    <div class="option">(3) 9⁶</div>
+                    <div class="option">(4) 6⁶</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 2:</div>
+                <p>A population grows according to P(t) = 200(1.15)ᵗ. What is the initial population?</p>
+                <div class="options">
+                    <div class="option">(1) 15</div>
+                    <div class="option">(2) 115</div>
+                    <div class="option">(3) 200</div>
+                    <div class="option">(4) 230</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 3:</div>
+                <p>The half-life of a radioactive element is 20 years. What fraction remains after 60 years?</p>
+                <div class="options">
+                    <div class="option">(1) 1/2</div>
+                    <div class="option">(2) 1/4</div>
+                    <div class="option">(3) 1/8</div>
+                    <div class="option">(4) 1/16</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 4:</div>
+                <p>Which equation represents exponential decay?</p>
+                <div class="options">
+                    <div class="option">(1) y = 500(1.2)ˣ</div>
+                    <div class="option">(2) y = 500(0.8)ˣ</div>
+                    <div class="option">(3) y = 500 + 0.8x</div>
+                    <div class="option">(4) y = 500x^(0.8)</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 5:</div>
+                <p>If log₂ x = 5, then x equals:</p>
+                <div class="options">
+                    <div class="option">(1) 10</div>
+                    <div class="option">(2) 25</div>
+                    <div class="option">(3) 32</div>
+                    <div class="option">(4) 52</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 6:</div>
+                <p>An investment doubles every 12 years. Using the rule of 72, what is the approximate annual interest rate?</p>
+                <div class="options">
+                    <div class="option">(1) 6%</div>
+                    <div class="option">(2) 8%</div>
+                    <div class="option">(3) 10%</div>
+                    <div class="option">(4) 12%</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+        </div>
+
+        <!-- BONUS ANSWER KEY -->
+        <div class="answer-key-section">
+            <h2>BONUS REGENTS ANSWER KEY</h2>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 1:</span> <strong>(1) 3⁶</strong><br>
+                <strong>Solution:</strong> When multiplying powers with the same base, add the exponents: 3⁴ · 3² = 3⁴⁺² = 3⁶
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 2:</span> <strong>(3) 200</strong><br>
+                <strong>Solution:</strong> In the exponential function P(t) = 200(1.15)ᵗ, the coefficient 200 represents the initial population when t = 0.
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 3:</span> <strong>(3) 1/8</strong><br>
+                <strong>Solution:</strong> After 60 years, there are 60/20 = 3 half-lives. After each half-life, half remains: (1/2)³ = 1/8
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 4:</span> <strong>(2) y = 500(0.8)ˣ</strong><br>
+                <strong>Solution:</strong> Exponential decay occurs when the base is between 0 and 1. Only option (2) has a base of 0.8, which is less than 1.
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 5:</span> <strong>(3) 32</strong><br>
+                <strong>Solution:</strong> If log₂ x = 5, then 2⁵ = x, so x = 32
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 6:</span> <strong>(1) 6%</strong><br>
+                <strong>Solution:</strong> The rule of 72 states that doubling time ≈ 72/rate. If doubling time is 12 years, then 12 = 72/rate, so rate = 72/12 = 6%
+            </div>
+        </div>
+
+        <!-- SUCCESS STRATEGIES -->
+        <div class="success-section">
+            <h2>SUCCESS STRATEGIES FOR EXPONENTIAL FUNCTIONS</h2>
+
+            <h3>For Students:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Show ALL work:</strong> Even for multiple choice, show your calculation steps</li>
+                    <li><strong>Check your work:</strong> Substitute answers back into original equations</li>
+                    <li><strong>Use proper notation:</strong> Distinguish between 2x (linear) and 2ˣ (exponential)</li>
+                    <li><strong>Master exponent rules:</strong> Product rule, quotient rule, and power rule</li>
+                    <li><strong>Understand growth vs. decay:</strong> Base > 1 is growth, 0 < base < 1 is decay</li>
+                    <li><strong>Practice with calculator:</strong> Know how to enter exponents correctly on TI-84</li>
+                </ul>
+            </div>
+
+            <h3>Common Student Errors to Avoid:</h3>
+            <div class="error-box">
+                <ul>
+                    <li><strong>Confusing exponential and polynomial:</strong> 2ˣ ≠ x²</li>
+                    <li><strong>Incorrect exponent rules:</strong> (aᵐ)ⁿ = aᵐⁿ, NOT aᵐ⁺ⁿ</li>
+                    <li><strong>Forgetting parentheses:</strong> 2·3ˣ on calculator needs to be entered as 2*(3^x)</li>
+                    <li><strong>Misidentifying initial value:</strong> In f(x) = ab^x, 'a' is initial value, not 'b'</li>
+                    <li><strong>Wrong asymptote:</strong> y = 2ˣ has horizontal asymptote at y = 0, not x = 0</li>
+                    <li><strong>Incorrect log conversion:</strong> 2⁵ = 32 means log₂ 32 = 5, not log₃₂ 2 = 5</li>
+                </ul>
+            </div>
+
+            <h3>Time Management Tips:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>MCQ (1-14):</strong> Aim for 1-2 minutes per question</li>
+                    <li><strong>Extended Response (15-20):</strong> Allocate 5-8 minutes per question</li>
+                    <li><strong>Priority Order:</strong> Complete familiar exponential forms first, save complex applications for last</li>
+                    <li><strong>Calculator Efficiency:</strong> Set up Y= functions early for quick reference and graphing</li>
+                </ul>
+            </div>
+
+            <h3>Verification Strategies:</h3>
+            <div class="strategy-box">
+                <ol>
+                    <li><strong>Substitution Check:</strong> Plug solutions back into original equation to verify</li>
+                    <li><strong>Graphical Confirmation:</strong> Graph both sides of equation and verify intersection points</li>
+                    <li><strong>Base Analysis:</strong> Verify growth/decay by checking if base is greater than or less than 1</li>
+                    <li><strong>Asymptote Check:</strong> Confirm horizontal asymptote by evaluating limits</li>
+                    <li><strong>Table Verification:</strong> Use TABLE feature to verify exponential pattern (constant ratio)</li>
+                    <li><strong>Logarithm Reversal:</strong> Convert between exponential and logarithmic forms to verify</li>
+                </ol>
+            </div>
+
+            <h3>Real-World Application Categories:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Population Growth:</strong> Bacteria, animals, human populations with constant growth rate</li>
+                    <li><strong>Financial Mathematics:</strong> Compound interest, investment growth, loan calculations</li>
+                    <li><strong>Radioactive Decay:</strong> Half-life problems, carbon dating, medical isotopes</li>
+                    <li><strong>Temperature Change:</strong> Newton's Law of Cooling, heating processes</li>
+                    <li><strong>Medicine:</strong> Drug concentration decay in bloodstream</li>
+                    <li><strong>Technology:</strong> Moore's Law (computer processing power), viral social media growth</li>
+                </ul>
+            </div>
+
+            <h3>Pattern Recognition Skills:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Exponential Growth:</strong> Base b > 1, y-values increase rapidly, graph curves upward</li>
+                    <li><strong>Exponential Decay:</strong> Base 0 < b < 1, y-values decrease toward zero, graph curves downward</li>
+                    <li><strong>Y-intercept:</strong> Always equals 'a' in f(x) = ab^x when x = 0</li>
+                    <li><strong>Horizontal Asymptote:</strong> For f(x) = ab^x + c, asymptote is y = c</li>
+                    <li><strong>Doubling Time:</strong> Time for quantity to double is constant in exponential growth</li>
+                    <li><strong>Half-Life Pattern:</strong> After n half-lives, fraction remaining is (1/2)^n</li>
+                </ul>
+            </div>
+
+            <h3>Regents Exam Preparation Focus:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Compound Interest Formula:</strong> A = P(1 + r)^t is heavily tested</li>
+                    <li><strong>Half-Life Problems:</strong> Master N(t) = N₀(1/2)^(t/h) formula</li>
+                    <li><strong>Logarithm Properties:</strong> Know product, quotient, and power rules</li>
+                    <li><strong>Change of Base:</strong> Use log_b(x) = log(x)/log(b) for calculator</li>
+                    <li><strong>Graph Interpretation:</strong> Identify growth/decay from graph shape and behavior</li>
+                    <li><strong>Real-World Modeling:</strong> Translate word problems into exponential equations</li>
+                </ul>
+            </div>
+
+            <h3>Problem-Solving Approach:</h3>
+            <div class="strategy-box">
+                <ol>
+                    <li><strong>Analyze:</strong> Identify if problem involves growth/decay, determine initial value and rate</li>
+                    <li><strong>Set Up Model:</strong> Write exponential function f(x) = ab^x with correct values</li>
+                    <li><strong>Apply Method:</strong> Use exponent rules, logarithms, or graphing as appropriate</li>
+                    <li><strong>Solve:</strong> Find solution algebraically or graphically, simplify answer</li>
+                    <li><strong>Verify and Interpret:</strong> Check solution makes sense in context, include units</li>
+                </ol>
+            </div>
+
+            <h3>Advanced Techniques (Level 3):</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Logarithmic Solutions:</strong> Use logs to solve exponential equations with non-integer solutions</li>
+                    <li><strong>Continuous Compounding:</strong> Master formula A = Pe^(rt) with natural exponential</li>
+                    <li><strong>Exponential Regression:</strong> Use TI-84 to find best-fit exponential models from data</li>
+                    <li><strong>Inverse Functions:</strong> Understand exponential and logarithmic functions are inverses</li>
+                    <li><strong>Complex Applications:</strong> Solve multi-step problems combining exponentials with other functions</li>
+                    <li><strong>Proofs:</strong> Prove logarithm properties using definition and exponent rules</li>
+                </ul>
+            </div>
+
+            <h3>Study Recommendations:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Daily Practice:</strong> Solve 15-20 exponential problems daily using various methods</li>
+                    <li><strong>Exponent Rules Drills:</strong> Practice simplifying expressions until automatic</li>
+                    <li><strong>Graphing Practice:</strong> Sketch exponential graphs quickly, identifying key features</li>
+                    <li><strong>Real-World Collection:</strong> Find examples of exponential growth/decay in news and daily life</li>
+                    <li><strong>Calculator Mastery:</strong> Practice entering complex exponential expressions correctly</li>
+                    <li><strong>Logarithm Connection:</strong> Practice converting between exponential and logarithmic forms</li>
+                </ul>
+            </div>
+
+            <h3>Performance Checklist:</h3>
+            <div class="checklist">
+                <ul>
+                    <li>☐ Evaluate exponential expressions with integer and fractional exponents</li>
+                    <li>☐ Apply exponent rules (product, quotient, power) correctly</li>
+                    <li>☐ Distinguish between exponential growth and decay</li>
+                    <li>☐ Graph exponential functions and identify key features</li>
+                    <li>☐ Solve exponential equations using common bases</li>
+                    <li>☐ Use logarithms to solve exponential equations</li>
+                    <li>☐ Model real-world situations with exponential functions</li>
+                    <li>☐ Calculate compound interest and investment growth</li>
+                    <li>☐ Solve half-life and radioactive decay problems</li>
+                    <li>☐ Convert between exponential and logarithmic forms</li>
+                    <li>☐ Use TI-84 for exponential regression and graphing</li>
+                    <li>☐ Verify solutions using multiple methods</li>
+                </ul>
+            </div>
+
+            <h3>NYS Regents Standards Coverage:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>F.IF.C.7.e:</strong> Graph exponential functions, showing intercepts and end behavior</li>
+                    <li><strong>F.IF.C.8.b:</strong> Use properties of exponents to interpret expressions for exponential functions</li>
+                    <li><strong>F.LE.A.2:</strong> Construct linear and exponential functions from graphs, descriptions, and tables</li>
+                    <li><strong>F.LE.A.4:</strong> For exponential models, express as a logarithm the solution to ab^(ct) = d</li>
+                    <li><strong>A.SSE.B.3.c:</strong> Use properties of exponents to transform expressions for exponential functions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Algebra I Regents Review | Topic 6: Exponential Functions</strong></p>
+            <p>© D.E.Bs Learning Academy - Unlocking Brilliance Through Learning</p>
+        </div>
+    </div>
+
+    <script>
+        // Make all work-space areas editable
+        document.querySelectorAll('.work-space').forEach(function(workSpace) {
+            // Create textarea for work area
+            const textarea = document.createElement('textarea');
+            textarea.style.width = '100%';
+            textarea.style.minHeight = '120px';
+            textarea.style.padding = '15px';
+            textarea.style.fontSize = '14px';
+            textarea.style.fontFamily = 'monospace';
+            textarea.style.border = '1px solid #ccc';
+            textarea.style.borderRadius = '5px';
+            textarea.style.resize = 'vertical';
+            textarea.style.marginTop = '10px';
+            textarea.placeholder = 'Type your work here...';
+            
+            workSpace.appendChild(textarea);
+        });
+
+        // Make multiple choice options selectable
+        document.querySelectorAll('.option').forEach(function(option, index) {
+            // Skip if already has radio button
+            if (option.querySelector('input[type="radio"]')) return;
+            
+            const questionBlock = option.closest('.question');
+            if (!questionBlock) return;
+            
+            const questionNum = questionBlock.querySelector('.question-number');
+            if (!questionNum) return;
+            
+            // Extract question number for unique naming
+            const qNum = questionNum.textContent.match(/^\d+/);
+            if (!qNum) return;
+            
+            // Find which level section we're in
+            const levelSection = option.closest('.level-section');
+            let levelPrefix = 'L1';
+            if (levelSection) {
+                if (levelSection.querySelector('h2').textContent.includes('LEVEL 2')) levelPrefix = 'L2';
+                if (levelSection.querySelector('h2').textContent.includes('LEVEL 3')) levelPrefix = 'L3';
+            }
+            
+            // Check if it's a bonus question
+            if (questionNum.textContent.includes('Bonus')) {
+                levelPrefix = 'B';
+            }
+            
+            const radioName = `q_${levelPrefix}_${qNum[0]}`;
+            
+            // Get the option text
+            const optionText = option.textContent.trim();
+            const optionLetter = optionText.charAt(0); // a, b, c, d, or (1, (2, etc
+            
+            // Create radio button
+            const label = document.createElement('label');
+            label.style.cursor = 'pointer';
+            label.style.display = 'block';
+            
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = radioName;
+            radio.value = optionLetter;
+            radio.style.marginRight = '10px';
+            radio.style.cursor = 'pointer';
+            
+            const span = document.createElement('span');
+            span.textContent = optionText;
+            
+            // Add click handler to highlight selection
+            radio.addEventListener('change', function() {
+                // Remove highlight from all options in this question
+                questionBlock.querySelectorAll('.option').forEach(opt => {
+                    opt.style.backgroundColor = '';
+                    opt.style.fontWeight = '';
+                });
+                
+                // Highlight selected option
+                if (this.checked) {
+                    option.style.backgroundColor = '#e8f4f8';
+                    span.style.fontWeight = 'bold';
+                    span.style.color = '#667eea';
+                }
+            });
+            
+            label.appendChild(radio);
+            label.appendChild(span);
+            
+            option.textContent = '';
+            option.appendChild(label);
+        });
+
+        // Print functionality that preserves user input
+        window.addEventListener('beforeprint', function() {
+            // Store all selections and text inputs
+            document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+                radio.setAttribute('data-checked', 'true');
+            });
+        });
+    </script>
+</body>
+</html>

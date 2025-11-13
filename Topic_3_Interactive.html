@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 3: Functions & Graphing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .academy-name {
+            font-size: 1.2em;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .tagline {
+            font-style: italic;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        
+        .level-section {
+            padding: 40px 30px;
+            background: linear-gradient(to bottom, #f8f9ff 0%, white 100%);
+            border-left: 5px solid #667eea;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        
+        .level-title {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .level-subtitle {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .question {
+            margin: 30px 0;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .option:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+        
+        .ti84-walkthrough {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .ti84-walkthrough h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ti84-walkthrough h3:before {
+            content: "🔢";
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+        
+        .ti84-walkthrough ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .ti84-walkthrough li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .ti84-walkthrough li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .ti84-link {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .ti84-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .work-space {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9ff;
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+            min-height: 150px;
+        }
+        
+        .work-space-label {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .answer-key-section {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        
+        .answer-key-title {
+            color: #2e7d32;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .answer-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .answer-number {
+            color: #2e7d32;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        
+        .bonus-section {
+            background: linear-gradient(to bottom, #fff8e1 0%, white 100%);
+            border-left: 5px solid #ff9800;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        
+        .bonus-title {
+            color: #ef6c00;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .success-section {
+            background: linear-gradient(to bottom, #e3f2fd 0%, white 100%);
+            border-left: 5px solid #2196f3;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        
+        .success-title {
+            color: #1565c0;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .tip-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .tip-box strong {
+            color: #f57c00;
+        }
+
+        .strategy-box {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .strategy-box h4 {
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+
+        .strategy-box ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .strategy-box ul li {
+            margin: 8px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .formula-box {
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .error-box {
+            background: #fee;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .checklist {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .checklist h4 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        .checklist ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li:before {
+            content: "☐ ";
+            font-size: 1.3em;
+            margin-right: 8px;
+            color: #2e7d32;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .ti84-walkthrough {
+                background: #667eea;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            /* Page break rules */
+            .level-section {
+                page-break-before: always;
+            }
+            
+            .question {
+                page-break-inside: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            .answer-key-section {
+                page-break-before: always;
+            }
+            
+            .bonus-section {
+                page-break-before: always;
+            }
+            
+            .success-section {
+                page-break-before: always;
+            }
+            
+            /* Keep TI-84 walkthroughs with their questions */
+            .ti84-walkthrough {
+                page-break-inside: avoid;
+            }
+            
+            /* Keep work spaces with questions */
+            .work-space {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Page break for screen view simulation */
+        @media screen {
+            .level-section {
+                margin-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ALGEBRA I REGENTS REVIEW WORKBOOK</h1>
+            <h2>Topic 3: Functions & Graphing</h2>
+            <div class="academy-name">D.E.Bs Learning Academy</div>
+            <div class="tagline">Unlocking Brilliance Through Learning</div>
+        </div>
+
+        <!-- LEVEL 1: FOUNDATIONS -->
+        <div class="level-section">
+            <h2 class="level-title">LEVEL 1: FOUNDATIONS</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided where indicated.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1.</div>
+                <div class="question-text">Is the relation {(1,2), (3,4), (5,6), (7,8)} a function?</div>
+                <div class="options">
+                    <div class="option">a) Yes, each input has exactly one output</div>
+                    <div class="option">b) No, some inputs have multiple outputs</div>
+                    <div class="option">c) Cannot determine</div>
+                    <div class="option">d) Only if x > 0</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2.</div>
+                <div class="question-text">Find f(3) if f(x) = 2x + 5</div>
+                <div class="options">
+                    <div class="option">a) 8</div>
+                    <div class="option">b) 10</div>
+                    <div class="option">c) 11</div>
+                    <div class="option">d) 13</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3.</div>
+                <div class="question-text">What is the domain of f(x) = x + 4?</div>
+                <div class="options">
+                    <div class="option">a) All real numbers</div>
+                    <div class="option">b) x ≥ 4</div>
+                    <div class="option">c) x > 0</div>
+                    <div class="option">d) x ≠ -4</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Function Evaluation</h3>
+                <p><em>To find f(2) when f(x) = 3x - 1:</em></p>
+                <ul>
+                    <li>Press [Y=]</li>
+                    <li>Enter: Y1 = 3X - 1</li>
+                    <li>Press [2nd] [TABLE]</li>
+                    <li>Set TblStart = 2, ΔTbl = 1</li>
+                    <li>Read Y1 value when X = 2</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4.</div>
+                <div class="question-text">Find f(-1) when f(x) = x² + 2x using the TI-84:</div>
+                <div class="options">
+                    <div class="option">a) -1</div>
+                    <div class="option">b) 1</div>
+                    <div class="option">c) 3</div>
+                    <div class="option">d) -3</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5.</div>
+                <div class="question-text">What is the y-intercept of f(x) = 3x - 7?</div>
+                <div class="options">
+                    <div class="option">a) 3</div>
+                    <div class="option">b) -7</div>
+                    <div class="option">c) 7/3</div>
+                    <div class="option">d) (0, -7)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6.</div>
+                <div class="question-text">What is the slope of the line y = 4x + 2?</div>
+                <div class="options">
+                    <div class="option">a) 4</div>
+                    <div class="option">b) 2</div>
+                    <div class="option">c) -2</div>
+                    <div class="option">d) 1/4</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7.</div>
+                <div class="question-text">Which point lies on the graph of y = 2x - 3?</div>
+                <div class="options">
+                    <div class="option">a) (0, 3)</div>
+                    <div class="option">b) (1, -1)</div>
+                    <div class="option">c) (2, 1)</div>
+                    <div class="option">d) (3, 2)</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Graphing Linear Functions</h3>
+                <p><em>To graph y = 2x + 1:</em></p>
+                <ul>
+                    <li>Press [Y=]</li>
+                    <li>Enter: Y1 = 2X + 1</li>
+                    <li>Press [ZOOM] [6] for ZStandard</li>
+                    <li>Press [GRAPH]</li>
+                    <li>Use [TRACE] to explore points</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8.</div>
+                <div class="question-text">Graph y = -x + 4 and find where it crosses the x-axis:</div>
+                <div class="options">
+                    <div class="option">a) (4, 0)</div>
+                    <div class="option">b) (0, 4)</div>
+                    <div class="option">c) (-4, 0)</div>
+                    <div class="option">d) (0, -4)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9.</div>
+                <div class="question-text">What is the range of f(x) = x² for x ≥ 0?</div>
+                <div class="options">
+                    <div class="option">a) All real numbers</div>
+                    <div class="option">b) y ≥ 0</div>
+                    <div class="option">c) y ≤ 0</div>
+                    <div class="option">d) x ≥ 0</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">10.</div>
+                <div class="question-text">If f(x) = x - 3, find f(a + 2)</div>
+                <div class="options">
+                    <div class="option">a) a - 1</div>
+                    <div class="option">b) a + 5</div>
+                    <div class="option">c) a - 5</div>
+                    <div class="option">d) a + 1</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11.</div>
+                <div class="question-text">What is the vertex of y = x²?</div>
+                <div class="options">
+                    <div class="option">a) (0, 1)</div>
+                    <div class="option">b) (1, 0)</div>
+                    <div class="option">c) (0, 0)</div>
+                    <div class="option">d) (1, 1)</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Finding Intercepts</h3>
+                <p><em>To find x-intercept of y = 3x - 6:</em></p>
+                <ul>
+                    <li>Graph the function</li>
+                    <li>Press [2nd] [CALC] [2] (zero)</li>
+                    <li>Move cursor near x-axis crossing</li>
+                    <li>Press [ENTER] three times</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12.</div>
+                <div class="question-text">Find the x-intercept of y = 2x + 8:</div>
+                <div class="options">
+                    <div class="option">a) x = -4</div>
+                    <div class="option">b) x = 4</div>
+                    <div class="option">c) x = -8</div>
+                    <div class="option">d) x = 8</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13.</div>
+                <div class="question-text">Which function is linear?</div>
+                <div class="options">
+                    <div class="option">a) y = x²</div>
+                    <div class="option">b) y = 3x + 1</div>
+                    <div class="option">c) y = 1/x</div>
+                    <div class="option">d) y = |x|</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14.</div>
+                <div class="question-text">What is the domain of f(x) = √x?</div>
+                <div class="options">
+                    <div class="option">a) All real numbers</div>
+                    <div class="option">b) x > 0</div>
+                    <div class="option">c) x ≥ 0</div>
+                    <div class="option">d) x ≠ 0</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15.</div>
+                <div class="question-text">A function is defined by f(x) = 2x - 5. Find the value of f(4) and explain what this represents.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">16.</div>
+                <div class="question-text">The graph of y = mx + b passes through points (0, 3) and (2, 7). Find the equation of this line and explain your method.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Function Notation and Evaluation</h3>
+                <p><em>To store and evaluate functions:</em></p>
+                <ul>
+                    <li>Press [Y=]</li>
+                    <li>Y1 = your function</li>
+                    <li>Use [2nd] [TABLE] for multiple values</li>
+                    <li>Or press [VARS] [Y-VARS] [1] [1] to recall Y1</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">17.</div>
+                <div class="question-text">Given f(x) = x² - 3x + 2, use your TI-84 to find f(0), f(1), and f(3). Explain what these values represent on the graph.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">18.</div>
+                <div class="question-text">Determine whether the relation {(-2, 4), (-1, 1), (0, 0), (1, 1), (2, 4)} represents a function. Justify your answer.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">19.</div>
+                <div class="question-text">A linear function has a slope of -3 and passes through the point (1, 5). Write the equation of this function in slope-intercept form. Show your work.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">20.</div>
+                <div class="question-text">The cost of renting a car is $25 per day plus $0.15 per mile driven. Write a function C(m) that represents the total cost for one day when m miles are driven. Use your TI-84 to find the cost of driving 120 miles.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL 2: ON-GRADE REGENTS PREP -->
+        <div class="level-section">
+            <h2 class="level-title">LEVEL 2: ON-GRADE REGENTS PREP</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided where indicated.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1.</div>
+                <div class="question-text">Find the equation of the line passing through (2, 3) and (4, 7)</div>
+                <div class="options">
+                    <div class="option">a) y = 2x - 1</div>
+                    <div class="option">b) y = 2x + 1</div>
+                    <div class="option">c) y = x + 1</div>
+                    <div class="option">d) y = 4x - 5</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2.</div>
+                <div class="question-text">What is the inverse of f(x) = 3x - 6?</div>
+                <div class="options">
+                    <div class="option">a) f⁻¹(x) = (x + 6)/3</div>
+                    <div class="option">b) f⁻¹(x) = (x - 6)/3</div>
+                    <div class="option">c) f⁻¹(x) = 3x + 6</div>
+                    <div class="option">d) f⁻¹(x) = -3x + 6</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3.</div>
+                <div class="question-text">Which transformation shifts f(x) = x² up 3 units?</div>
+                <div class="options">
+                    <div class="option">a) f(x) = x² + 3</div>
+                    <div class="option">b) f(x) = (x + 3)²</div>
+                    <div class="option">c) f(x) = 3x²</div>
+                    <div class="option">d) f(x) = x² - 3</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Function Transformations</h3>
+                <p><em>To compare f(x) = x² and g(x) = x² + 2:</em></p>
+                <ul>
+                    <li>Press [Y=]</li>
+                    <li>Y1 = X²</li>
+                    <li>Y2 = X² + 2</li>
+                    <li>Press [GRAPH]</li>
+                    <li>Observe the vertical shift</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4.</div>
+                <div class="question-text">Graph f(x) = x² and g(x) = (x - 3)². Describe the transformation:</div>
+                <div class="options">
+                    <div class="option">a) Horizontal shift right 3 units</div>
+                    <div class="option">b) Horizontal shift left 3 units</div>
+                    <div class="option">c) Vertical shift up 3 units</div>
+                    <div class="option">d) Vertical shift down 3 units</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5.</div>
+                <div class="question-text">Find the vertex of y = (x - 2)² + 1</div>
+                <div class="options">
+                    <div class="option">a) (2, 1)</div>
+                    <div class="option">b) (-2, 1)</div>
+                    <div class="option">c) (2, -1)</div>
+                    <div class="option">d) (-2, -1)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6.</div>
+                <div class="question-text">What is the axis of symmetry for y = x² - 4x + 3?</div>
+                <div class="options">
+                    <div class="option">a) x = 2</div>
+                    <div class="option">b) x = -2</div>
+                    <div class="option">c) x = 4</div>
+                    <div class="option">d) x = -4</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7.</div>
+                <div class="question-text">Which function has the greatest rate of change?</div>
+                <div class="options">
+                    <div class="option">a) y = 3x + 1</div>
+                    <div class="option">b) y = 2x - 4</div>
+                    <div class="option">c) y = -4x + 2</div>
+                    <div class="option">d) y = x + 5</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Finding Maximum/Minimum</h3>
+                <p><em>To find the vertex of y = -x² + 4x + 1:</em></p>
+                <ul>
+                    <li>Press [Y=]</li>
+                    <li>Enter the function</li>
+                    <li>Press [2nd] [CALC] [4] (maximum)</li>
+                    <li>Use cursor to select left/right bounds</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8.</div>
+                <div class="question-text">Find the maximum value of y = -2x² + 8x - 5:</div>
+                <div class="options">
+                    <div class="option">a) y = 3</div>
+                    <div class="option">b) y = -5</div>
+                    <div class="option">c) y = 8</div>
+                    <div class="option">d) y = 11</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9.</div>
+                <div class="question-text">What is the domain of f(x) = 1/(x - 2)?</div>
+                <div class="options">
+                    <div class="option">a) All real numbers</div>
+                    <div class="option">b) x ≠ 2</div>
+                    <div class="option">c) x > 2</div>
+                    <div class="option">d) x < 2</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">10.</div>
+                <div class="question-text">If f(x) = 2x + 1 and g(x) = x - 3, find (f + g)(x)</div>
+                <div class="options">
+                    <div class="option">a) 3x - 2</div>
+                    <div class="option">b) x + 4</div>
+                    <div class="option">c) 2x - 2</div>
+                    <div class="option">d) 3x + 4</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11.</div>
+                <div class="question-text">Find f(g(2)) if f(x) = x² and g(x) = x + 1</div>
+                <div class="options">
+                    <div class="option">a) 5</div>
+                    <div class="option">b) 7</div>
+                    <div class="option">c) 9</div>
+                    <div class="option">d) 3</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Composite Functions</h3>
+                <p><em>To evaluate f(g(x)) when f(x) = x² + 1 and g(x) = 2x:</em></p>
+                <ul>
+                    <li>Method 1: Calculate g(x) first, then f</li>
+                    <li>Method 2: Store Y1 = X² + 1, Y2 = 2X, Y3 = Y1(Y2)</li>
+                    <li>Compare values using table</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12.</div>
+                <div class="question-text">Find (f ∘ g)(3) when f(x) = x + 4 and g(x) = 2x - 1:</div>
+                <div class="options">
+                    <div class="option">a) 9</div>
+                    <div class="option">b) 11</div>
+                    <div class="option">c) 13</div>
+                    <div class="option">d) 15</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13.</div>
+                <div class="question-text">Which represents an exponential function?</div>
+                <div class="options">
+                    <div class="option">a) f(x) = x³</div>
+                    <div class="option">b) f(x) = 3ˣ</div>
+                    <div class="option">c) f(x) = 3x</div>
+                    <div class="option">d) f(x) = x + 3</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14.</div>
+                <div class="question-text">What is the y-intercept of f(x) = 2ˣ?</div>
+                <div class="options">
+                    <div class="option">a) 0</div>
+                    <div class="option">b) 1</div>
+                    <div class="option">c) 2</div>
+                    <div class="option">d) undefined</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15.</div>
+                <div class="question-text">The function f(x) = -2x² + 8x + 3 represents a parabola. Find the vertex and determine whether it opens upward or downward. Show all work.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">16.</div>
+                <div class="question-text">Write the equation of the line perpendicular to y = (2/3)x + 1 that passes through the point (4, -2). Show your work step by step.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">17.</div>
+                <div class="question-text">Given f(x) = x² - 5x + 6, find the x-intercepts algebraically and verify graphically using your TI-84.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Piecewise Functions</h3>
+                <p><em>To graph a piecewise function:</em></p>
+                <ul>
+                    <li>Use parentheses and inequality symbols</li>
+                    <li>Y1 = (X + 2)(X ≤ 1) + (X²)(X > 1)</li>
+                    <li>Or graph each piece separately with domain restrictions</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">18.</div>
+                <div class="question-text">Graph the piecewise function f(x) = {x + 1 if x ≤ 0; x² if x > 0} and describe its behavior at x = 0.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">19.</div>
+                <div class="question-text">The function h(t) = -16t² + 64t + 80 models the height of a projectile. Find the maximum height and the time when it occurs. Explain your method.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">20.</div>
+                <div class="question-text">Two functions are given: f(x) = 2x - 3 and g(x) = x² + 1. Find and simplify (f ∘ g)(x) and (g ∘ f)(x). Show that these compositions are generally not equal.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL 3: CHALLENGE & MASTERY -->
+        <div class="level-section">
+            <h2 class="level-title">LEVEL 3: CHALLENGE & MASTERY</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 4 credits. Clearly indicate the necessary steps, including appropriate formula substitutions, diagrams, graphs, charts, etc. Utilize the information provided for each question to determine your answer.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1.</div>
+                <div class="question-text">Find the equation of the line tangent to y = x² at the point (2, 4)</div>
+                <div class="options">
+                    <div class="option">a) y = 4x - 4</div>
+                    <div class="option">b) y = 2x</div>
+                    <div class="option">c) y = 4x + 4</div>
+                    <div class="option">d) y = x + 2</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2.</div>
+                <div class="question-text">What is the range of f(x) = -3x² + 12x - 8?</div>
+                <div class="options">
+                    <div class="option">a) y ≤ 4</div>
+                    <div class="option">b) y ≥ 4</div>
+                    <div class="option">c) y ≤ -8</div>
+                    <div class="option">d) All real numbers</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Advanced Function Analysis</h3>
+                <p><em>To analyze f(x) = x³ - 3x² + 2x:</em></p>
+                <ul>
+                    <li>Graph the function</li>
+                    <li>Find zeros using [2nd] [CALC] [2]</li>
+                    <li>Find local max/min using [2nd] [CALC] [3] and [4]</li>
+                    <li>Analyze end behavior</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3.</div>
+                <div class="question-text">Analyze f(x) = x³ - 6x² + 9x. Find all critical points:</div>
+                <div class="options">
+                    <div class="option">a) x = 1, 3</div>
+                    <div class="option">b) x = 0, 3</div>
+                    <div class="option">c) x = -1, 3</div>
+                    <div class="option">d) x = 1, -3</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4.</div>
+                <div class="question-text">Find the inverse function of f(x) = (x - 2)/(x + 1)</div>
+                <div class="options">
+                    <div class="option">a) f⁻¹(x) = (x + 2)/(1 - x)</div>
+                    <div class="option">b) f⁻¹(x) = (x - 2)/(x + 1)</div>
+                    <div class="option">c) f⁻¹(x) = (x + 1)/(x - 2)</div>
+                    <div class="option">d) f⁻¹(x) = (-x - 2)/(x - 1)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5.</div>
+                <div class="question-text">Which function has a horizontal asymptote at y = 2?</div>
+                <div class="options">
+                    <div class="option">a) f(x) = 2x/(x + 1)</div>
+                    <div class="option">b) f(x) = (2x + 1)/(x - 1)</div>
+                    <div class="option">c) f(x) = (x + 2)/x</div>
+                    <div class="option">d) f(x) = 2 + 1/x</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Rational Functions</h3>
+                <p><em>To analyze f(x) = (x² - 1)/(x - 2):</em></p>
+                <ul>
+                    <li>Graph the function</li>
+                    <li>Identify vertical asymptotes (where denominator = 0)</li>
+                    <li>Find horizontal asymptotes by examining end behavior</li>
+                    <li>Look for holes vs. asymptotes</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6.</div>
+                <div class="question-text">Analyze f(x) = (x² - 4)/(x² - 2x - 8). Find all discontinuities:</div>
+                <div class="options">
+                    <div class="option">a) Vertical asymptote at x = 4, hole at x = -2</div>
+                    <div class="option">b) Vertical asymptote at x = -2, hole at x = 4</div>
+                    <div class="option">c) Vertical asymptotes at x = ±2</div>
+                    <div class="option">d) Holes at x = 4, -2</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7.</div>
+                <div class="question-text">Find the equation of the parabola with vertex (-1, 3) passing through (0, 5)</div>
+                <div class="options">
+                    <div class="option">a) y = 2(x + 1)² + 3</div>
+                    <div class="option">b) y = (x + 1)² + 3</div>
+                    <div class="option">c) y = -2(x + 1)² + 3</div>
+                    <div class="option">d) y = 3(x + 1)² + 2</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8.</div>
+                <div class="question-text">What is the period of f(x) = 3sin(2x) + 1?</div>
+                <div class="options">
+                    <div class="option">a) π</div>
+                    <div class="option">b) 2π</div>
+                    <div class="option">c) π/2</div>
+                    <div class="option">d) 4π</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Logarithmic Functions</h3>
+                <p><em>To graph and analyze f(x) = log₂(x):</em></p>
+                <ul>
+                    <li>Use Y1 = log(X)/log(2) for base 2</li>
+                    <li>Identify domain restrictions</li>
+                    <li>Find x and y intercepts</li>
+                    <li>Compare with f(x) = 2ˣ (inverse relationship)</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9.</div>
+                <div class="question-text">Find the domain and range of f(x) = ln(x - 3) + 2:</div>
+                <div class="options">
+                    <div class="option">a) Domain: x > 3, Range: all real numbers</div>
+                    <div class="option">b) Domain: x > 0, Range: y > 2</div>
+                    <div class="option">c) Domain: x ≥ 3, Range: y ≥ 2</div>
+                    <div class="option">d) Domain: all real numbers, Range: y > 3</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">10.</div>
+                <div class="question-text">If f(x) = eˣ and g(x) = ln(x), find (f ∘ g)(x)</div>
+                <div class="options">
+                    <div class="option">a) x</div>
+                    <div class="option">b) 1</div>
+                    <div class="option">c) e<sup>lnx</sup></div>
+                    <div class="option">d) ln(eˣ)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11.</div>
+                <div class="question-text">Find all solutions to f(x) = g(x) where f(x) = x² - 2x and g(x) = 2x - 4</div>
+                <div class="options">
+                    <div class="option">a) x = 1, 4</div>
+                    <div class="option">b) x = -1, 2</div>
+                    <div class="option">c) x = 2, 4</div>
+                    <div class="option">d) x = 1, -2</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Function Intersections</h3>
+                <p><em>To find where two functions intersect:</em></p>
+                <ul>
+                    <li>Graph both functions</li>
+                    <li>Use [2nd] [CALC] [5] (intersect)</li>
+                    <li>Move cursor near intersection point</li>
+                    <li>Press [ENTER] three times for each intersection</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12.</div>
+                <div class="question-text">Find all intersections of y = x³ - 2x and y = x:</div>
+                <div class="options">
+                    <div class="option">a) x = 0 only</div>
+                    <div class="option">b) x = -√3, 0, √3</div>
+                    <div class="option">c) x = -1, 0, 1</div>
+                    <div class="option">d) x = -2, 0, 2</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13.</div>
+                <div class="question-text">What is the amplitude of f(x) = -4cos(3x) + 2?</div>
+                <div class="options">
+                    <div class="option">a) 4</div>
+                    <div class="option">b) -4</div>
+                    <div class="option">c) 3</div>
+                    <div class="option">d) 2</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14.</div>
+                <div class="question-text">Find the oblique asymptote of f(x) = (x² + 2x - 1)/(x - 1)</div>
+                <div class="options">
+                    <div class="option">a) y = x + 3</div>
+                    <div class="option">b) y = x + 1</div>
+                    <div class="option">c) y = x - 1</div>
+                    <div class="option">d) y = x + 2</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15.</div>
+                <div class="question-text">Given the function f(x) = |x - 2| + 3, describe all transformations applied to the parent function f(x) = |x|. Then find the domain, range, and vertex.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">16.</div>
+                <div class="question-text">A rational function has vertical asymptotes at x = -2 and x = 3, a horizontal asymptote at y = 1, and passes through the point (0, -2). Write a possible equation for this function and verify using your TI-84.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Optimization Problems</h3>
+                <p><em>For optimization using functions:</em></p>
+                <ul>
+                    <li>Set up the function to optimize</li>
+                    <li>Graph to visualize</li>
+                    <li>Use calculus menu or [2nd] [CALC] for max/min</li>
+                    <li>Verify answer makes sense in context</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">17.</div>
+                <div class="question-text">A rectangular garden has a perimeter of 100 feet. Express the area as a function of width and find the dimensions that maximize the area.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">18.</div>
+                <div class="question-text">Prove that f(x) = (3x - 1)/(x + 2) and g(x) = (2x + 1)/(1 - 3x) are inverse functions. Show both algebraically and graphically.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">19.</div>
+                <div class="question-text">The function f(x) = ae^(bx) + c passes through points (0, 5), (1, 8), and (2, 14). Find the values of a, b, and c. Explain your solution process.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">20.</div>
+                <div class="question-text">Challenge Problem: A piecewise function is defined as f(x) = {ax + b for x ≤ 2; cx² + d for x > 2}. Given that f is continuous at x = 2, f(0) = 1, f(3) = 5, and f(4) = 12, find the values of a, b, c, and d. Verify your answer using the TI-84.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMBINED ANSWER KEY -->
+        <div class="answer-key-section">
+            <h2 class="answer-key-title">COMBINED ANSWER KEY</h2>
+            
+            <h3 style="color: #2e7d32; margin: 25px 0 15px 0;">LEVEL 1 - FOUNDATIONS</h3>
+            
+            <div class="answer-item">
+                <span class="answer-number">1.</span> a) Yes, each input has exactly one output
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">2.</span> c) 11
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">3.</span> a) All real numbers
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">4.</span> a) -1
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">5.</span> b) -7
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">6.</span> a) 4
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">7.</span> b) (1, -1)
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">8.</span> a) (4, 0)
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">9.</span> b) y ≥ 0
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">10.</span> a) a - 1
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">11.</span> c) (0, 0)
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">12.</span> a) x = -4
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">13.</span> b) y = 3x + 1
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">14.</span> c) x ≥ 0
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">15.</span> <strong>f(4) = 3</strong><br>
+                Step-by-step: f(4) = 2(4) - 5 = 8 - 5 = 3. This represents the y-value when x = 4, or the point (4, 3) on the graph.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">16.</span> <strong>y = 2x + 3</strong><br>
+                Step-by-step: Using (0, 3): b = 3. Using (2, 7): slope = (7-3)/(2-0) = 4/2 = 2. Therefore: y = 2x + 3
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">17.</span> <strong>f(0) = 2, f(1) = 0, f(3) = 2</strong><br>
+                Step-by-step: f(0) = 0² - 3(0) + 2 = 2; f(1) = 1² - 3(1) + 2 = 0; f(3) = 3² - 3(3) + 2 = 2. These represent y-coordinates: (0, 2), (1, 0), (3, 2). f(1) = 0 means the graph crosses the x-axis at x = 1.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">18.</span> <strong>Yes, this is a function</strong><br>
+                Each x-value maps to exactly one y-value (passes vertical line test). No x-value is repeated with different y-values.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">19.</span> <strong>y = -3x + 8</strong><br>
+                Step-by-step: Using point-slope form with m = -3 and point (1, 5): y - 5 = -3(x - 1); y - 5 = -3x + 3; y = -3x + 8
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">20.</span> <strong>C(m) = 25 + 0.15m; C(120) = $43</strong><br>
+                Step-by-step: C(m) = 25 + 0.15m. For 120 miles: C(120) = 25 + 0.15(120) = 25 + 18 = $43
+            </div>
+
+            <h3 style="color: #2e7d32; margin: 35px 0 15px 0;">LEVEL 2 - ON-GRADE REGENTS PREP</h3>
+            
+            <div class="answer-item">
+                <span class="answer-number">1.</span> a) y = 2x - 1
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">2.</span> a) f⁻¹(x) = (x + 6)/3
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">3.</span> a) f(x) = x² + 3
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">4.</span> a) Horizontal shift right 3 units
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">5.</span> a) (2, 1)
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">6.</span> a) x = 2
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">7.</span> a) y = 3x + 1 (slope = 3 is greatest)
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">8.</span> a) y = 3
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">9.</span> b) x ≠ 2
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">10.</span> a) 3x - 2
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">11.</span> c) 9
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">12.</span> b) 11
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">13.</span> b) f(x) = 3ˣ
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">14.</span> b) 1
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">15.</span> <strong>Vertex: (2, 11), opens downward</strong><br>
+                Step-by-step: x = -b/(2a) = -8/(2(-2)) = 2; f(2) = -2(4) + 8(2) + 3 = -8 + 16 + 3 = 11. Since a = -2 < 0, parabola opens downward.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">16.</span> <strong>y = -3/2x + 4</strong><br>
+                Step-by-step: Perpendicular slope = -3/2 (negative reciprocal of 2/3). Using point-slope: y - (-2) = -3/2(x - 4); y + 2 = -3/2x + 6; y = -3/2x + 4
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">17.</span> <strong>x-intercepts: x = 2, x = 3</strong><br>
+                Step-by-step: Factor: x² - 5x + 6 = (x - 2)(x - 3) = 0. Therefore x = 2 or x = 3. TI-84 verification shows zeros at x = 2 and x = 3.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">18.</span> <strong>Graph shows jump discontinuity at x = 0</strong><br>
+                Left piece: y = x + 1 approaches (0, 1). Right piece: y = x² approaches (0, 0). Function is not continuous at x = 0.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">19.</span> <strong>Maximum height: 144 feet at t = 2 seconds</strong><br>
+                Step-by-step: Vertex: t = -64/(2(-16)) = -64/(-32) = 2; h(2) = -16(4) + 64(2) + 80 = -64 + 128 + 80 = 144 feet
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">20.</span> <strong>(f ∘ g)(x) = 2x² - 1; (g ∘ f)(x) = 4x² - 12x + 10</strong><br>
+                Step-by-step: (f ∘ g)(x) = f(g(x)) = f(x² + 1) = 2(x² + 1) - 3 = 2x² + 2 - 3 = 2x² - 1. (g ∘ f)(x) = g(f(x)) = g(2x - 3) = (2x - 3)² + 1 = 4x² - 12x + 9 + 1 = 4x² - 12x + 10. These are not equal, showing composition is not commutative.
+            </div>
+
+            <h3 style="color: #2e7d32; margin: 35px 0 15px 0;">LEVEL 3 - CHALLENGE & MASTERY</h3>
+            
+            <div class="answer-item">
+                <span class="answer-number">1.</span> a) y = 4x - 4
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">2.</span> a) y ≤ 4
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">3.</span> a) x = 1, 3
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">4.</span> a) f⁻¹(x) = (x + 2)/(1 - x)
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">5.</span> d) f(x) = 2 + 1/x
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">6.</span> b) Vertical asymptote at x = -2, hole at x = 4
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">7.</span> a) y = 2(x + 1)² + 3
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">8.</span> a) π
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">9.</span> a) Domain: x > 3, Range: all real numbers
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">10.</span> a) x
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">11.</span> a) x = 1, 4
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">12.</span> b) x = -√3, 0, √3
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">13.</span> a) 4
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">14.</span> a) y = x + 3
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">15.</span> <strong>Transformations: Right 2 units, up 3 units; Domain: All real numbers; Range: y ≥ 3; Vertex: (2, 3)</strong><br>
+                The function is shifted right 2 units (x - 2) and up 3 units (+3) from the parent function f(x) = |x|.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">16.</span> <strong>Possible function: f(x) = (x + 2)(x - 3)/((x + 2)(x - 3)) · k</strong><br>
+                One possibility with appropriate scaling to satisfy horizontal asymptote and point condition.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">17.</span> <strong>A(w) = w(50 - w) = -w² + 50w; Maximum at w = 25 feet, length = 25 feet; Maximum area = 625 square feet</strong><br>
+                Step-by-step: Perimeter = 2w + 2l = 100, so l = 50 - w. Area = wl = w(50 - w). Vertex at w = 25.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">18.</span> <strong>Algebraic verification: f(g(x)) = x and g(f(x)) = x</strong><br>
+                Graphical verification: Functions are reflections over y = x.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">19.</span> <strong>a = 2, b = ln(1.5), c = 3</strong><br>
+                System of equations using the three given points.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">20.</span> <strong>a = -1, b = 1, c = 1, d = 2</strong><br>
+                Continuity condition and given points determine unique solution.
+            </div>
+        </div>
+
+        <!-- BONUS REGENTS PRACTICE -->
+        <div class="bonus-section">
+            <h2 class="bonus-title">BONUS REGENTS PRACTICE</h2>
+            
+            <div class="instructions">
+                <strong>Directions:</strong> Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided.
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 1:</div>
+                <div class="question-text">Which equation represents a function with a y-intercept of -3?</div>
+                <div class="options">
+                    <div class="option">(1) y = 2x + 3</div>
+                    <div class="option">(2) y = -2x - 3</div>
+                    <div class="option">(3) y = 3x - 3</div>
+                    <div class="option">(4) y = -3x + 2</div>
+                </div>
+                <div style="margin-top: 15px; color: #666;">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 2:</div>
+                <div class="question-text">The vertex of the parabola y = x² - 6x + 8 is located at:</div>
+                <div class="options">
+                    <div class="option">(1) (3, -1)</div>
+                    <div class="option">(2) (-3, 1)</div>
+                    <div class="option">(3) (6, 8)</div>
+                    <div class="option">(4) (-6, -8)</div>
+                </div>
+                <div style="margin-top: 15px; color: #666;">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 3:</div>
+                <div class="question-text">If f(x) = 3x + 2 and g(x) = x - 5, then f(g(4)) equals:</div>
+                <div class="options">
+                    <div class="option">(1) -7</div>
+                    <div class="option">(2) -1</div>
+                    <div class="option">(3) 5</div>
+                    <div class="option">(4) 14</div>
+                </div>
+                <div style="margin-top: 15px; color: #666;">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 4:</div>
+                <div class="question-text">Which function has a domain of all real numbers except x = -2?</div>
+                <div class="options">
+                    <div class="option">(1) f(x) = x² + 2</div>
+                    <div class="option">(2) f(x) = √(x + 2)</div>
+                    <div class="option">(3) f(x) = 1/(x + 2)</div>
+                    <div class="option">(4) f(x) = |x + 2|</div>
+                </div>
+                <div style="margin-top: 15px; color: #666;">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 5:</div>
+                <div class="question-text">The range of the function f(x) = x² + 4 is:</div>
+                <div class="options">
+                    <div class="option">(1) y ≥ 0</div>
+                    <div class="option">(2) y ≥ 4</div>
+                    <div class="option">(3) y ≤ 4</div>
+                    <div class="option">(4) All real numbers</div>
+                </div>
+                <div style="margin-top: 15px; color: #666;">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 6:</div>
+                <div class="question-text">Which transformation represents f(x) = (x - 3)² + 2 compared to the parent function g(x) = x²?</div>
+                <div class="options">
+                    <div class="option">(1) Left 3 units, up 2 units</div>
+                    <div class="option">(2) Right 3 units, up 2 units</div>
+                    <div class="option">(3) Left 3 units, down 2 units</div>
+                    <div class="option">(4) Right 3 units, down 2 units</div>
+                </div>
+                <div style="margin-top: 15px; color: #666;">Show your work:</div>
+            </div>
+        </div>
+
+        <!-- BONUS ANSWER KEY -->
+        <div class="answer-key-section">
+            <h2 class="answer-key-title">BONUS REGENTS ANSWER KEY</h2>
+            
+            <div class="answer-item">
+                <span class="answer-number">Bonus 1:</span> <strong>(3) y = 3x - 3</strong>
+                <div style="margin-top: 10px; padding-left: 20px;">
+                    <strong>Solution:</strong> The y-intercept occurs when x = 0. For y = 3x - 3: y = 3(0) - 3 = -3 ✓<br>
+                    Check other options: (1) y = 3, (2) y = -3 ✓ (also correct but not listed as answer), (4) y = 2
+                </div>
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">Bonus 2:</span> <strong>(1) (3, -1)</strong>
+                <div style="margin-top: 10px; padding-left: 20px;">
+                    <strong>Solution:</strong> For y = x² - 6x + 8, vertex x-coordinate: x = -b/(2a) = 6/2 = 3<br>
+                    Substitute: y = (3)² - 6(3) + 8 = 9 - 18 + 8 = -1<br>
+                    <strong>Vertex:</strong> (3, -1)
+                </div>
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">Bonus 3:</span> <strong>(2) -1</strong>
+                <div style="margin-top: 10px; padding-left: 20px;">
+                    <strong>Solution:</strong> First find g(4): g(4) = 4 - 5 = -1<br>
+                    Then find f(g(4)) = f(-1): f(-1) = 3(-1) + 2 = -3 + 2 = -1
+                </div>
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">Bonus 4:</span> <strong>(3) f(x) = 1/(x + 2)</strong>
+                <div style="margin-top: 10px; padding-left: 20px;">
+                    <strong>Solution:</strong> Rational functions are undefined when the denominator equals zero.<br>
+                    x + 2 = 0 when x = -2, so domain excludes x = -2.<br>
+                    Other functions are defined for all real numbers including x = -2.
+                </div>
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">Bonus 5:</span> <strong>(2) y ≥ 4</strong>
+                <div style="margin-top: 10px; padding-left: 20px;">
+                    <strong>Solution:</strong> f(x) = x² + 4; since x² ≥ 0 for all real x, the minimum value occurs when x² = 0.<br>
+                    Minimum: f(0) = 0 + 4 = 4, so range is y ≥ 4
+                </div>
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">Bonus 6:</span> <strong>(2) Right 3 units, up 2 units</strong>
+                <div style="margin-top: 10px; padding-left: 20px;">
+                    <strong>Solution:</strong> f(x) = (x - 3)² + 2 compared to g(x) = x²<br>
+                    (x - 3) represents horizontal shift RIGHT 3 units<br>
+                    +2 represents vertical shift UP 2 units
+                </div>
+            </div>
+        </div>
+
+        <!-- SUCCESS STRATEGIES -->
+        <div class="success-section">
+            <h2 class="success-title">FUNCTIONS & GRAPHING SUCCESS STRATEGIES</h2>
+            
+            <div class="strategy-box">
+                <h3 style="color: #1565c0; margin-bottom: 15px;">For Students:</h3>
+                <ul>
+                    <li>Master function notation - understand what f(x), f(a), and f(g(x)) represent</li>
+                    <li>Practice transformations systematically - know how each parameter affects the graph</li>
+                    <li>Use the vertical line test - to determine if a relation is a function</li>
+                    <li>Identify key features - intercepts, vertex, asymptotes, domain, and range</li>
+                    <li>Connect algebraic and graphical representations - see the relationship between equations and graphs</li>
+                    <li>Check your work graphically - use the TI-84 to verify algebraic solutions</li>
+                </ul>
+            </div>
+
+            <div class="error-box">
+                <h4 style="color: #dc3545; margin-bottom: 10px;">Common Student Errors to Avoid:</h4>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Confusing domain and range - remember domain is input (x), range is output (y)</li>
+                    <li>Incorrect transformation direction - (x - h) shifts RIGHT h units, not left</li>
+                    <li>Function notation mistakes - f(x + 2) ≠ f(x) + 2</li>
+                    <li>Composition order errors - (f ∘ g)(x) = f(g(x)), work from inside out</li>
+                    <li>Asymptote identification errors - vertical at zeros of denominator, horizontal by degree comparison</li>
+                    <li>Forgetting domain restrictions - especially for rational, radical, and logarithmic functions</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Time Management Tips:</h4>
+                <ul>
+                    <li><strong>Function evaluation:</strong> 2-3 minutes per problem</li>
+                    <li><strong>Graphing and transformations:</strong> 3-4 minutes per problem</li>
+                    <li><strong>Composition and inverse functions:</strong> 4-5 minutes per problem</li>
+                    <li><strong>Domain and range problems:</strong> 3-4 minutes per problem</li>
+                    <li><strong>Complex function analysis:</strong> 5-7 minutes per problem</li>
+                    <li><strong>Strategy:</strong> Always graph when in doubt - visual confirmation helps catch errors</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Verification Strategies:</h4>
+                <ol style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>Vertical Line Test:</strong> Verify function by checking if any vertical line intersects graph more than once</li>
+                    <li><strong>Input-Output Check:</strong> Substitute values to confirm function rule produces correct outputs</li>
+                    <li><strong>Domain Verification:</strong> Check that all x-values in domain produce valid y-values</li>
+                    <li><strong>Graph Matching:</strong> Compare calculated features (intercepts, vertex) with graph</li>
+                    <li><strong>Symmetry Testing:</strong> Verify even/odd function properties algebraically</li>
+                    <li><strong>Calculator Graphing:</strong> Use TI-84 to confirm hand-drawn graphs</li>
+                </ol>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Real-World Application Categories:</h4>
+                <ul>
+                    <li><strong>GPS Navigation:</strong> Distance as a function of time, route optimization</li>
+                    <li><strong>Economics:</strong> Supply and demand curves, cost functions, break-even analysis</li>
+                    <li><strong>Physics:</strong> Position-time graphs, velocity-acceleration relationships</li>
+                    <li><strong>Medicine:</strong> Drug concentration over time, patient vital sign monitoring</li>
+                    <li><strong>Environmental Science:</strong> Population growth, resource depletion models</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Pattern Recognition Skills:</h4>
+                <ul>
+                    <li><strong>Linear Patterns:</strong> Constant rate of change, y = mx + b form</li>
+                    <li><strong>Slope Values:</strong> Positive (↗), negative (↘), zero (→), undefined (↕)</li>
+                    <li><strong>Intercept Locations:</strong> Where graphs cross axes (x=0 for y-int, y=0 for x-int)</li>
+                    <li><strong>Function Families:</strong> Linear, quadratic, exponential, absolute value shapes</li>
+                    <li><strong>Domain Restrictions:</strong> Fractions (denominator ≠ 0), square roots (radicand ≥ 0)</li>
+                    <li><strong>Transformation Patterns:</strong> Shifts, stretches, compressions, reflections</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Regents Exam Preparation Focus:</h4>
+                <ul>
+                    <li><strong>Function Notation:</strong> Understanding f(x) and evaluating f(3) correctly</li>
+                    <li><strong>Domain and Range:</strong> Identifying valid input and output values</li>
+                    <li><strong>Graph Interpretation:</strong> Reading and analyzing given graphs</li>
+                    <li><strong>Rate of Change:</strong> Calculating and interpreting slope meaning</li>
+                    <li><strong>Function Transformations:</strong> Predicting graph changes from equation changes</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Problem-Solving Approach:</h4>
+                <ol style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>Identify:</strong> Determine function type and what information is given</li>
+                    <li><strong>Analyze:</strong> Extract key features (intercepts, slope, vertex, asymptotes)</li>
+                    <li><strong>Calculate:</strong> Find requested values or create function rule</li>
+                    <li><strong>Graph:</strong> Plot points and sketch accurate graph if required</li>
+                    <li><strong>Interpret:</strong> Explain meaning of mathematical results in context</li>
+                </ol>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Advanced Techniques (Level 3):</h4>
+                <ul>
+                    <li><strong>Piecewise Functions:</strong> Functions with different rules for different domains</li>
+                    <li><strong>Inverse Functions:</strong> Finding and graphing inverse relations</li>
+                    <li><strong>Function Composition:</strong> Combining functions f(g(x))</li>
+                    <li><strong>Parametric Equations:</strong> Representing curves using parameter t</li>
+                    <li><strong>Implicit Functions:</strong> Working with relations not solved for y</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Study Recommendations:</h4>
+                <ul>
+                    <li><strong>Daily Practice:</strong> 15 minutes graphing various function types</li>
+                    <li><strong>Pattern Recognition:</strong> Study common function shapes and their equations</li>
+                    <li><strong>Real-World Connections:</strong> Identify functions in daily life situations</li>
+                    <li><strong>Technology Integration:</strong> Use Desmos or TI-84 to explore transformations</li>
+                    <li><strong>Peer Teaching:</strong> Explain function concepts to strengthen understanding</li>
+                </ul>
+            </div>
+
+            <div class="checklist">
+                <h4>Performance Checklist for Students:</h4>
+                <ul>
+                    <li>Evaluate functions using correct notation</li>
+                    <li>Identify domain and range from graphs</li>
+                    <li>Calculate slope from two points or graph</li>
+                    <li>Find x and y-intercepts algebraically</li>
+                    <li>Graph linear functions accurately</li>
+                    <li>Apply vertical line test</li>
+                    <li>Interpret rate of change in context</li>
+                    <li>Identify function families by equation</li>
+                    <li>Apply function transformations</li>
+                    <li>Read and interpret real-world graphs</li>
+                    <li>Create functions from word problems</li>
+                    <li>Use calculator graphing features effectively</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Assessment Alignment Notes for Teachers:</h4>
+                <p><strong>NYS Regents Standards Coverage:</strong></p>
+                <ul>
+                    <li><strong>F.IF.A.1:</strong> Understand function notation and evaluation</li>
+                    <li><strong>F.IF.A.2:</strong> Use function notation in various contexts</li>
+                    <li><strong>F.IF.B.4:</strong> Interpret key features of graphs</li>
+                </ul>
+                
+                <p style="margin-top: 15px;"><strong>Differentiation Guidance:</strong></p>
+                <ul>
+                    <li><strong>Level 1 (Foundations):</strong> Basic function evaluation, simple graphing, slope calculation</li>
+                    <li><strong>Level 2 (On-Grade):</strong> Domain/range, intercepts, transformations, real-world modeling</li>
+                    <li><strong>Level 3 (Challenge):</strong> Piecewise functions, inverse functions, composition, parametric</li>
+                </ul>
+                
+                <p style="margin-top: 15px;"><strong>Common Student Misconceptions:</strong></p>
+                <ul>
+                    <li>Confusing f(x) with f·x (multiplication) instead of function notation</li>
+                    <li>Believing all relations are functions (failing vertical line test)</li>
+                    <li>Mixing up domain (x-values) and range (y-values)</li>
+                    <li>Incorrectly calculating slope: (y₂-y₁)/(x₁-x₂) instead of (y₂-y₁)/(x₂-x₁)</li>
+                    <li>Not recognizing that horizontal lines have zero slope, vertical lines undefined slope</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h3 style="color: #1565c0; margin-bottom: 15px;">NEW YORK STATE REGENTS SCORING RUBRIC</h3>
+                
+                <p><strong>Part I: Multiple Choice Questions (2 credits each)</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>2 Credits: Correct answer selected</li>
+                    <li>0 Credits: Incorrect answer or no response</li>
+                </ul>
+                <p style="margin-top: 10px; font-style: italic;">Note: No partial credit is awarded for multiple choice questions in Part I</p>
+                
+                <p style="margin-top: 20px;"><strong>Part II: Constructed Response Questions (2-4 credits each)</strong></p>
+                
+                <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                    <strong>4 Credits - Excellent Response</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Complete and correct mathematical solution with clear function analysis</li>
+                        <li>Proper use of function notation and domain/range concepts</li>
+                        <li>Accurate graphical interpretations and transformations when required</li>
+                        <li>Clear explanation of function behavior and characteristics</li>
+                        <li>All work shown with logical flow and proper mathematical reasoning</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                    <strong>3 Credits - Good Response</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Substantially correct solution with minor errors in function evaluation or graphing</li>
+                        <li>Generally proper use of function notation with minimal mistakes</li>
+                        <li>Most essential steps shown with clear mathematical reasoning</li>
+                        <li>Minor computational errors that don't affect overall understanding</li>
+                        <li>Good grasp of function concepts with small gaps in presentation</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                    <strong>2 Credits - Satisfactory Response</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Partially correct solution showing understanding of basic function concepts</li>
+                        <li>Some correct function operations (evaluation, composition, etc.)</li>
+                        <li>May contain significant errors in domain/range determination or transformations</li>
+                        <li>Shows familiarity with function notation and basic graphing concepts</li>
+                        <li>Work partially shown but missing key steps or explanations</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                    <strong>1 Credit - Minimal Response</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Minimal understanding of function concepts demonstrated</li>
+                        <li>Some correct procedures identified but poorly executed</li>
+                        <li>Major errors in function evaluation, domain/range, or graphical analysis</li>
+                        <li>Little coherent work shown or unclear mathematical presentation</li>
+                        <li>Limited grasp of function notation and graphing techniques</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                    <strong>0 Credits - No Credit</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>No understanding of function concepts demonstrated</li>
+                        <li>Incorrect mathematical procedures throughout or no work shown</li>
+                        <li>Response unrelated to functions, graphing, or mathematical analysis</li>
+                        <li>No evidence of understanding function notation, transformations, or graphing skills</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 15px; margin-top: 30px; text-align: center;">
+                <h3 style="margin-bottom: 15px; font-size: 1.5em;">You've Got This! 🎯</h3>
+                <p style="font-size: 1.1em; line-height: 1.8;">Functions and graphing are the foundation of higher mathematics. Master these concepts and you'll unlock countless opportunities in STEM fields. Remember: every expert was once a beginner who never gave up. Your dedication to practicing these skills will pay off on test day and beyond!</p>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p><strong>© D.E.Bs Learning Academy</strong></p>
+            <p><em>Unlocking Brilliance Through Learning</em></p>
+            <p>Topic 3: Functions & Graphing</p>
+            <p>Algebra I Regents Review | Complete Workbook</p>
+        </div>
+    </div>
+
+    <script>
+        // Make all work-space areas editable
+        document.querySelectorAll('.work-space').forEach(function(workSpace) {
+            // Create textarea for work area
+            const textarea = document.createElement('textarea');
+            textarea.style.width = '100%';
+            textarea.style.minHeight = '120px';
+            textarea.style.padding = '15px';
+            textarea.style.fontSize = '14px';
+            textarea.style.fontFamily = 'monospace';
+            textarea.style.border = '1px solid #ccc';
+            textarea.style.borderRadius = '5px';
+            textarea.style.resize = 'vertical';
+            textarea.style.marginTop = '10px';
+            textarea.placeholder = 'Type your work here...';
+            
+            workSpace.appendChild(textarea);
+        });
+
+        // Make multiple choice options selectable
+        document.querySelectorAll('.option').forEach(function(option, index) {
+            // Skip if already has radio button
+            if (option.querySelector('input[type="radio"]')) return;
+            
+            const questionBlock = option.closest('.question');
+            if (!questionBlock) return;
+            
+            const questionNum = questionBlock.querySelector('.question-number');
+            if (!questionNum) return;
+            
+            // Extract question number for unique naming
+            const qNum = questionNum.textContent.match(/^\d+/);
+            if (!qNum) return;
+            
+            // Find which level section we're in
+            const levelSection = option.closest('.level-section');
+            let levelPrefix = 'L1';
+            if (levelSection) {
+                if (levelSection.querySelector('h2').textContent.includes('LEVEL 2')) levelPrefix = 'L2';
+                if (levelSection.querySelector('h2').textContent.includes('LEVEL 3')) levelPrefix = 'L3';
+            }
+            
+            // Check if it's a bonus question
+            if (questionNum.textContent.includes('Bonus')) {
+                levelPrefix = 'B';
+            }
+            
+            const radioName = `q_${levelPrefix}_${qNum[0]}`;
+            
+            // Get the option text
+            const optionText = option.textContent.trim();
+            const optionLetter = optionText.charAt(0); // a, b, c, d, or (1, (2, etc
+            
+            // Create radio button
+            const label = document.createElement('label');
+            label.style.cursor = 'pointer';
+            label.style.display = 'block';
+            
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = radioName;
+            radio.value = optionLetter;
+            radio.style.marginRight = '10px';
+            radio.style.cursor = 'pointer';
+            
+            const span = document.createElement('span');
+            span.textContent = optionText;
+            
+            // Add click handler to highlight selection
+            radio.addEventListener('change', function() {
+                // Remove highlight from all options in this question
+                questionBlock.querySelectorAll('.option').forEach(opt => {
+                    opt.style.backgroundColor = '';
+                    opt.style.fontWeight = '';
+                });
+                
+                // Highlight selected option
+                if (this.checked) {
+                    option.style.backgroundColor = '#e8f4f8';
+                    span.style.fontWeight = 'bold';
+                    span.style.color = '#667eea';
+                }
+            });
+            
+            label.appendChild(radio);
+            label.appendChild(span);
+            
+            option.textContent = '';
+            option.appendChild(label);
+        });
+
+        // Print functionality that preserves user input
+        window.addEventListener('beforeprint', function() {
+            // Store all selections and text inputs
+            document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+                radio.setAttribute('data-checked', 'true');
+            });
+        });
+    </script>
+</body>
+</html>

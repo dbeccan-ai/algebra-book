@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 2: Solving Equations & Inequalities - Algebra I Regents Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .academy-name {
+            font-size: 1.2em;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .tagline {
+            font-style: italic;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        .level-section {
+            padding: 40px 30px;
+            background: linear-gradient(to bottom, #f8f9ff 0%, white 100%);
+            border-left: 5px solid #667eea;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .level-title {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .instructions {
+            background: #e8eaf6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .instructions strong {
+            color: #667eea;
+        }
+
+        .student-info {
+            display: flex;
+            gap: 30px;
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .student-info div {
+            flex: 1;
+        }
+
+        .question {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .question:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .question-text {
+            margin: 15px 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .option {
+            padding: 10px;
+            margin: 8px 0;
+            background: #f5f5f5;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .option:hover {
+            background: #e8eaf6;
+        }
+
+        .work-space {
+            background: #f8f9fa;
+            padding: 30px;
+            margin-top: 15px;
+            border-radius: 8px;
+            min-height: 150px;
+            border: 2px dashed #dee2e6;
+        }
+
+        .work-space-label {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+        }
+
+        .ti84-walkthrough {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .ti84-walkthrough h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .ti84-walkthrough ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .ti84-walkthrough li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .ti84-walkthrough li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .ti84-walkthrough a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .ti84-walkthrough a:hover {
+            text-decoration: underline;
+        }
+
+        .answer-key-section {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .answer-key-section h2 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .answer-key-section h3 {
+            color: #4caf50;
+            margin: 25px 0 15px 0;
+            font-size: 1.5em;
+        }
+
+        .answer-item {
+            padding: 12px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #4caf50;
+        }
+
+        .answer-number {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        .bonus-section {
+            background: linear-gradient(to bottom, #fff8e1 0%, white 100%);
+            border-left: 5px solid #ff9800;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .bonus-section h2 {
+            color: #ef6c00;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .bonus-question {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-section {
+            background: linear-gradient(to bottom, #e3f2fd 0%, white 100%);
+            border-left: 5px solid #2196f3;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .success-section h2 {
+            color: #1565c0;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .success-section h3 {
+            color: #2196f3;
+            margin: 25px 0 15px 0;
+            font-size: 1.3em;
+        }
+
+        .strategy-box {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .error-box {
+            background: #ffebee;
+            border-left: 4px solid #dc3545;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .checklist {
+            background: #f1f8f4;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .checklist li {
+            padding: 5px 0;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            margin: 8px 0;
+        }
+
+        .motivation-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.1em;
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .level-section {
+                page-break-before: always;
+            }
+
+            .question {
+                page-break-inside: avoid;
+            }
+
+            .answer-key-section {
+                page-break-before: always;
+            }
+
+            .bonus-section {
+                page-break-before: always;
+            }
+
+            .success-section {
+                page-break-before: always;
+            }
+
+            .ti84-walkthrough {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header h2 {
+                font-size: 1.3em;
+            }
+
+            .level-section {
+                padding: 20px 15px;
+                margin: 10px;
+            }
+
+            .question {
+                padding: 15px;
+            }
+
+            .student-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ALGEBRA I REGENTS REVIEW WORKBOOK</h1>
+            <h2>Topic 2: Solving Equations & Inequalities</h2>
+            <div class="academy-name">D.E.Bs Learning Academy</div>
+            <div class="tagline">Unlocking Brilliance Through Learning</div>
+        </div>
+
+        <!-- LEVEL 1: FOUNDATIONS -->
+        <div class="level-section">
+            <h2 class="level-title">LEVEL 1: FOUNDATIONS</h2>
+            
+            <div class="student-info">
+                <div><strong>Name:</strong> _________________________________</div>
+                <div><strong>Date:</strong> _________________________________</div>
+            </div>
+
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided where indicated.
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <div class="question-number">1.</div>
+                <div class="question-text">Solve: x + 7 = 12</div>
+                <div class="options">
+                    <div class="option">a) x = 5</div>
+                    <div class="option">b) x = 19</div>
+                    <div class="option">c) x = -5</div>
+                    <div class="option">d) x = 84</div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <div class="question-number">2.</div>
+                <div class="question-text">Solve: 3x = 15</div>
+                <div class="options">
+                    <div class="option">a) x = 45</div>
+                    <div class="option">b) x = 5</div>
+                    <div class="option">c) x = 12</div>
+                    <div class="option">d) x = 18</div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <div class="question-number">3.</div>
+                <div class="question-text">Solve: 2x - 5 = 11</div>
+                <div class="options">
+                    <div class="option">a) x = 3</div>
+                    <div class="option">b) x = 8</div>
+                    <div class="option">c) x = 16</div>
+                    <div class="option">d) x = 22</div>
+                </div>
+            </div>
+
+            <!-- Question 4 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Solving Linear Equations Graphically</h3>
+                <p>To solve 2x + 3 = 7:</p>
+                <ul>
+                    <li>Press [Y=]</li>
+                    <li>Y1 = 2X + 3</li>
+                    <li>Y2 = 7</li>
+                    <li>Press [GRAPH]</li>
+                    <li>Use [2nd] [CALC] [5] (intersect) to find solution</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4.</div>
+                <div class="question-text">Solve graphically: 3x - 1 = 8</div>
+                <div class="options">
+                    <div class="option">a) x = 2</div>
+                    <div class="option">b) x = 3</div>
+                    <div class="option">c) x = 4</div>
+                    <div class="option">d) x = 9</div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <div class="question-number">5.</div>
+                <div class="question-text">Solve: x/4 = 6</div>
+                <div class="options">
+                    <div class="option">a) x = 1.5</div>
+                    <div class="option">b) x = 2</div>
+                    <div class="option">c) x = 10</div>
+                    <div class="option">d) x = 24</div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <div class="question-number">6.</div>
+                <div class="question-text">Solve the inequality: x + 3 > 8</div>
+                <div class="options">
+                    <div class="option">a) x > 11</div>
+                    <div class="option">b) x > 5</div>
+                    <div class="option">c) x < 5</div>
+                    <div class="option">d) x < 11</div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <div class="question-number">7.</div>
+                <div class="question-text">Solve: 4x + 2 = 18</div>
+                <div class="options">
+                    <div class="option">a) x = 4</div>
+                    <div class="option">b) x = 5</div>
+                    <div class="option">c) x = 16</div>
+                    <div class="option">d) x = 20</div>
+                </div>
+            </div>
+
+            <!-- Question 8 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Checking Solutions</h3>
+                <p>To verify x = 3 is the solution to 2x + 1 = 7:</p>
+                <ul>
+                    <li>Press [2nd] [QUIT]</li>
+                    <li>Type: 2(3) + 1</li>
+                    <li>Press [ENTER]</li>
+                    <li>Result should equal 7</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8.</div>
+                <div class="question-text">Verify that x = 5 solves 3x - 2 = 13:</div>
+                <div class="options">
+                    <div class="option">a) True: 3(5) - 2 = 13</div>
+                    <div class="option">b) False: 3(5) - 2 ≠ 13</div>
+                    <div class="option">c) Cannot determine</div>
+                    <div class="option">d) Need more information</div>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <div class="question-number">9.</div>
+                <div class="question-text">Solve: -2x = 10</div>
+                <div class="options">
+                    <div class="option">a) x = -5</div>
+                    <div class="option">b) x = 5</div>
+                    <div class="option">c) x = -20</div>
+                    <div class="option">d) x = 8</div>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <div class="question-number">10.</div>
+                <div class="question-text">Solve the inequality: 2x < 12</div>
+                <div class="options">
+                    <div class="option">a) x < 6</div>
+                    <div class="option">b) x > 6</div>
+                    <div class="option">c) x < 24</div>
+                    <div class="option">d) x > 24</div>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question">
+                <div class="question-number">11.</div>
+                <div class="question-text">Solve: 5x - 3 = 12</div>
+                <div class="options">
+                    <div class="option">a) x = 1.8</div>
+                    <div class="option">b) x = 3</div>
+                    <div class="option">c) x = 9</div>
+                    <div class="option">d) x = 15</div>
+                </div>
+            </div>
+
+            <!-- Question 12 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Graphing Inequalities</h3>
+                <p>To graph x + 2 > 5:</p>
+                <ul>
+                    <li>Solve: x > 3</li>
+                    <li>Press [Y=]</li>
+                    <li>Y1 = X + 2, Y2 = 5</li>
+                    <li>Shade region where Y1 > Y2</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12.</div>
+                <div class="question-text">Graph the solution to 2x - 1 ≥ 5:</div>
+                <div class="options">
+                    <div class="option">a) x ≥ 3</div>
+                    <div class="option">b) x ≤ 3</div>
+                    <div class="option">c) x ≥ 2</div>
+                    <div class="option">d) x ≤ 2</div>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question">
+                <div class="question-number">13.</div>
+                <div class="question-text">Solve: 6 - x = 2</div>
+                <div class="options">
+                    <div class="option">a) x = 4</div>
+                    <div class="option">b) x = 8</div>
+                    <div class="option">c) x = -4</div>
+                    <div class="option">d) x = -8</div>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question">
+                <div class="question-number">14.</div>
+                <div class="question-text">Solve: 3(x + 1) = 12</div>
+                <div class="options">
+                    <div class="option">a) x = 3</div>
+                    <div class="option">b) x = 4</div>
+                    <div class="option">c) x = 5</div>
+                    <div class="option">d) x = 15</div>
+                </div>
+            </div>
+
+            <!-- Question 15 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">15.</div>
+                <div class="question-text">The solution to 2x + 5 = 17 is x = 6. Show your work to verify this solution is correct.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 16 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">16.</div>
+                <div class="question-text">Which inequality has the solution x > -2? Explain how you can determine this from the inequality.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 17 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Systems of Equations Introduction</h3>
+                <p>To solve the system: x + y = 5, x - y = 1</p>
+                <ul>
+                    <li>Press [Y=]</li>
+                    <li>Y1 = 5 - X (solve for y)</li>
+                    <li>Y2 = X - 1 (solve for y)</li>
+                    <li>Find intersection point</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">17.</div>
+                <div class="question-text">Solve the system: x + y = 7, x - y = 3. Show your work algebraically and verify with the TI-84.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 18 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">18.</div>
+                <div class="question-text">If 3x - 7 = 14, then x equals what value? Show all algebraic steps.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 19 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">19.</div>
+                <div class="question-text">The solution set for the inequality 2x + 3 ≤ 11 includes which values? Show your solving steps.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 20 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">20.</div>
+                <div class="question-text">A number decreased by 8 equals 15. Write and solve an equation to find the number. Verify your solution using the TI-84 and explain your verification process.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL 2: ON-GRADE REGENTS PREP -->
+        <div class="level-section">
+            <h2 class="level-title">LEVEL 2: ON-GRADE REGENTS PREP</h2>
+            
+            <div class="student-info">
+                <div><strong>Name:</strong> _________________________________</div>
+                <div><strong>Date:</strong> _________________________________</div>
+            </div>
+
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided where indicated.
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <div class="question-number">1.</div>
+                <div class="question-text">Solve: 4(2x - 3) = 5x + 1</div>
+                <div class="options">
+                    <div class="option">a) x = 13/3</div>
+                    <div class="option">b) x = 3</div>
+                    <div class="option">c) x = 5</div>
+                    <div class="option">d) x = 13</div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <div class="question-number">2.</div>
+                <div class="question-text">Solve: (x + 3)/2 = (x - 1)/3</div>
+                <div class="options">
+                    <div class="option">a) x = 11</div>
+                    <div class="option">b) x = 7</div>
+                    <div class="option">c) x = 5</div>
+                    <div class="option">d) x = -11</div>
+                </div>
+            </div>
+
+            <!-- Question 3 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Solving Complex Linear Equations</h3>
+                <p>To solve 3(x + 2) - 2(x - 1) = 15:</p>
+                <ul>
+                    <li>Expand: 3x + 6 - 2x + 2 = 15</li>
+                    <li>Simplify: x + 8 = 15</li>
+                    <li>Solve: x = 7</li>
+                    <li>Verify by substitution on calculator</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3.</div>
+                <div class="question-text">Solve: 5(2x - 1) - 3(x + 2) = 8</div>
+                <div class="options">
+                    <div class="option">a) x = 3</div>
+                    <div class="option">b) x = 19/7</div>
+                    <div class="option">c) x = 21/7</div>
+                    <div class="option">d) x = 5</div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <div class="question-number">4.</div>
+                <div class="question-text">Solve the compound inequality: -3 ≤ 2x + 1 < 7</div>
+                <div class="options">
+                    <div class="option">a) -2 ≤ x < 3</div>
+                    <div class="option">b) -1 ≤ x < 4</div>
+                    <div class="option">c) -3 ≤ x < 7</div>
+                    <div class="option">d) -4 ≤ x < 6</div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <div class="question-number">5.</div>
+                <div class="question-text">Solve: |x - 3| = 5</div>
+                <div class="options">
+                    <div class="option">a) x = 2, x = 8</div>
+                    <div class="option">b) x = -2, x = 8</div>
+                    <div class="option">c) x = -8, x = 2</div>
+                    <div class="option">d) x = 3, x = 5</div>
+                </div>
+            </div>
+
+            <!-- Question 6 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Absolute Value Equations</h3>
+                <p>To solve |x - 2| = 4:</p>
+                <ul>
+                    <li>Press [Y=]</li>
+                    <li>Y1 = abs(X - 2)</li>
+                    <li>Y2 = 4</li>
+                    <li>Find intersections using [2nd] [CALC] [5]</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6.</div>
+                <div class="question-text">Solve |2x + 1| = 7 graphically:</div>
+                <div class="options">
+                    <div class="option">a) x = -4, x = 3</div>
+                    <div class="option">b) x = -3, x = 4</div>
+                    <div class="option">c) x = 3, x = -4</div>
+                    <div class="option">d) x = 4, x = -3</div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <div class="question-number">7.</div>
+                <div class="question-text">Solve the system: 2x + 3y = 12, x - y = 1</div>
+                <div class="options">
+                    <div class="option">a) x = 3, y = 2</div>
+                    <div class="option">b) x = 2, y = 3</div>
+                    <div class="option">c) x = 4, y = 3</div>
+                    <div class="option">d) x = 3, y = 4</div>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <div class="question-number">8.</div>
+                <div class="question-text">Solve: x² - 5x + 6 = 0</div>
+                <div class="options">
+                    <div class="option">a) x = 2, x = 3</div>
+                    <div class="option">b) x = -2, x = -3</div>
+                    <div class="option">c) x = 1, x = 6</div>
+                    <div class="option">d) x = -1, x = -6</div>
+                </div>
+            </div>
+
+            <!-- Question 9 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Quadratic Equations</h3>
+                <p>To solve x² - 4x + 3 = 0:</p>
+                <ul>
+                    <li>Press [Y=]</li>
+                    <li>Y1 = X² - 4X + 3</li>
+                    <li>Use [2nd] [CALC] [2] to find zeros</li>
+                    <li>Or use quadratic formula verification</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9.</div>
+                <div class="question-text">Solve x² + 2x - 8 = 0:</div>
+                <div class="options">
+                    <div class="option">a) x = -4, x = 2</div>
+                    <div class="option">b) x = 4, x = -2</div>
+                    <div class="option">c) x = -1, x = 8</div>
+                    <div class="option">d) x = 1, x = -8</div>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <div class="question-number">10.</div>
+                <div class="question-text">Solve the inequality: 3x - 2 > x + 6</div>
+                <div class="options">
+                    <div class="option">a) x > 4</div>
+                    <div class="option">b) x < 4</div>
+                    <div class="option">c) x > 2</div>
+                    <div class="option">d) x < 2</div>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question">
+                <div class="question-number">11.</div>
+                <div class="question-text">Solve: 2x² - 8 = 0</div>
+                <div class="options">
+                    <div class="option">a) x = ±2</div>
+                    <div class="option">b) x = ±4</div>
+                    <div class="option">c) x = ±2√2</div>
+                    <div class="option">d) x = ±4√2</div>
+                </div>
+            </div>
+
+            <!-- Question 12 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Systems by Substitution</h3>
+                <p>To solve: y = 2x + 1, 3x + y = 11</p>
+                <ul>
+                    <li>Substitute: 3x + (2x + 1) = 11</li>
+                    <li>Solve: 5x + 1 = 11, x = 2</li>
+                    <li>Find y = 2(2) + 1 = 5</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12.</div>
+                <div class="question-text">Solve the system: y = x - 2, 2x + y = 7</div>
+                <div class="options">
+                    <div class="option">a) x = 3, y = 1</div>
+                    <div class="option">b) x = 1, y = 3</div>
+                    <div class="option">c) x = 4, y = 2</div>
+                    <div class="option">d) x = 2, y = 4</div>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question">
+                <div class="question-number">13.</div>
+                <div class="question-text">Solve: √(x + 5) = 3</div>
+                <div class="options">
+                    <div class="option">a) x = 4</div>
+                    <div class="option">b) x = 9</div>
+                    <div class="option">c) x = 14</div>
+                    <div class="option">d) x = -4</div>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question">
+                <div class="question-number">14.</div>
+                <div class="question-text">Solve the inequality: |x + 2| < 5</div>
+                <div class="options">
+                    <div class="option">a) -7 < x < 3</div>
+                    <div class="option">b) -3 < x < 7</div>
+                    <div class="option">c) x < -7 or x > 3</div>
+                    <div class="option">d) x < 3 or x > -7</div>
+                </div>
+            </div>
+
+            <!-- Question 15 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">15.</div>
+                <div class="question-text">Solve the equation 3(x - 4) + 2x = 23. Show all algebraic steps and verify your answer.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 16 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">16.</div>
+                <div class="question-text">A quadratic equation x² - 6x + k = 0 has two equal roots. Find the value of k and explain your reasoning using the discriminant.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 17 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">17.</div>
+                <div class="question-text">Solve the system of equations: 2x + y = 8 and x - 2y = -6. Show your work using substitution method.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 18 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">18.</div>
+                <div class="question-text">The inequality 4x - 3 ≥ 2x + 9 has a solution set. Find this solution set and represent it on a number line.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 19 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Quadratic Formula Verification</h3>
+                <p>For ax² + bx + c = 0, x = (-b ± √(b² - 4ac))/2a</p>
+                <ul>
+                    <li>Store values of a, b, c</li>
+                    <li>Calculate discriminant</li>
+                    <li>Find both solutions</li>
+                    <li>Verify by graphing</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">19.</div>
+                <div class="question-text">Use the quadratic formula to solve 2x² - 7x + 3 = 0. Verify your solutions using the TI-84.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 20 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">20.</div>
+                <div class="question-text">Maria has $20 more than twice what John has. Together they have $140. Write and solve a system of equations to find how much money each person has. Show all work.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL 3: CHALLENGE & MASTERY -->
+        <div class="level-section">
+            <h2 class="level-title">LEVEL 3: CHALLENGE & MASTERY</h2>
+            
+            <div class="student-info">
+                <div><strong>Name:</strong> _________________________________</div>
+                <div><strong>Date:</strong> _________________________________</div>
+            </div>
+
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 4 credits. Clearly indicate the necessary steps, including appropriate formula substitutions, diagrams, graphs, charts, etc. Utilize the information provided for each question to determine your answer.
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question">
+                <div class="question-number">1.</div>
+                <div class="question-text">Solve: (x + 2)/(x - 1) = (x - 3)/(x + 4)</div>
+                <div class="options">
+                    <div class="option">a) x = -10/3</div>
+                    <div class="option">b) x = 10/3</div>
+                    <div class="option">c) x = -6</div>
+                    <div class="option">d) x = 6</div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <div class="question-number">2.</div>
+                <div class="question-text">Solve: x⁴ - 5x² + 4 = 0</div>
+                <div class="options">
+                    <div class="option">a) x = ±1, ±2</div>
+                    <div class="option">b) x = ±1, ±4</div>
+                    <div class="option">c) x = ±2, ±5</div>
+                    <div class="option">d) x = 1, 2, 4, 5</div>
+                </div>
+            </div>
+
+            <!-- Question 3 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Rational Equations</h3>
+                <p>To solve 1/x + 1/(x+1) = 1/2:</p>
+                <ul>
+                    <li>Clear denominators: multiply by 2x(x+1)</li>
+                    <li>Simplify and solve resulting quadratic</li>
+                    <li>Check for extraneous solutions</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3.</div>
+                <div class="question-text">Solve: 2/(x-1) + 3/(x+2) = 1</div>
+                <div class="options">
+                    <div class="option">a) x = 7</div>
+                    <div class="option">b) x = -7</div>
+                    <div class="option">c) x = 1, -5</div>
+                    <div class="option">d) x = 5, -1</div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <div class="question-number">4.</div>
+                <div class="question-text">Solve the system: x² + y² = 25, x + y = 7</div>
+                <div class="options">
+                    <div class="option">a) (3, 4) and (4, 3)</div>
+                    <div class="option">b) (0, 5) and (5, 0)</div>
+                    <div class="option">c) (7, 0) and (0, 7)</div>
+                    <div class="option">d) No real solutions</div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <div class="question-number">5.</div>
+                <div class="question-text">Solve: log₂(x + 3) + log₂(x - 1) = 3</div>
+                <div class="options">
+                    <div class="option">a) x = 5</div>
+                    <div class="option">b) x = 1</div>
+                    <div class="option">c) x = 3</div>
+                    <div class="option">d) x = 7</div>
+                </div>
+            </div>
+
+            <!-- Question 6 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Exponential Equations</h3>
+                <p>To solve 2^(x+1) = 8:</p>
+                <ul>
+                    <li>Rewrite with same base: 2^(x+1) = 2³</li>
+                    <li>Equate exponents: x + 1 = 3</li>
+                    <li>Solve: x = 2</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6.</div>
+                <div class="question-text">Solve: 3^(2x-1) = 27</div>
+                <div class="options">
+                    <div class="option">a) x = 1</div>
+                    <div class="option">b) x = 2</div>
+                    <div class="option">c) x = 3</div>
+                    <div class="option">d) x = 4</div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <div class="question-number">7.</div>
+                <div class="question-text">Solve: |2x - 3| = |x + 1|</div>
+                <div class="options">
+                    <div class="option">a) x = 4/3, x = 2</div>
+                    <div class="option">b) x = 2/3, x = 4</div>
+                    <div class="option">c) x = 4, x = 2/3</div>
+                    <div class="option">d) x = 3/2, x = 4</div>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <div class="question-number">8.</div>
+                <div class="question-text">Solve the inequality: x² - 6x + 8 < 0</div>
+                <div class="options">
+                    <div class="option">a) 2 < x < 4</div>
+                    <div class="option">b) x < 2 or x > 4</div>
+                    <div class="option">c) -4 < x < -2</div>
+                    <div class="option">d) x < -2 or x > 4</div>
+                </div>
+            </div>
+
+            <!-- Question 9 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Polynomial Inequalities</h3>
+                <p>To solve x² - 3x - 4 > 0:</p>
+                <ul>
+                    <li>Factor: (x - 4)(x + 1) > 0</li>
+                    <li>Find zeros: x = 4, x = -1</li>
+                    <li>Test intervals on number line</li>
+                    <li>Graph to verify</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9.</div>
+                <div class="question-text">Solve: x³ - 4x < 0</div>
+                <div class="options">
+                    <div class="option">a) -2 < x < 0 or 0 < x < 2</div>
+                    <div class="option">b) x < -2 or 0 < x < 2</div>
+                    <div class="option">c) -2 < x < 2</div>
+                    <div class="option">d) x < 0 or x > 4</div>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <div class="question-number">10.</div>
+                <div class="question-text">Solve the system: xy = 12, x + y = 7</div>
+                <div class="options">
+                    <div class="option">a) (3, 4) and (4, 3)</div>
+                    <div class="option">b) (2, 6) and (6, 2)</div>
+                    <div class="option">c) (1, 12) and (12, 1)</div>
+                    <div class="option">d) No real solutions</div>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question">
+                <div class="question-number">11.</div>
+                <div class="question-text">Solve: √(2x + 1) + √(x - 2) = 4</div>
+                <div class="options">
+                    <div class="option">a) x = 8</div>
+                    <div class="option">b) x = 6</div>
+                    <div class="option">c) x = 5</div>
+                    <div class="option">d) x = 3</div>
+                </div>
+            </div>
+
+            <!-- Question 12 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Radical Equations</h3>
+                <p>To solve √(x + 4) = x - 2:</p>
+                <ul>
+                    <li>Square both sides: x + 4 = (x - 2)²</li>
+                    <li>Expand: x + 4 = x² - 4x + 4</li>
+                    <li>Rearrange: x² - 5x = 0</li>
+                    <li>Check solutions in original equation</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12.</div>
+                <div class="question-text">Solve: √(3x + 1) = x - 1</div>
+                <div class="options">
+                    <div class="option">a) x = 0, 8</div>
+                    <div class="option">b) x = 8</div>
+                    <div class="option">c) x = 0</div>
+                    <div class="option">d) No solution</div>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question">
+                <div class="question-number">13.</div>
+                <div class="question-text">Solve: |x² - 4x| = 5</div>
+                <div class="options">
+                    <div class="option">a) x = -1, 5</div>
+                    <div class="option">b) x = -1, 1, 5</div>
+                    <div class="option">c) x = 2 ± 3</div>
+                    <div class="option">d) x = -1, 5, -1, 5</div>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question">
+                <div class="question-number">14.</div>
+                <div class="question-text">Solve the inequality: (x - 2)/(x + 1) ≥ 0</div>
+                <div class="options">
+                    <div class="option">a) x ≤ -1 or x ≥ 2</div>
+                    <div class="option">b) -1 < x ≤ 2</div>
+                    <div class="option">c) x < -1 or x > 2</div>
+                    <div class="option">d) x ≤ 2, x ≠ -1</div>
+                </div>
+            </div>
+
+            <!-- Question 15 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">15.</div>
+                <div class="question-text">Solve the equation x/(x-2) - 3/(x+1) = 2. Show all work, including checking for extraneous solutions.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 16 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">16.</div>
+                <div class="question-text">A projectile is launched with the height equation h(t) = -16t² + 64t + 80. Find when the projectile hits the ground and explain your solution method.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 17 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">17.</div>
+                <div class="question-text">Solve the system of equations: x² - y² = 7 and 2x + y = 4. Show your work using substitution and verify graphically.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 18 with TI-84 Walkthrough -->
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Complex Systems</h3>
+                <p>For nonlinear systems:</p>
+                <ul>
+                    <li>Graph both equations</li>
+                    <li>Use intersect function to find solutions</li>
+                    <li>Verify algebraically</li>
+                    <li>Check all intersection points</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank">Desmos | Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">18.</div>
+                <div class="question-text">Solve the system y = x² - 2x + 1 and y = 2x - 1. Use both algebraic and graphical methods to find all solutions.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 19 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">19.</div>
+                <div class="question-text">The inequality |2x - 5| < 3 can be rewritten as a compound inequality. Solve this inequality and explain the relationship between the absolute value form and compound inequality form.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <!-- Question 20 - Constructed Response -->
+            <div class="question">
+                <div class="question-number">20.</div>
+                <div class="question-text">Challenge Problem: Solve the equation x⁴ - 13x² + 36 = 0. Use substitution method and verify all solutions using the TI-84. Explain why this technique works for this type of equation.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMBINED ANSWER KEY -->
+        <div class="answer-key-section">
+            <h2>COMBINED ANSWER KEY</h2>
+            <h3>LEVEL 1 - FOUNDATIONS</h3>
+            
+            <div class="answer-item"><span class="answer-number">1.</span> a) x = 5</div>
+            <div class="answer-item"><span class="answer-number">2.</span> b) x = 5</div>
+            <div class="answer-item"><span class="answer-number">3.</span> b) x = 8</div>
+            <div class="answer-item"><span class="answer-number">4.</span> b) x = 3</div>
+            <div class="answer-item"><span class="answer-number">5.</span> d) x = 24</div>
+            <div class="answer-item"><span class="answer-number">6.</span> b) x > 5</div>
+            <div class="answer-item"><span class="answer-number">7.</span> a) x = 4</div>
+            <div class="answer-item"><span class="answer-number">8.</span> a) True: 3(5) - 2 = 13</div>
+            <div class="answer-item"><span class="answer-number">9.</span> a) x = -5</div>
+            <div class="answer-item"><span class="answer-number">10.</span> a) x < 6</div>
+            <div class="answer-item"><span class="answer-number">11.</span> b) x = 3</div>
+            <div class="answer-item"><span class="answer-number">12.</span> a) x ≥ 3</div>
+            <div class="answer-item"><span class="answer-number">13.</span> a) x = 4</div>
+            <div class="answer-item"><span class="answer-number">14.</span> a) x = 3</div>
+
+            <h3>Extended Response Solutions (15-20):</h3>
+            
+            <div class="answer-item">
+                <span class="answer-number">15.</span> Verification: 2x + 5 = 17; 2(6) + 5 = 12 + 5 = 17 ✓
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">16.</span> Example: x + 2 > 0 gives x > -2. Any inequality that isolates x > -2 works.
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">17.</span> System Solution: x + y = 7, x - y = 3<br>
+                Add equations: 2x = 10, so x = 5<br>
+                Substitute: 5 + y = 7, so y = 2<br>
+                Solution: (5, 2); TI-84 verification confirms
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">18.</span> Solution: 3x - 7 = 14 → 3x = 21 → x = 7
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">19.</span> Inequality Solution: 2x + 3 ≤ 11 → 2x ≤ 8 → x ≤ 4
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">20.</span> Word Problem: Let n = the number → n - 8 = 15 → n = 23<br>
+                Verification: 23 - 8 = 15 ✓
+            </div>
+
+            <h3>LEVEL 2 - ON-GRADE REGENTS PREP</h3>
+            
+            <div class="answer-item"><span class="answer-number">1.</span> a) x = 13/3</div>
+            <div class="answer-item"><span class="answer-number">2.</span> a) x = 11</div>
+            <div class="answer-item"><span class="answer-number">3.</span> c) x = 21/7</div>
+            <div class="answer-item"><span class="answer-number">4.</span> a) -2 ≤ x < 3</div>
+            <div class="answer-item"><span class="answer-number">5.</span> b) x = -2, x = 8</div>
+            <div class="answer-item"><span class="answer-number">6.</span> a) x = -4, x = 3</div>
+            <div class="answer-item"><span class="answer-number">7.</span> a) x = 3, y = 2</div>
+            <div class="answer-item"><span class="answer-number">8.</span> a) x = 2, x = 3</div>
+            <div class="answer-item"><span class="answer-number">9.</span> a) x = -4, x = 2</div>
+            <div class="answer-item"><span class="answer-number">10.</span> a) x > 4</div>
+            <div class="answer-item"><span class="answer-number">11.</span> c) x = ±2√2</div>
+            <div class="answer-item"><span class="answer-number">12.</span> a) x = 3, y = 1</div>
+            <div class="answer-item"><span class="answer-number">13.</span> a) x = 4</div>
+            <div class="answer-item"><span class="answer-number">14.</span> a) -7 < x < 3</div>
+
+            <h3>Extended Response Solutions (15-20):</h3>
+            
+            <div class="answer-item">
+                <span class="answer-number">15.</span> 3(x - 4) + 2x = 23 → 3x - 12 + 2x = 23 → 5x = 35 → x = 7
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">16.</span> Discriminant = 0 for equal roots → b² - 4ac = 0 → 36 - 4k = 0 → k = 9
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">17.</span> System Solution: 2x + y = 8, x - 2y = -6<br>
+                From second equation: x = 2y - 6<br>
+                Substitute: 2(2y - 6) + y = 8 → 4y - 12 + y = 8 → 5y = 20, y = 4<br>
+                x = 2(4) - 6 = 2<br>
+                Solution: (2, 4)
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">18.</span> 4x - 3 ≥ 2x + 9 → 2x ≥ 12 → x ≥ 6
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">19.</span> Quadratic Formula: x = (7 ± √25)/4 = (7 ± 5)/4 → x = 3 or x = 1/2
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">20.</span> System: Let M = Maria's money, J = John's money<br>
+                M = 2J + 20<br>
+                M + J = 140<br>
+                Substituting: (2J + 20) + J = 140 → 3J = 120, J = 40<br>
+                M = 100<br>
+                John: $40, Maria: $100
+            </div>
+
+            <h3>LEVEL 3 - CHALLENGE & MASTERY</h3>
+            
+            <div class="answer-item"><span class="answer-number">1.</span> a) x = -10/3</div>
+            <div class="answer-item"><span class="answer-number">2.</span> a) x = ±1, ±2</div>
+            <div class="answer-item"><span class="answer-number">3.</span> d) x = 5, -1</div>
+            <div class="answer-item"><span class="answer-number">4.</span> a) (3, 4) and (4, 3)</div>
+            <div class="answer-item"><span class="answer-number">5.</span> a) x = 5</div>
+            <div class="answer-item"><span class="answer-number">6.</span> b) x = 2</div>
+            <div class="answer-item"><span class="answer-number">7.</span> c) x = 4, x = 2/3</div>
+            <div class="answer-item"><span class="answer-number">8.</span> a) 2 < x < 4</div>
+            <div class="answer-item"><span class="answer-number">9.</span> a) -2 < x < 0 or 0 < x < 2</div>
+            <div class="answer-item"><span class="answer-number">10.</span> a) (3, 4) and (4, 3)</div>
+            <div class="answer-item"><span class="answer-number">11.</span> a) x = 8</div>
+            <div class="answer-item"><span class="answer-number">12.</span> b) x = 8</div>
+            <div class="answer-item"><span class="answer-number">13.</span> b) x = -1, 1, 5</div>
+            <div class="answer-item"><span class="answer-number">14.</span> d) x ≤ 2, x ≠ -1</div>
+
+            <h3>Extended Response Solutions (15-20):</h3>
+            
+            <div class="answer-item">
+                <span class="answer-number">15.</span> Cross multiply and solve; check for restrictions → Solution: x = 8 (after checking x ≠ 2, x ≠ -1)
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">16.</span> Set h(t) = 0: -16t² + 64t + 80 = 0 → t = 5 seconds (when projectile hits ground)
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">17.</span> Substitution method: y = 4 - 2x into x² - y² = 7<br>
+                Solutions: (3, -2) and (-1, 6)
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">18.</span> Set equal: x² - 2x + 1 = 2x - 1 → x² - 4x + 2 = 0<br>
+                Solutions: (1, 1) and (3, 5)
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">19.</span> |2x - 5| < 3 ⟺ -3 < 2x - 5 < 3 → 1 < x < 4
+            </div>
+            
+            <div class="answer-item">
+                <span class="answer-number">20.</span> Let u = x²: u² - 13u + 36 = 0 → (u - 4)(u - 9) = 0<br>
+                u = 4 or u = 9 → x² = 4 or x² = 9<br>
+                x = ±2, ±3
+            </div>
+        </div>
+
+        <!-- BONUS REGENTS PRACTICE -->
+        <div class="bonus-section">
+            <h2>BONUS REGENTS PRACTICE</h2>
+            
+            <div class="student-info">
+                <div><strong>Name:</strong> _________________________________</div>
+                <div><strong>Date:</strong> _________________________________</div>
+            </div>
+
+            <div class="instructions">
+                <strong>Directions (1-6):</strong> Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided.
+            </div>
+
+            <div class="bonus-question">
+                <div class="question-number">Bonus Question 1:</div>
+                <div class="question-text">The equation 3x - 7 = 2x + 5 has the solution:</div>
+                <div class="options">
+                    <div class="option">(1) x = 12</div>
+                    <div class="option">(2) x = 2</div>
+                    <div class="option">(3) x = -2</div>
+                    <div class="option">(4) x = -12</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="bonus-question">
+                <div class="question-number">Bonus Question 2:</div>
+                <div class="question-text">Which inequality is represented by the solution x ≥ -3?</div>
+                <div class="options">
+                    <div class="option">(1) x + 3 ≥ 0</div>
+                    <div class="option">(2) x - 3 ≥ 0</div>
+                    <div class="option">(3) -x + 3 ≥ 0</div>
+                    <div class="option">(4) -x - 3 ≥ 0</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="bonus-question">
+                <div class="question-number">Bonus Question 3:</div>
+                <div class="question-text">The system of equations y = 2x + 1 and y = -x + 7 has the solution:</div>
+                <div class="options">
+                    <div class="option">(1) (2, 5)</div>
+                    <div class="option">(2) (5, 2)</div>
+                    <div class="option">(3) (-2, -3)</div>
+                    <div class="option">(4) (3, -2)</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="bonus-question">
+                <div class="question-number">Bonus Question 4:</div>
+                <div class="question-text">The equation x² - 6x + 9 = 0 has:</div>
+                <div class="options">
+                    <div class="option">(1) two distinct real solutions</div>
+                    <div class="option">(2) one repeated real solution</div>
+                    <div class="option">(3) no real solutions</div>
+                    <div class="option">(4) infinitely many solutions</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="bonus-question">
+                <div class="question-number">Bonus Question 5:</div>
+                <div class="question-text">The solution to |x + 4| = 7 is:</div>
+                <div class="options">
+                    <div class="option">(1) x = 3</div>
+                    <div class="option">(2) x = -11</div>
+                    <div class="option">(3) x = 3 or x = -11</div>
+                    <div class="option">(4) x = -3 or x = 11</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="bonus-question">
+                <div class="question-number">Bonus Question 6:</div>
+                <div class="question-text">If 2(x - 3) + 5 = 3x - 1, then x equals:</div>
+                <div class="options">
+                    <div class="option">(1) 0</div>
+                    <div class="option">(2) 2</div>
+                    <div class="option">(3) 4</div>
+                    <div class="option">(4) 6</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+        </div>
+
+        <!-- BONUS ANSWER KEY -->
+        <div class="answer-key-section">
+            <h2>BONUS REGENTS ANSWER KEY</h2>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus 1.</span> <strong>(1) x = 12</strong><br>
+                <strong>Solution:</strong> 3x - 7 = 2x + 5<br>
+                Subtract 2x from both sides: x - 7 = 5<br>
+                Add 7 to both sides: x = 12
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus 2.</span> <strong>(1) x + 3 ≥ 0</strong><br>
+                <strong>Solution:</strong> x ≥ -3 is equivalent to x + 3 ≥ 0<br>
+                Check: x + 3 ≥ 0 → x ≥ -3 ✓
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus 3.</span> <strong>(1) (2, 5)</strong><br>
+                <strong>Solution:</strong> Set equations equal: 2x + 1 = -x + 7<br>
+                Add x to both sides: 3x + 1 = 7<br>
+                Subtract 1: 3x = 6<br>
+                Divide by 3: x = 2<br>
+                Substitute: y = 2(2) + 1 = 5<br>
+                Solution: (2, 5)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus 4.</span> <strong>(2) one repeated real solution</strong><br>
+                <strong>Solution:</strong> x² - 6x + 9 = (x - 3)²<br>
+                This equals zero when x = 3 (repeated root)<br>
+                Discriminant: b² - 4ac = 36 - 36 = 0 (confirms repeated root)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus 5.</span> <strong>(3) x = 3 or x = -11</strong><br>
+                <strong>Solution:</strong> |x + 4| = 7<br>
+                Case 1: x + 4 = 7 → x = 3<br>
+                Case 2: x + 4 = -7 → x = -11
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus 6.</span> <strong>(1) x = 0</strong><br>
+                <strong>Solution:</strong> 2(x - 3) + 5 = 3x - 1<br>
+                Expand: 2x - 6 + 5 = 3x - 1<br>
+                Simplify: 2x - 1 = 3x - 1<br>
+                Subtract 2x: -1 = x - 1<br>
+                Add 1: x = 0
+            </div>
+        </div>
+
+        <!-- SUCCESS STRATEGIES SECTION -->
+        <div class="success-section">
+            <h2>EQUATION-SOLVING SUCCESS STRATEGIES</h2>
+
+            <h3>For Students:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li>Show every algebraic step - each transformation should be clearly written</li>
+                    <li>Check your solutions - substitute back into original equations when possible</li>
+                    <li>Watch for sign errors - be especially careful with negative numbers and distribution</li>
+                    <li>Identify equation types - linear, quadratic, absolute value, radical, etc.</li>
+                    <li>State restrictions - for rational equations, identify values that make denominators zero</li>
+                    <li>Use proper notation - especially for inequality solutions and system solutions</li>
+                </ul>
+            </div>
+
+            <h3>Common Student Errors to Avoid:</h3>
+            <div class="error-box">
+                <ul>
+                    <li>Sign errors when distributing negative numbers or moving terms</li>
+                    <li>Forgetting to check for extraneous solutions in radical and rational equations</li>
+                    <li>Incorrect inequality symbols when multiplying or dividing by negative numbers</li>
+                    <li>Not checking both cases for absolute value equations</li>
+                    <li>Arithmetic mistakes in fraction operations and cross-multiplication</li>
+                    <li>Confusing "and" vs "or" in compound inequalities</li>
+                </ul>
+            </div>
+
+            <h3>Time Management Tips:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li>Linear equations: 2-3 minutes each</li>
+                    <li>Quadratic equations: 4-5 minutes each</li>
+                    <li>Systems of equations: 5-7 minutes each</li>
+                    <li>Complex inequalities: 4-6 minutes each</li>
+                    <li>Word problems: 6-8 minutes each</li>
+                    <li>Always leave time for checking solutions</li>
+                </ul>
+            </div>
+
+            <h3>Verification Strategies:</h3>
+            <div class="strategy-box">
+                <ol>
+                    <li><strong>Substitution Check:</strong> Plug solution back into original equation to verify</li>
+                    <li><strong>Graphical Verification:</strong> Graph both sides and confirm intersection point</li>
+                    <li><strong>Balance Check:</strong> Ensure both sides remain equal after each operation</li>
+                    <li><strong>Sign Analysis:</strong> Verify inequality direction changes only when multiplying/dividing by negatives</li>
+                    <li><strong>Boundary Testing:</strong> For inequalities, test values on both sides of solution</li>
+                    <li><strong>Calculator Confirmation:</strong> Use TI-84 solve function to verify solutions</li>
+                </ol>
+            </div>
+
+            <h3>Real-World Application Categories:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Budget Management:</strong> Solving for unknown expenses or income requirements</li>
+                    <li><strong>Distance-Rate-Time:</strong> Travel planning and logistics optimization</li>
+                    <li><strong>Temperature Conversion:</strong> Converting between Fahrenheit and Celsius</li>
+                    <li><strong>Mixture Problems:</strong> Chemical solutions, recipe scaling, alloy composition</li>
+                    <li><strong>Salary Negotiation:</strong> Solving for salary requirements with benefits and taxes</li>
+                </ul>
+            </div>
+
+            <h3>Pattern Recognition Skills:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Coefficient Patterns:</strong> Recognize when to multiply/divide to isolate variables</li>
+                    <li><strong>Fraction Patterns:</strong> Common denominators (2, 3, 4, 5, 6, 8, 10, 12)</li>
+                    <li><strong>Inequality Symbols:</strong> < (less than), ≤ (at most), > (greater than), ≥ (at least)</li>
+                    <li><strong>Solution Types:</strong> One solution, no solution, infinite solutions, interval solutions</li>
+                    <li><strong>Special Cases:</strong> Equations that simplify to 0 = 0 or 0 = 5</li>
+                </ul>
+            </div>
+
+            <h3>Regents Exam Preparation Focus:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Multi-Step Equations:</strong> Problems requiring 4-5 steps to isolate variable</li>
+                    <li><strong>Literal Equations:</strong> Solving for one variable in terms of others</li>
+                    <li><strong>Inequality Direction:</strong> Remembering when to flip the inequality symbol</li>
+                    <li><strong>Number Line Graphing:</strong> Proper use of open vs. closed circles</li>
+                    <li><strong>Application Problems:</strong> Translating word problems into equations</li>
+                </ul>
+            </div>
+
+            <h3>Problem-Solving Approach:</h3>
+            <div class="strategy-box">
+                <ol>
+                    <li><strong>Analyze:</strong> Identify equation type and what needs to be isolated</li>
+                    <li><strong>Strategize:</strong> Determine order of operations to undo (reverse PEMDAS)</li>
+                    <li><strong>Execute:</strong> Perform inverse operations systematically on both sides</li>
+                    <li><strong>Simplify:</strong> Reduce to x = # or inequality solution form</li>
+                    <li><strong>Verify:</strong> Substitute solution back into original equation</li>
+                </ol>
+            </div>
+
+            <h3>Advanced Techniques (Level 3):</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Absolute Value Equations:</strong> Split into two cases for positive and negative</li>
+                    <li><strong>Rational Equations:</strong> Clear denominators by multiplying by LCD</li>
+                    <li><strong>Radical Equations:</strong> Square both sides and check for extraneous solutions</li>
+                    <li><strong>Exponential Equations:</strong> Use logarithms to solve for variable exponents</li>
+                    <li><strong>Systems with Parameters:</strong> Solve equations with unknown constants</li>
+                </ul>
+            </div>
+
+            <h3>Study Recommendations:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Daily Practice:</strong> 15-20 minutes solving various equation types</li>
+                    <li><strong>Step Recording:</strong> Write every step explicitly to build systematic habits</li>
+                    <li><strong>Error Analysis:</strong> Review each mistake to identify pattern of errors</li>
+                    <li><strong>Mixed Problem Sets:</strong> Practice all equation types in random order</li>
+                    <li><strong>Speed Drills:</strong> Time yourself solving basic equations for fluency</li>
+                </ul>
+            </div>
+
+            <h3>Performance Checklist for Students:</h3>
+            <div class="checklist">
+                <ul>
+                    <li>☐ Isolate variables using inverse operations</li>
+                    <li>☐ Maintain equation balance throughout solving</li>
+                    <li>☐ Handle fractions and decimals correctly</li>
+                    <li>☐ Solve multi-step equations systematically</li>
+                    <li>☐ Solve literal equations for specified variable</li>
+                    <li>☐ Graph inequality solutions on number line</li>
+                    <li>☐ Flip inequality symbols appropriately</li>
+                    <li>☐ Identify equations with no solution or infinite solutions</li>
+                    <li>☐ Translate word problems into equations</li>
+                    <li>☐ Verify solutions by substitution</li>
+                    <li>☐ Solve absolute value equations</li>
+                    <li>☐ Check for extraneous solutions</li>
+                </ul>
+            </div>
+
+            <h3>Assessment Alignment Notes for Teachers:</h3>
+            <div class="strategy-box">
+                <strong>NYS Regents Standards Coverage:</strong>
+                <ul>
+                    <li><strong>A.REI.A.1:</strong> Explain steps in solving equations</li>
+                    <li><strong>A.REI.B.3:</strong> Solve linear equations and inequalities</li>
+                    <li><strong>A.CED.A.1:</strong> Create equations from real-world contexts</li>
+                    <li><strong>A.CED.A.4:</strong> Rearrange formulas to highlight quantities of interest</li>
+                </ul>
+
+                <strong>Differentiation Guidance:</strong>
+                <ul>
+                    <li><strong>Level 1 (Foundations):</strong> One and two-step equations, basic inequalities</li>
+                    <li><strong>Level 2 (On-Grade):</strong> Multi-step equations, compound inequalities, literal equations</li>
+                    <li><strong>Level 3 (Challenge):</strong> Absolute value, rational equations, systems with parameters</li>
+                </ul>
+
+                <strong>Common Student Misconceptions:</strong>
+                <ul>
+                    <li>Subtracting from one side only instead of both sides</li>
+                    <li>Not distributing negative signs correctly: -(x - 3) ≠ -x - 3</li>
+                    <li>Forgetting to flip inequality when multiplying/dividing by negative</li>
+                    <li>Dropping denominators without proper multiplication: x/2 = 3 → x = 3 (wrong)</li>
+                    <li>Not checking for extraneous solutions in radical/rational equations</li>
+                </ul>
+            </div>
+
+            <h3>NEW YORK STATE REGENTS SCORING RUBRIC:</h3>
+            <div class="strategy-box">
+                <strong>Part I: Multiple Choice Questions (2 credits each)</strong>
+                <ul>
+                    <li>2 Credits: Correct answer selected</li>
+                    <li>0 Credits: Incorrect answer or no response</li>
+                </ul>
+                <p><em>Note: No partial credit is awarded for multiple choice questions in Part I</em></p>
+
+                <strong>Part II: Constructed Response Questions (2-4 credits each)</strong>
+                
+                <p><strong>4 Credits - Excellent Response</strong></p>
+                <ul>
+                    <li>Complete and correct mathematical solution with all steps clearly shown</li>
+                    <li>Proper setup of equations, inequalities, or systems</li>
+                    <li>Correct algebraic manipulation throughout the solution process</li>
+                    <li>Accurate final answer with appropriate verification when requested</li>
+                    <li>Clear mathematical reasoning and logical flow of steps</li>
+                </ul>
+
+                <p><strong>3 Credits - Good Response</strong></p>
+                <ul>
+                    <li>Substantially correct solution with minor computational or algebraic errors</li>
+                    <li>Proper mathematical approach with most essential steps present</li>
+                    <li>Minor errors that don't significantly impact the overall solution method</li>
+                    <li>Generally correct setup and algebraic procedures</li>
+                    <li>Answer close to correct with reasonable mathematical work shown</li>
+                </ul>
+
+                <p><strong>2 Credits - Satisfactory Response</strong></p>
+                <ul>
+                    <li>Partially correct solution showing understanding of key equation-solving concepts</li>
+                    <li>Some correct algebraic procedures and manipulation demonstrated</li>
+                    <li>May contain significant errors in arithmetic or algebraic steps</li>
+                    <li>Shows familiarity with linear equations, quadratic equations, or system solving</li>
+                    <li>Partial work shown but missing important steps or verification</li>
+                </ul>
+
+                <p><strong>1 Credit - Minimal Response</strong></p>
+                <ul>
+                    <li>Minimal understanding of equation-solving concepts demonstrated</li>
+                    <li>Some correct mathematical procedures identified but poorly executed</li>
+                    <li>Major errors in algebraic manipulation, sign errors, or incorrect operations</li>
+                    <li>Little coherent work shown or unclear mathematical reasoning</li>
+                    <li>Limited grasp of required algebraic techniques</li>
+                </ul>
+
+                <p><strong>0 Credits - No Credit</strong></p>
+                <ul>
+                    <li>No understanding of mathematical concepts demonstrated</li>
+                    <li>Incorrect mathematical procedures throughout or no work shown</li>
+                    <li>Response completely unrelated to the problem or no response provided</li>
+                    <li>No evidence of equation-solving, inequality, or system-solving skills</li>
+                </ul>
+            </div>
+
+            <div class="motivation-box">
+                <strong>Master the art of solving equations and you master the language of mathematics!</strong><br>
+                Every equation you solve builds your confidence and sharpens your analytical skills. Remember: equations are just puzzles waiting to be solved, and you have all the tools you need. Practice with purpose, check your work carefully, and celebrate your progress. Your success on the Algebra I Regents starts here!
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>© D.E.Bs Learning Academy</p>
+            <p>Unlocking Brilliance Through Learning</p>
+            <p><strong>Topic 2: Solving Equations & Inequalities</strong></p>
+            <p>Algebra I Regents Review | Complete Workbook</p>
+        </div>
+    </div>
+
+    <script>
+        // Make all work-space areas editable
+        document.querySelectorAll('.work-space').forEach(function(workSpace) {
+            // Hide the work-space-label to avoid duplication with textarea placeholder
+            const label = workSpace.querySelector('.work-space-label');
+            if (label) {
+                label.style.display = 'none';
+            }
+            
+            // Create textarea for work area
+            const textarea = document.createElement('textarea');
+            textarea.style.width = '100%';
+            textarea.style.minHeight = '120px';
+            textarea.style.padding = '15px';
+            textarea.style.fontSize = '14px';
+            textarea.style.fontFamily = 'monospace';
+            textarea.style.border = '1px solid #ccc';
+            textarea.style.borderRadius = '5px';
+            textarea.style.resize = 'vertical';
+            textarea.style.marginTop = '10px';
+            textarea.placeholder = 'Type your work here...';
+            
+            workSpace.appendChild(textarea);
+        });
+
+        // Make multiple choice options selectable
+        document.querySelectorAll('.option').forEach(function(option, index) {
+            // Skip if already has radio button
+            if (option.querySelector('input[type="radio"]')) return;
+            
+            const questionBlock = option.closest('.question');
+            if (!questionBlock) return;
+            
+            const questionNum = questionBlock.querySelector('.question-number');
+            if (!questionNum) return;
+            
+            // Extract question number for unique naming
+            const qNum = questionNum.textContent.match(/^\d+/);
+            if (!qNum) return;
+            
+            // Find which level section we're in
+            const levelSection = option.closest('.level-section');
+            let levelPrefix = 'L1';
+            if (levelSection) {
+                if (levelSection.querySelector('h2').textContent.includes('LEVEL 2')) levelPrefix = 'L2';
+                if (levelSection.querySelector('h2').textContent.includes('LEVEL 3')) levelPrefix = 'L3';
+            }
+            
+            // Check if it's a bonus question
+            if (questionNum.textContent.includes('Bonus')) {
+                levelPrefix = 'B';
+            }
+            
+            const radioName = `q_${levelPrefix}_${qNum[0]}`;
+            
+            // Get the option text
+            const optionText = option.textContent.trim();
+            const optionLetter = optionText.charAt(0); // a, b, c, d, or (1, (2, etc
+            
+            // Create radio button
+            const label = document.createElement('label');
+            label.style.cursor = 'pointer';
+            label.style.display = 'block';
+            
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = radioName;
+            radio.value = optionLetter;
+            radio.style.marginRight = '10px';
+            radio.style.cursor = 'pointer';
+            
+            const span = document.createElement('span');
+            span.textContent = optionText;
+            
+            // Add click handler to highlight selection
+            radio.addEventListener('change', function() {
+                // Remove highlight from all options in this question
+                questionBlock.querySelectorAll('.option').forEach(opt => {
+                    opt.style.backgroundColor = '';
+                    opt.style.fontWeight = '';
+                });
+                
+                // Highlight selected option
+                if (this.checked) {
+                    option.style.backgroundColor = '#e8f4f8';
+                    span.style.fontWeight = 'bold';
+                    span.style.color = '#667eea';
+                }
+            });
+            
+            label.appendChild(radio);
+            label.appendChild(span);
+            
+            option.textContent = '';
+            option.appendChild(label);
+        });
+
+        // Print functionality that preserves user input
+        window.addEventListener('beforeprint', function() {
+            // Store all selections and text inputs
+            document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+                radio.setAttribute('data-checked', 'true');
+            });
+        });
+    </script>
+</body>
+</html>

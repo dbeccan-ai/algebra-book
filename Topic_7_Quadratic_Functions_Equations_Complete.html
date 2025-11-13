@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 7: Quadratic Functions & Equations - Algebra I Regents Review</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .academy-name {
+            font-size: 1.2em;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .tagline {
+            font-style: italic;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        .level-section {
+            background: linear-gradient(to right, #f8f9ff 0%, #ffffff 100%);
+            border-left: 5px solid #667eea;
+            padding: 40px 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .level-section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .instructions {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #2196f3;
+        }
+
+        .question {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .question:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .option {
+            padding: 8px 0;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .option:hover {
+            color: #667eea;
+        }
+
+        .work-space {
+            background: #f8f9fa;
+            padding: 30px;
+            margin-top: 15px;
+            border-radius: 8px;
+            min-height: 150px;
+            border: 2px dashed #dee2e6;
+        }
+
+        .work-space-label {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+        }
+
+        .work-area {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 120px;
+            border: 1px solid #ccc;
+            font-family: 'Courier New', monospace;
+            line-height: 1.8;
+            outline: none;
+        }
+
+        .work-area:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
+        .option label {
+            cursor: pointer;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.2s;
+        }
+
+        .option label:hover {
+            color: #667eea;
+        }
+
+        .option input[type="radio"]:checked + span {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .ti84-walkthrough {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .ti84-walkthrough h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .ti84-walkthrough ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .ti84-walkthrough li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .ti84-walkthrough li:before {
+            content: "▸";
+            color: #ffd700;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .desmos-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .desmos-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .answer-key-section {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .answer-key-section h2 {
+            color: #2e7d32;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .answer-key-section h3 {
+            color: #388e3c;
+            margin: 25px 0 15px 0;
+            font-size: 1.5em;
+            border-bottom: 2px solid #4caf50;
+            padding-bottom: 10px;
+        }
+
+        .answer-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #4caf50;
+        }
+
+        .answer-number {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .bonus-section {
+            background: linear-gradient(to right, #fff8e1 0%, #ffffff 100%);
+            border-left: 5px solid #ff9800;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .bonus-section h2 {
+            color: #ef6c00;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .success-section {
+            background: linear-gradient(to right, #e3f2fd 0%, #ffffff 100%);
+            border-left: 5px solid #2196f3;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .success-section h2 {
+            color: #1565c0;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .success-section h3 {
+            color: #1976d2;
+            margin: 25px 0 15px 0;
+            font-size: 1.3em;
+        }
+
+        .strategy-box {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .error-box {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .checklist {
+            background: #e8f5e9;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .checklist li {
+            padding: 5px 0;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .level-section {
+                page-break-before: always;
+            }
+
+            .question {
+                page-break-inside: avoid;
+            }
+
+            .answer-key-section {
+                page-break-before: always;
+            }
+
+            .bonus-section {
+                page-break-before: always;
+            }
+
+            .success-section {
+                page-break-before: always;
+            }
+
+            .ti84-walkthrough {
+                page-break-inside: avoid;
+            }
+
+            /* Preserve checked radio buttons */
+            input[type="radio"]:checked::before {
+                content: "✓";
+                display: inline-block;
+                font-weight: bold;
+            }
+
+            /* Show textarea content */
+            textarea {
+                border: 1px solid #000;
+                background: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header h2 {
+                font-size: 1.3em;
+            }
+
+            .level-section {
+                padding: 20px 15px;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ALGEBRA I REGENTS REVIEW WORKBOOK</h1>
+            <h2>Topic 7: Quadratic Functions & Equations</h2>
+            <div class="academy-name">D.E.Bs Learning Academy</div>
+            <div class="tagline">Unlocking Brilliance Through Learning</div>
+        </div>
+
+        <!-- LEVEL 1: FOUNDATIONS -->
+        <div class="level-section">
+            <h2>LEVEL 1: FOUNDATIONS</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided where indicated.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1. Which of the following is a quadratic equation?</div>
+                <div class="options">
+                    <div class="option">
+                        <label>
+                            <input type="radio" name="q1_1" value="a">
+                            <span>a) y = 2x + 5</span>
+                        </label>
+                    </div>
+                    <div class="option">
+                        <label>
+                            <input type="radio" name="q1_1" value="b">
+                            <span>b) y = x² + 3x - 2</span>
+                        </label>
+                    </div>
+                    <div class="option">
+                        <label>
+                            <input type="radio" name="q1_1" value="c">
+                            <span>c) y = 3x³ + x</span>
+                        </label>
+                    </div>
+                    <div class="option">
+                        <label>
+                            <input type="radio" name="q1_1" value="d">
+                            <span>d) y = 5/x</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2. What is the standard form of a quadratic function?</div>
+                <div class="options">
+                    <div class="option">a) y = mx + b</div>
+                    <div class="option">b) y = ax² + bx + c</div>
+                    <div class="option">c) y = a(x - h)² + k</div>
+                    <div class="option">d) y = ab^x</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3. In the quadratic y = 3x² - 7x + 2, what is the value of the coefficient 'a'?</div>
+                <div class="options">
+                    <div class="option">a) 2</div>
+                    <div class="option">b) -7</div>
+                    <div class="option">c) 3</div>
+                    <div class="option">d) 7</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4. Factor: x² - 9</div>
+                <div class="options">
+                    <div class="option">a) (x - 3)(x - 3)</div>
+                    <div class="option">b) (x + 3)(x + 3)</div>
+                    <div class="option">c) (x - 3)(x + 3)</div>
+                    <div class="option">d) Cannot be factored</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Graph a Basic Quadratic Function</h3>
+                <ul>
+                    <li>Press [Y=] and enter Y1 = X²</li>
+                    <li>Press [ZOOM] [6:ZStandard] to view</li>
+                    <li>Use [TRACE] to explore the vertex and intercepts</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5. What is the axis of symmetry for y = x²?</div>
+                <div class="options">
+                    <div class="option">a) x = 0</div>
+                    <div class="option">b) y = 0</div>
+                    <div class="option">c) x = 1</div>
+                    <div class="option">d) y = 1</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6. The vertex of y = x² is located at:</div>
+                <div class="options">
+                    <div class="option">a) (0, 0)</div>
+                    <div class="option">b) (1, 1)</div>
+                    <div class="option">c) (0, 1)</div>
+                    <div class="option">d) (1, 0)</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Find the Vertex of a Parabola</h3>
+                <ul>
+                    <li>Graph Y1 = X² - 4X + 3</li>
+                    <li>Press [2nd] [CALC] [3:minimum] or [4:maximum]</li>
+                    <li>Move cursor and press [ENTER] three times</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7. Which direction does y = -2x² open?</div>
+                <div class="options">
+                    <div class="option">a) Upward</div>
+                    <div class="option">b) Downward</div>
+                    <div class="option">c) Left</div>
+                    <div class="option">d) Right</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8. Solve: x² = 16</div>
+                <div class="options">
+                    <div class="option">a) x = 4</div>
+                    <div class="option">b) x = ±4</div>
+                    <div class="option">c) x = 8</div>
+                    <div class="option">d) x = 2</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Solve Quadratic Equations by Graphing</h3>
+                <ul>
+                    <li>Graph Y1 = X² - 5X + 6 and Y2 = 0</li>
+                    <li>Use [2nd] [CALC] [5:intersect] to find x-intercepts</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9. Factor: x² + 5x + 6</div>
+                <div class="options">
+                    <div class="option">a) (x + 2)(x + 3)</div>
+                    <div class="option">b) (x + 1)(x + 6)</div>
+                    <div class="option">c) (x - 2)(x - 3)</div>
+                    <div class="option">d) (x + 5)(x + 1)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">10. The y-intercept of y = x² + 3x - 4 is:</div>
+                <div class="options">
+                    <div class="option">a) -4</div>
+                    <div class="option">b) 3</div>
+                    <div class="option">c) 0</div>
+                    <div class="option">d) 4</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Create a Table for Quadratic Functions</h3>
+                <ul>
+                    <li>Enter Y1 = X² + 2X - 3</li>
+                    <li>Press [2nd] [WINDOW] to set table parameters</li>
+                    <li>Press [2nd] [GRAPH] to view the table</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11. A ball is thrown upward with an initial velocity of 32 feet per second from a height of 6 feet. The height h(t) after t seconds is given by h(t) = -16t² + 32t + 6. Find the maximum height of the ball.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12. Factor completely: 2x² - 8x + 6</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13. Solve the quadratic equation x² - 6x + 8 = 0 using any method. Show all work.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Identify Key Features Using Calculator</h3>
+                <ul>
+                    <li>Graph y = x² - 4x + 3</li>
+                    <li>Identify the vertex, axis of symmetry, and x-intercepts</li>
+                    <li>Use [CALC] menu features for precise values</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14. A rectangular garden has dimensions where the length is 4 feet more than the width. If the area is 60 square feet, find the dimensions of the garden.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15. Compare the graphs of y = x² and y = x² + 4. Describe the transformation and explain how this affects the vertex and y-intercept.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL 2: ON-GRADE REGENTS PREP -->
+        <div class="level-section">
+            <h2>LEVEL 2: ON-GRADE REGENTS PREP</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided where indicated.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1. What is the discriminant of 3x² - 5x + 2 = 0?</div>
+                <div class="options">
+                    <div class="option">a) 1</div>
+                    <div class="option">b) 25</div>
+                    <div class="option">c) -23</div>
+                    <div class="option">d) 49</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2. The vertex form of a quadratic is y = a(x - h)² + k. What does 'k' represent?</div>
+                <div class="options">
+                    <div class="option">a) The x-coordinate of the vertex</div>
+                    <div class="option">b) The y-coordinate of the vertex</div>
+                    <div class="option">c) The axis of symmetry</div>
+                    <div class="option">d) The stretch factor</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Complete the Square Using Technology</h3>
+                <ul>
+                    <li>Enter Y1 = X² + 6X + 5</li>
+                    <li>Use algebra features to convert to vertex form</li>
+                    <li>Verify by graphing both forms</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3. Solve using the quadratic formula: 2x² + 7x - 4 = 0</div>
+                <div class="options">
+                    <div class="option">a) x = -4, x = 1/2</div>
+                    <div class="option">b) x = 4, x = -1/2</div>
+                    <div class="option">c) x = -1/2, x = 4</div>
+                    <div class="option">d) x = 1/2, x = -4</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4. Convert to vertex form: y = x² - 8x + 12</div>
+                <div class="options">
+                    <div class="option">a) y = (x - 4)² - 4</div>
+                    <div class="option">b) y = (x + 4)² - 4</div>
+                    <div class="option">c) y = (x - 4)² + 4</div>
+                    <div class="option">d) y = (x - 8)² + 12</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Quadratic Regression Analysis</h3>
+                <ul>
+                    <li>Enter data points in L1 and L2</li>
+                    <li>Press [STAT] [CALC] [5:QuadReg]</li>
+                    <li>Store equation in Y1 for graphing</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5. The roots of x² - 7x + 12 = 0 are:</div>
+                <div class="options">
+                    <div class="option">a) x = 3, x = 4</div>
+                    <div class="option">b) x = -3, x = -4</div>
+                    <div class="option">c) x = 6, x = 2</div>
+                    <div class="option">d) x = 1, x = 12</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6. What is the axis of symmetry for y = 2x² - 12x + 10?</div>
+                <div class="options">
+                    <div class="option">a) x = 3</div>
+                    <div class="option">b) x = -3</div>
+                    <div class="option">c) x = 6</div>
+                    <div class="option">d) x = -6</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Analyze Quadratic Transformations</h3>
+                <ul>
+                    <li>Graph Y1 = X², Y2 = (X-3)², Y3 = X²+2</li>
+                    <li>Compare vertex locations and shape changes</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7. If a quadratic has roots at x = -2 and x = 5, which could be the equation?</div>
+                <div class="options">
+                    <div class="option">a) y = (x + 2)(x - 5)</div>
+                    <div class="option">b) y = (x - 2)(x + 5)</div>
+                    <div class="option">c) y = x² + 3x - 10</div>
+                    <div class="option">d) y = x² - 3x - 10</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8. The minimum value of y = x² - 6x + 13 is:</div>
+                <div class="options">
+                    <div class="option">a) 4</div>
+                    <div class="option">b) 13</div>
+                    <div class="option">c) -4</div>
+                    <div class="option">d) 9</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Solve Systems Involving Quadratics</h3>
+                <ul>
+                    <li>Graph Y1 = X² - 4 and Y2 = 2X + 1</li>
+                    <li>Find intersection points using CALC menu</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9. Factor: 3x² - 27</div>
+                <div class="options">
+                    <div class="option">a) 3(x² - 9)</div>
+                    <div class="option">b) 3(x - 3)(x + 3)</div>
+                    <div class="option">c) (3x - 9)(x + 3)</div>
+                    <div class="option">d) 3(x - 3)²</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Model Projectile Motion</h3>
+                <ul>
+                    <li>Enter height function h(t) = -16t² + v₀t + h₀</li>
+                    <li>Find maximum height and time to hit ground</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11. A company's profit P (in thousands) is modeled by P(x) = -2x² + 16x - 24, where x is the number of items produced (in hundreds). Find the number of items that should be produced to maximize profit, and state the maximum profit.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12. Solve 3x² - 12x + 9 = 0 using the quadratic formula. Express your answer in simplest radical form.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13. The path of a diver is modeled by h(t) = -5t² + 10t + 15, where h is height in feet and t is time in seconds. When does the diver hit the water (h = 0)?</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14. A quadratic function has vertex at (3, -4) and passes through point (1, 0). Find the equation of the function and verify using your calculator.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15. Determine the number and nature of the roots of 2x² - 3x + 5 = 0 using the discriminant. Explain what this tells you about the graph.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL 3: CHALLENGE & MASTERY -->
+        <div class="level-section">
+            <h2>LEVEL 3: CHALLENGE & MASTERY</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 4 credits. Clearly indicate the necessary steps, including appropriate formula substitutions, diagrams, graphs, charts, etc. Utilize the information provided for each question to determine your answer.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1. Solve the system: y = x² - 2x + 1 and y = 2x - 1</div>
+                <div class="options">
+                    <div class="option">a) (0, -1) and (4, 7)</div>
+                    <div class="option">b) (0, -1) and (3, 5)</div>
+                    <div class="option">c) (1, 0) and (3, 5)</div>
+                    <div class="option">d) (0, 1) and (4, 7)</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Advanced Quadratic Modeling</h3>
+                <ul>
+                    <li>Use multiple regression techniques for complex data</li>
+                    <li>Compare quadratic vs. other polynomial fits</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2. Find the equation of the parabola with vertex (-2, 3) and focus (-2, 4).</div>
+                <div class="options">
+                    <div class="option">a) (x + 2)² = 4(y - 3)</div>
+                    <div class="option">b) (x - 2)² = 4(y + 3)</div>
+                    <div class="option">c) (y - 3)² = 4(x + 2)</div>
+                    <div class="option">d) (x + 2)² = (y - 3)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3. The quadratic ax² + bx + c = 0 has one repeated root. Which condition must be satisfied?</div>
+                <div class="options">
+                    <div class="option">a) a = 0</div>
+                    <div class="option">b) b² - 4ac = 0</div>
+                    <div class="option">c) b² - 4ac > 0</div>
+                    <div class="option">d) b² - 4ac < 0</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Quadratic Inequalities and Regions</h3>
+                <ul>
+                    <li>Graph quadratic functions and shade appropriate regions</li>
+                    <li>Find boundary points and test regions</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4. Simplify: √(x² - 6x + 9) when x < 3</div>
+                <div class="options">
+                    <div class="option">a) x - 3</div>
+                    <div class="option">b) 3 - x</div>
+                    <div class="option">c) |x - 3|</div>
+                    <div class="option">d) x + 3</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5. The sum and product of the roots of 2x² - 5x + 3 = 0 are respectively:</div>
+                <div class="options">
+                    <div class="option">a) 5/2 and 3/2</div>
+                    <div class="option">b) -5/2 and 3/2</div>
+                    <div class="option">c) 5/2 and -3/2</div>
+                    <div class="option">d) 2/5 and 2/3</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Optimization Problems with Constraints</h3>
+                <ul>
+                    <li>Model business applications with quadratic functions</li>
+                    <li>Find maximum/minimum values within constraints</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6. Find all values of k for which x² + kx + 16 = 0 has real roots.</div>
+                <div class="options">
+                    <div class="option">a) k ≥ 8 or k ≤ -8</div>
+                    <div class="option">b) -8 < k < 8</div>
+                    <div class="option">c) k = ±8</div>
+                    <div class="option">d) k > 0</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7. Solve: |x² - 5x + 6| = 2</div>
+                <div class="options">
+                    <div class="option">a) x = 1, 2, 4</div>
+                    <div class="option">b) x = 1, 4</div>
+                    <div class="option">c) x = 2, 3</div>
+                    <div class="option">d) x = 1, 2, 3, 4</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Parametric Quadratic Equations</h3>
+                <ul>
+                    <li>Model projectile motion using parametric equations</li>
+                    <li>Analyze trajectory and range calculations</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8. The parabola y = ax² + bx + c passes through (-1, 8), (0, 3), and (2, 3). Find a, b, and c.</div>
+                <div class="options">
+                    <div class="option">a) a = 1, b = -2, c = 3</div>
+                    <div class="option">b) a = 2, b = -3, c = 3</div>
+                    <div class="option">c) a = 2, b = -2, c = 3</div>
+                    <div class="option">d) a = 1, b = -3, c = 3</div>
+                </div>
+            </div>
+
+            <div class="ti84-walkthrough">
+                <h3>TI-84 WALKTHROUGH: Complex Roots and the Fundamental Theorem</h3>
+                <ul>
+                    <li>Explore quadratics with no real roots</li>
+                    <li>Use complex number features if available</li>
+                </ul>
+                <a href="https://www.desmos.com/calculator" target="_blank" class="desmos-link">Open Desmos Graphing Calculator</a>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9. Transform y = x² to pass through points (1, 4) and (-1, 4).</div>
+                <div class="options">
+                    <div class="option">a) y = 4x²</div>
+                    <div class="option">b) y = x² + 3</div>
+                    <div class="option">c) y = 2x² + 2</div>
+                    <div class="option">d) y = (x + 1)² + 3</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11. A quadratic function has zeros at x = -3 and x = 7, and has a maximum value of 25. Write the equation in both factored form and standard form. Verify your answer by showing the function achieves its maximum at the correct point.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12. Solve the equation x⁴ - 13x² + 36 = 0 completely. Express all solutions and explain your method.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13. A manufacturer determines that the cost C (in dollars) of producing x units is given by C(x) = 0.5x² - 20x + 500, and the revenue R(x) = 30x. Find the break-even points and the production level that maximizes profit.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14. Design a suspension bridge where the cable follows a parabolic path. The towers are 100 feet high and 400 feet apart, with the lowest point of the cable 20 feet above the roadway. Find the equation of the parabola and calculate the cable height at 50 feet from the center.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15. Analyze the quadratic inequality x² - 4x + 3 < 0. Solve algebraically, verify graphically, and explain the relationship between the solution and the quadratic's zeros.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMBINED ANSWER KEY -->
+        <div class="answer-key-section">
+            <h2>TOPIC 7: COMBINED ANSWER KEY</h2>
+
+            <h3>LEVEL 1 - FOUNDATIONS</h3>
+
+            <div class="answer-item">
+                <span class="answer-number">1.</span> <strong>b) y = x² + 3x - 2</strong> (highest power is 2, making it quadratic)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">2.</span> <strong>b) y = ax² + bx + c</strong> (standard form of quadratic function)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">3.</span> <strong>c) 3</strong> (coefficient of x² term)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">4.</span> <strong>c) (x - 3)(x + 3)</strong> (difference of squares: a² - b² = (a-b)(a+b))
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">5.</span> <strong>a) x = 0</strong> (vertical line through vertex)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">6.</span> <strong>a) (0, 0)</strong> (vertex of parent function y = x²)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">7.</span> <strong>b) Downward</strong> (negative coefficient of x² term)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">8.</span> <strong>b) x = ±4</strong> (square root property: if x² = k, then x = ±√k)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">9.</span> <strong>a) (x + 2)(x + 3)</strong> (find two numbers that multiply to 6 and add to 5)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">10.</span> <strong>a) -4</strong> (substitute x = 0 into equation)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">11.</span> <strong>Extended Response Solution:</strong><br>
+                Maximum height = 22 feet (at vertex: t = 1 second)<br>
+                Using vertex formula: t = -b/2a = -32/2(-16) = 1<br>
+                h(1) = -16(1)² + 32(1) + 6 = 22 feet
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">12.</span> <strong>Extended Response Solution:</strong><br>
+                2x² - 8x + 6 = 2(x² - 4x + 3) = 2(x - 1)(x - 3)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">13.</span> <strong>Extended Response Solution:</strong><br>
+                x² - 6x + 8 = 0; (x - 2)(x - 4) = 0; x = 2 or x = 4
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">14.</span> <strong>Extended Response Solution:</strong><br>
+                Let w = width, then length = w + 4<br>
+                Area: w(w + 4) = 60; w² + 4w - 60 = 0; (w + 10)(w - 6) = 0<br>
+                Width = 6 feet, Length = 10 feet (reject negative solution)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">15.</span> <strong>Extended Response Solution:</strong><br>
+                y = x² + 4 is y = x² shifted up 4 units<br>
+                New vertex: (0, 4), New y-intercept: 4
+            </div>
+
+            <h3>LEVEL 2 - ON-GRADE REGENTS PREP</h3>
+
+            <div class="answer-item">
+                <span class="answer-number">1.</span> <strong>a) 1</strong> (b² - 4ac = (-5)² - 4(3)(2) = 25 - 24 = 1)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">2.</span> <strong>b) The y-coordinate of the vertex</strong> (k represents vertical shift)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">3.</span> <strong>a) x = -4, x = 1/2</strong><br>
+                Using quadratic formula: x = (-7 ± √(49 + 32))/4 = (-7 ± 9)/4
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">4.</span> <strong>a) y = (x - 4)² - 4</strong><br>
+                Complete the square: x² - 8x + 16 - 16 + 12 = (x - 4)² - 4
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">5.</span> <strong>a) x = 3, x = 4</strong> (factor: (x - 3)(x - 4) = 0)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">6.</span> <strong>a) x = 3</strong> (axis of symmetry: x = -b/2a = -(-12)/2(2) = 3)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">7.</span> <strong>a) y = (x + 2)(x - 5)</strong> = x² - 3x - 10
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">8.</span> <strong>a) 4</strong> (vertex form: y = (x - 3)² + 4, minimum value is 4)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">9.</span> <strong>b) 3(x - 3)(x + 3)</strong> (factor out 3, then difference of squares)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">11.</span> <strong>Extended Response Solution:</strong><br>
+                Maximum at vertex: x = -b/2a = -16/2(-2) = 4 hundred items<br>
+                Maximum profit: P(4) = -2(16) + 16(4) - 24 = 8 thousand dollars
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">12.</span> <strong>Extended Response Solution:</strong><br>
+                3x² - 12x + 9 = 0; x² - 4x + 3 = 0<br>
+                x = (4 ± √(16-12))/2 = (4 ± 2)/2 = 3 or 1
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">13.</span> <strong>Extended Response Solution:</strong><br>
+                -5t² + 10t + 15 = 0; t² - 2t - 3 = 0; (t - 3)(t + 1) = 0<br>
+                t = 3 seconds (reject negative time)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">14.</span> <strong>Extended Response Solution:</strong><br>
+                Using vertex form: y = a(x - 3)² - 4<br>
+                Substitute (1, 0): 0 = a(1 - 3)² - 4; a = 1<br>
+                Equation: y = (x - 3)² - 4 = x² - 6x + 5
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">15.</span> <strong>Extended Response Solution:</strong><br>
+                Discriminant = (-3)² - 4(2)(5) = 9 - 40 = -31 < 0<br>
+                Two complex roots; parabola doesn't intersect x-axis
+            </div>
+
+            <h3>LEVEL 3 - CHALLENGE & MASTERY</h3>
+
+            <div class="answer-item">
+                <span class="answer-number">1.</span> <strong>a) (0, -1) and (4, 7)</strong><br>
+                Set x² - 2x + 1 = 2x - 1; x² - 4x + 2 = 0; solve using quadratic formula
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">2.</span> <strong>a) (x + 2)² = 4(y - 3)</strong><br>
+                Vertex form with vertical axis, distance from vertex to focus = 1
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">3.</span> <strong>b) b² - 4ac = 0</strong> (discriminant equals zero for repeated root)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">4.</span> <strong>b) 3 - x</strong> (since x < 3, the expression x - 3 is negative)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">5.</span> <strong>a) 5/2 and 3/2</strong><br>
+                Sum = -b/a = 5/2, Product = c/a = 3/2
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">6.</span> <strong>a) k ≥ 8 or k ≤ -8</strong><br>
+                For real roots: k² - 64 ≥ 0; |k| ≥ 8
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">7.</span> <strong>d) x = 1, 2, 3, 4</strong><br>
+                Solve x² - 5x + 6 = 2 and x² - 5x + 6 = -2
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">8.</span> <strong>b) a = 2, b = -3, c = 3</strong><br>
+                Set up system using three given points
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">9.</span> <strong>a) y = 4x²</strong> (passes through both given points)
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">11.</span> <strong>Extended Response Solution:</strong><br>
+                Factored: f(x) = -a(x + 3)(x - 7) where a > 0<br>
+                Maximum at x = 2: f(2) = -a(-1)(5) = 5a = 25, so a = 5<br>
+                f(x) = -5(x + 3)(x - 7) = -5x² + 20x + 105
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">12.</span> <strong>Extended Response Solution:</strong><br>
+                Let u = x²: u² - 13u + 36 = 0; (u - 4)(u - 9) = 0<br>
+                u = 4 or u = 9; x² = 4 or x² = 9; x = ±2, ±3
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">13.</span> <strong>Extended Response Solution:</strong><br>
+                Profit P(x) = R(x) - C(x) = 30x - (0.5x² - 20x + 500) = -0.5x² + 50x - 500<br>
+                Break-even: C(x) = R(x); 0.5x² - 20x + 500 = 30x; x = 20 or 50<br>
+                Maximum profit at x = 50 units
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">14.</span> <strong>Extended Response Solution:</strong><br>
+                Coordinate system with vertex at (0, 20), points at (±200, 100)<br>
+                Equation: y = 0.002x² + 20<br>
+                At 50 feet from center: y = 0.002(50)² + 20 = 25 feet
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">15.</span> <strong>Extended Response Solution:</strong><br>
+                x² - 4x + 3 < 0; (x - 1)(x - 3) < 0<br>
+                Solution: 1 < x < 3 (between the zeros where parabola is below x-axis)
+            </div>
+        </div>
+
+        <!-- BONUS REGENTS PRACTICE -->
+        <div class="bonus-section">
+            <h2>BONUS REGENTS PRACTICE</h2>
+
+            <div class="instructions">
+                <strong>Directions (1-6):</strong> Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided.
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 1:</div>
+                <p>What is the vertex of the parabola y = 2(x - 3)² + 1?</p>
+                <div class="options">
+                    <div class="option">(1) (3, 1)</div>
+                    <div class="option">(2) (-3, 1)</div>
+                    <div class="option">(3) (3, -1)</div>
+                    <div class="option">(4) (-3, -1)</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 2:</div>
+                <p>The quadratic equation x² - 4x + k = 0 has exactly one solution. What is the value of k?</p>
+                <div class="options">
+                    <div class="option">(1) 2</div>
+                    <div class="option">(2) 4</div>
+                    <div class="option">(3) 8</div>
+                    <div class="option">(4) 16</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 3:</div>
+                <p>Which quadratic function has the widest graph?</p>
+                <div class="options">
+                    <div class="option">(1) y = x²</div>
+                    <div class="option">(2) y = 2x²</div>
+                    <div class="option">(3) y = ½x²</div>
+                    <div class="option">(4) y = 4x²</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 4:</div>
+                <p>The roots of a quadratic equation are x = 2 and x = -5. Which equation could represent this quadratic?</p>
+                <div class="options">
+                    <div class="option">(1) x² + 3x - 10 = 0</div>
+                    <div class="option">(2) x² - 3x - 10 = 0</div>
+                    <div class="option">(3) x² + 7x + 10 = 0</div>
+                    <div class="option">(4) x² - 7x - 10 = 0</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 5:</div>
+                <p>A projectile is launched from ground level with the height function h(t) = -16t² + 64t. When does the projectile reach its maximum height?</p>
+                <div class="options">
+                    <div class="option">(1) t = 1 second</div>
+                    <div class="option">(2) t = 2 seconds</div>
+                    <div class="option">(3) t = 3 seconds</div>
+                    <div class="option">(4) t = 4 seconds</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 6:</div>
+                <p>Which transformation represents y = -(x + 2)² - 3 compared to y = x²?</p>
+                <div class="options">
+                    <div class="option">(1) Shift left 2, down 3, reflect over x-axis</div>
+                    <div class="option">(2) Shift right 2, up 3, reflect over x-axis</div>
+                    <div class="option">(3) Shift left 2, down 3, reflect over y-axis</div>
+                    <div class="option">(4) Shift right 2, down 3, reflect over x-axis</div>
+                </div>
+                <div class="work-space-label">Show your work:</div>
+            </div>
+        </div>
+
+        <!-- BONUS ANSWER KEY -->
+        <div class="answer-key-section">
+            <h2>BONUS REGENTS ANSWER KEY</h2>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 1:</span> <strong>(1) (3, 1)</strong><br>
+                <strong>Solution:</strong> In vertex form y = a(x - h)² + k, the vertex is (h, k). Therefore, vertex is (3, 1).
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 2:</span> <strong>(2) 4</strong><br>
+                <strong>Solution:</strong> For exactly one solution, discriminant = 0<br>
+                b² - 4ac = 0 → (-4)² - 4(1)(k) = 0<br>
+                16 - 4k = 0 → k = 4
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 3:</span> <strong>(3) y = ½x²</strong><br>
+                <strong>Solution:</strong> Smaller coefficient |a| makes parabola wider. |½| < |1| < |2| < |4|
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 4:</span> <strong>(1) x² + 3x - 10 = 0</strong><br>
+                <strong>Solution:</strong> If roots are 2 and -5: (x - 2)(x + 5) = 0<br>
+                Expand: x² + 5x - 2x - 10 = x² + 3x - 10 = 0
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 5:</span> <strong>(2) t = 2 seconds</strong><br>
+                <strong>Solution:</strong> Maximum at vertex: t = -b/2a = -64/2(-16) = 2
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus Question 6:</span> <strong>(1) Shift left 2, down 3, reflect over x-axis</strong><br>
+                <strong>Solution:</strong> Negative sign reflects over x-axis, (x + 2) shifts left 2, -3 shifts down 3
+            </div>
+        </div>
+
+        <!-- SUCCESS STRATEGIES -->
+        <div class="success-section">
+            <h2>SUCCESS STRATEGIES FOR QUADRATIC FUNCTIONS & EQUATIONS</h2>
+
+            <h3>For Students:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Show ALL work:</strong> Even for multiple choice, demonstrate your solution steps</li>
+                    <li><strong>Master multiple methods:</strong> Know factoring, quadratic formula, completing the square, and graphing</li>
+                    <li><strong>Use proper notation:</strong> Write equations clearly and organize your work systematically</li>
+                    <li><strong>Check your solutions:</strong> Substitute answers back into original equations</li>
+                    <li><strong>Understand the discriminant:</strong> Use b² - 4ac to predict number and type of solutions</li>
+                    <li><strong>Practice transformations:</strong> Know how changes affect vertex, direction, and width</li>
+                </ul>
+            </div>
+
+            <h3>Common Student Errors to Avoid:</h3>
+            <div class="error-box">
+                <ul>
+                    <li><strong>Sign Errors:</strong> Pay careful attention to negative coefficients, especially with squared terms</li>
+                    <li><strong>Formula Mistakes:</strong> Remember quadratic formula is x = (-b ± √(b² - 4ac))/(2a)</li>
+                    <li><strong>Incomplete Factoring:</strong> Always factor out GCF first before other techniques</li>
+                    <li><strong>Transformation Confusion:</strong> h shifts horizontally opposite to sign, k shifts vertically same as sign</li>
+                    <li><strong>Wrong Vertex Formula:</strong> It's x = -b/2a, not b/2a</li>
+                    <li><strong>Forgetting ± Symbol:</strong> When taking square roots, include both positive and negative solutions</li>
+                </ul>
+            </div>
+
+            <h3>Time Management Tips:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>MCQ (1-14):</strong> Target 1.5-2 minutes per question</li>
+                    <li><strong>Extended Response (15-20):</strong> Allocate 6-8 minutes per question</li>
+                    <li><strong>Priority Approach:</strong> Start with recognition problems, then computational, finish with applications</li>
+                    <li><strong>Calculator Efficiency:</strong> Pre-program common functions, use stored equations for verification</li>
+                </ul>
+            </div>
+
+            <h3>Verification Strategies:</h3>
+            <div class="strategy-box">
+                <ol>
+                    <li><strong>Discriminant Analysis:</strong> Use b² - 4ac to verify number of solutions</li>
+                    <li><strong>Substitution Check:</strong> Plug solutions into original equation</li>
+                    <li><strong>Factored Form Multiplication:</strong> Multiply factors to verify they produce original equation</li>
+                    <li><strong>Graphical Confirmation:</strong> Plot to verify x-intercepts match calculated solutions</li>
+                    <li><strong>Vertex Formula Check:</strong> Confirm vertex using x = -b/2a, then calculate y-value</li>
+                    <li><strong>Axis of Symmetry:</strong> Verify axis is midpoint between x-intercepts</li>
+                </ol>
+            </div>
+
+            <h3>Real-World Application Categories:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Projectile Motion:</strong> Trajectory calculations, maximum height, range determination</li>
+                    <li><strong>Business Optimization:</strong> Revenue maximization, break-even analysis, profit modeling</li>
+                    <li><strong>Architecture:</strong> Parabolic arches, satellite dishes, suspension bridge cables</li>
+                    <li><strong>Physics Applications:</strong> Falling objects, acceleration problems, energy calculations</li>
+                    <li><strong>Area Optimization:</strong> Maximizing enclosed area with fixed perimeter</li>
+                    <li><strong>Engineering Design:</strong> Strength curves, efficiency optimization, structural analysis</li>
+                </ul>
+            </div>
+
+            <h3>Pattern Recognition Skills:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Discriminant Values:</strong> b² - 4ac > 0 (two real), = 0 (one real/repeated), < 0 (two complex)</li>
+                    <li><strong>Vertex Location:</strong> Always at x = -b/2a, determines maximum or minimum</li>
+                    <li><strong>Opening Direction:</strong> a > 0 (opens up, minimum), a < 0 (opens down, maximum)</li>
+                    <li><strong>Factoring Patterns:</strong> x² + bx + c, difference of squares, perfect square trinomials</li>
+                    <li><strong>Axis of Symmetry:</strong> Vertical line x = -b/2a or midpoint of x-intercepts</li>
+                    <li><strong>Standard Forms:</strong> y = ax² + bx + c, y = a(x-h)² + k, y = a(x-p)(x-q)</li>
+                </ul>
+            </div>
+
+            <h3>Regents Exam Preparation Focus:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Multiple Solution Methods:</strong> Master factoring, quadratic formula, completing the square, graphing</li>
+                    <li><strong>Method Selection Strategy:</strong> Choose most efficient approach based on equation structure</li>
+                    <li><strong>Vertex Form Applications:</strong> Use for finding maximum/minimum in optimization problems</li>
+                    <li><strong>Discriminant Interpretation:</strong> Predict solution types before solving</li>
+                    <li><strong>Real-World Modeling:</strong> Translate projectile, area, and business problems into quadratics</li>
+                    <li><strong>Show Work Requirements:</strong> Demonstrate complete solution process for partial credit</li>
+                </ul>
+            </div>
+
+            <h3>Problem-Solving Approach:</h3>
+            <div class="strategy-box">
+                <ol>
+                    <li><strong>Analyze:</strong> Identify equation form and determine most efficient solution method</li>
+                    <li><strong>Apply Method:</strong> Execute chosen approach (factor, formula, complete square, graph)</li>
+                    <li><strong>Solve:</strong> Find all solutions and simplify to exact or decimal form as required</li>
+                    <li><strong>Verify:</strong> Check solutions using substitution or discriminant analysis</li>
+                    <li><strong>Interpret:</strong> If real-world problem, explain solution meaning and reasonableness</li>
+                </ol>
+            </div>
+
+            <h3>Advanced Techniques (Level 3):</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Complex Solutions:</strong> Understanding and working with imaginary numbers when b² - 4ac < 0</li>
+                    <li><strong>Quadratic Systems:</strong> Solving systems involving one quadratic and one linear equation</li>
+                    <li><strong>Optimization with Constraints:</strong> Finding maximum/minimum with domain restrictions</li>
+                    <li><strong>Quadratic Inequalities:</strong> Solving ax² + bx + c > 0 or < 0 using sign analysis</li>
+                    <li><strong>Regression Analysis:</strong> Using TI-84 quadratic regression for real-world data</li>
+                    <li><strong>Parametric Analysis:</strong> How changing a, b, c affects graph characteristics</li>
+                </ul>
+            </div>
+
+            <h3>Study Recommendations:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Daily Practice:</strong> 20 minutes solving quadratics using all methods</li>
+                    <li><strong>Method Rotation:</strong> Solve same problem using 3 different approaches</li>
+                    <li><strong>Factoring Drills:</strong> Rapid factoring practice for 15 trinomials in 10 minutes</li>
+                    <li><strong>Formula Memorization:</strong> Practice quadratic formula until automatic</li>
+                    <li><strong>Real-World Collection:</strong> Find examples of parabolas in architecture and nature</li>
+                    <li><strong>Graphing Practice:</strong> Sketch parabolas quickly identifying key features</li>
+                </ul>
+            </div>
+
+            <h3>Performance Checklist:</h3>
+            <div class="checklist">
+                <ul>
+                    <li>☐ Factor quadratic expressions systematically</li>
+                    <li>☐ Apply quadratic formula correctly</li>
+                    <li>☐ Complete the square accurately</li>
+                    <li>☐ Use discriminant to predict solution types</li>
+                    <li>☐ Graph parabolas with vertex and intercepts</li>
+                    <li>☐ Identify axis of symmetry</li>
+                    <li>☐ Determine maximum or minimum values</li>
+                    <li>☐ Convert between standard and vertex form</li>
+                    <li>☐ Solve real-world optimization problems</li>
+                    <li>☐ Interpret vertex and intercepts in context</li>
+                    <li>☐ Use TI-84 for graphing and solving</li>
+                    <li>☐ Verify solutions using multiple methods</li>
+                </ul>
+            </div>
+
+            <h3>NYS Regents Standards Coverage:</h3>
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>A.SSE.B.3.a:</strong> Factor quadratic expressions</li>
+                    <li><strong>A.REI.B.4.a:</strong> Solve quadratics by taking square roots</li>
+                    <li><strong>A.REI.B.4.b:</strong> Solve quadratics by completing the square</li>
+                    <li><strong>A.APR.B.3:</strong> Identify zeros of polynomials and use zeros to construct graphs</li>
+                    <li><strong>F.IF.B.4:</strong> Interpret key features of quadratic functions</li>
+                    <li><strong>F.IF.C.7.a:</strong> Graph quadratic functions and show intercepts, maxima, and minima</li>
+                    <li><strong>F.IF.C.8.a:</strong> Use completing the square to reveal vertex form</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Algebra I Regents Review | Topic 7: Quadratic Functions & Equations</strong></p>
+            <p>© D.E.Bs Learning Academy - Unlocking Brilliance Through Learning</p>
+        </div>
+    </div>
+
+    <script>
+        // Make all work-space areas editable
+        document.querySelectorAll('.work-space').forEach(function(workSpace) {
+            // Create textarea for work area
+            const textarea = document.createElement('textarea');
+            textarea.style.width = '100%';
+            textarea.style.minHeight = '120px';
+            textarea.style.padding = '15px';
+            textarea.style.fontSize = '14px';
+            textarea.style.fontFamily = 'monospace';
+            textarea.style.border = '1px solid #ccc';
+            textarea.style.borderRadius = '5px';
+            textarea.style.resize = 'vertical';
+            textarea.style.marginTop = '10px';
+            textarea.placeholder = 'Type your work here...';
+            
+            workSpace.appendChild(textarea);
+        });
+
+        // Make multiple choice options selectable
+        document.querySelectorAll('.option').forEach(function(option, index) {
+            // Skip if already has radio button
+            if (option.querySelector('input[type="radio"]')) return;
+            
+            const questionBlock = option.closest('.question');
+            if (!questionBlock) return;
+            
+            const questionNum = questionBlock.querySelector('.question-number');
+            if (!questionNum) return;
+            
+            // Extract question number for unique naming
+            const qNum = questionNum.textContent.match(/^\d+/);
+            if (!qNum) return;
+            
+            // Find which level section we're in
+            const levelSection = option.closest('.level-section');
+            let levelPrefix = 'L1';
+            if (levelSection) {
+                if (levelSection.querySelector('h2').textContent.includes('LEVEL 2')) levelPrefix = 'L2';
+                if (levelSection.querySelector('h2').textContent.includes('LEVEL 3')) levelPrefix = 'L3';
+            }
+            
+            // Check if it's a bonus question
+            if (questionNum.textContent.includes('Bonus')) {
+                levelPrefix = 'B';
+            }
+            
+            const radioName = `q_${levelPrefix}_${qNum[0]}`;
+            
+            // Get the option text
+            const optionText = option.textContent.trim();
+            const optionLetter = optionText.charAt(0); // a, b, c, d, or (1, (2, etc
+            
+            // Create radio button
+            const label = document.createElement('label');
+            label.style.cursor = 'pointer';
+            label.style.display = 'block';
+            
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = radioName;
+            radio.value = optionLetter;
+            radio.style.marginRight = '10px';
+            radio.style.cursor = 'pointer';
+            
+            const span = document.createElement('span');
+            span.textContent = optionText;
+            
+            // Add click handler to highlight selection
+            radio.addEventListener('change', function() {
+                // Remove highlight from all options in this question
+                questionBlock.querySelectorAll('.option').forEach(opt => {
+                    opt.style.backgroundColor = '';
+                    opt.style.fontWeight = '';
+                });
+                
+                // Highlight selected option
+                if (this.checked) {
+                    option.style.backgroundColor = '#e8f4f8';
+                    span.style.fontWeight = 'bold';
+                    span.style.color = '#667eea';
+                }
+            });
+            
+            label.appendChild(radio);
+            label.appendChild(span);
+            
+            option.textContent = '';
+            option.appendChild(label);
+        });
+
+        // Print functionality that preserves user input
+        window.addEventListener('beforeprint', function() {
+            // Store all selections and text inputs
+            document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+                radio.setAttribute('data-checked', 'true');
+            });
+        });
+    </script>
+</body>
+</html>

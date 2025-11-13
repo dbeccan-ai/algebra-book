@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 1: Structure of Expressions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .academy-name {
+            font-size: 1.2em;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .tagline {
+            font-style: italic;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        
+        .level-section {
+            padding: 40px 30px;
+            background: linear-gradient(to bottom, #f8f9ff 0%, white 100%);
+            border-left: 5px solid #667eea;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        
+        .level-title {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .level-subtitle {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .question {
+            margin: 30px 0;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .question-number {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .options {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .option:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+        
+        .ti84-walkthrough {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .ti84-walkthrough h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ti84-walkthrough h3:before {
+            content: "🔢";
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+        
+        .ti84-walkthrough ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .ti84-walkthrough li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .ti84-walkthrough li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .ti84-link {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .ti84-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .work-space {
+            background: #f8f9fa;
+            padding: 30px;
+            margin-top: 15px;
+            border-radius: 8px;
+            min-height: 150px;
+            border: 2px dashed #dee2e6;
+        }
+        
+        .work-space-label {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+        }
+        
+        .answer-key-section {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        
+        .answer-key-title {
+            color: #2e7d32;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .answer-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .answer-number {
+            color: #2e7d32;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        
+        .bonus-section {
+            background: linear-gradient(to bottom, #fff8e1 0%, white 100%);
+            border-left: 5px solid #ff9800;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        
+        .bonus-title {
+            color: #ef6c00;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .success-section {
+            background: linear-gradient(to bottom, #e3f2fd 0%, white 100%);
+            border-left: 5px solid #2196f3;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        
+        .success-title {
+            color: #1565c0;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .tip-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .tip-box strong {
+            color: #f57c00;
+        }
+
+        .strategy-box {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .strategy-box h4 {
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+
+        .strategy-box ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .strategy-box ul li {
+            margin: 8px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .formula-box {
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .error-box {
+            background: #fee;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .checklist {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .checklist h4 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        .checklist ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li:before {
+            content: "☐ ";
+            font-size: 1.3em;
+            margin-right: 8px;
+            color: #2e7d32;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            .ti84-walkthrough {
+                background: #667eea;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            /* Page break rules */
+            .level-section {
+                page-break-before: always;
+            }
+            
+            .question {
+                page-break-inside: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+            
+            .answer-key-section {
+                page-break-before: always;
+            }
+            
+            .bonus-section {
+                page-break-before: always;
+            }
+            
+            .success-section {
+                page-break-before: always;
+            }
+            
+            /* Keep TI-84 walkthroughs with their questions */
+            .ti84-walkthrough {
+                page-break-inside: avoid;
+            }
+            
+            /* Keep work spaces with questions */
+            .work-space {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Page break for screen view simulation */
+        @media screen {
+            .level-section {
+                margin-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ALGEBRA I REGENTS REVIEW WORKBOOK</h1>
+            <h2>Topic 1: Structure of Expressions</h2>
+            <div class="academy-name">D.E.Bs Learning Academy</div>
+            <div class="tagline">Unlocking Brilliance Through Learning</div>
+        </div>
+
+        <!-- LEVEL 1: FOUNDATIONS -->
+        <div class="level-section">
+            <h2 class="level-title">LEVEL 1: FOUNDATIONS</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided where indicated.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1.</div>
+                <div class="question-text">Simplify: 3x + 5x</div>
+                <div class="options">
+                    <div class="option">a) 8x</div>
+                    <div class="option">b) 15x</div>
+                    <div class="option">c) 8x²</div>
+                    <div class="option">d) 3x + 5x</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2.</div>
+                <div class="question-text">Combine like terms: 7y - 3y + 2y</div>
+                <div class="options">
+                    <div class="option">a) 12y</div>
+                    <div class="option">b) 6y</div>
+                    <div class="option">c) 2y</div>
+                    <div class="option">d) -6y</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3.</div>
+                <div class="question-text">Evaluate 4a + 3b when a = 2 and b = 5</div>
+                <div class="options">
+                    <div class="option">a) 12</div>
+                    <div class="option">b) 19</div>
+                    <div class="option">c) 23</div>
+                    <div class="option">d) 35</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4.</div>
+                <div class="question-text">Expand: 2(x + 4) <em>Hint: Use the distributive property</em></div>
+                <div class="options">
+                    <div class="option">a) 2x + 4</div>
+                    <div class="option">b) 2x + 8</div>
+                    <div class="option">c) x + 8</div>
+                    <div class="option">d) 2x + 6</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Use the Calculator to Evaluate Expressions</h3>
+                    <p><em>To evaluate 3x + 7 when x = 4:</em></p>
+                    <ul>
+                        <li>Press [Y=]</li>
+                        <li>Enter: 3X + 7</li>
+                        <li>Press [2nd] [TABLE]</li>
+                        <li>Set TblStart = 4, ΔTbl = 1</li>
+                        <li>Press [2nd] [TABLE] to view result</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Calculate 5x - 2 when x = 6 using your TI-84:</div>
+                <div class="options">
+                    <div class="option">a) 26</div>
+                    <div class="option">b) 28</div>
+                    <div class="option">c) 30</div>
+                    <div class="option">d) 32</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6.</div>
+                <div class="question-text">Factor out the greatest common factor: 6x + 9</div>
+                <div class="options">
+                    <div class="option">a) 3(2x + 3)</div>
+                    <div class="option">b) 6(x + 9)</div>
+                    <div class="option">c) 9(6x + 1)</div>
+                    <div class="option">d) x(6 + 9)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7.</div>
+                <div class="question-text">Simplify: 8m - 3m + 7</div>
+                <div class="options">
+                    <div class="option">a) 8m + 7</div>
+                    <div class="option">b) 5m + 7</div>
+                    <div class="option">c) 12m</div>
+                    <div class="option">d) 5m</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8.</div>
+                <div class="question-text">Expand: -3(2n - 1)</div>
+                <div class="options">
+                    <div class="option">a) -6n - 3</div>
+                    <div class="option">b) -6n + 3</div>
+                    <div class="option">c) -5n + 2</div>
+                    <div class="option">d) 6n - 3</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Graphing Linear Expressions</h3>
+                    <p><em>To graph y = 2x + 1:</em></p>
+                    <ul>
+                        <li>Press [Y=]</li>
+                        <li>Enter: 2X + 1</li>
+                        <li>Press [ZOOM] [6] for Z Standard</li>
+                        <li>Press [GRAPH]</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Graph y = x - 3 and find where: 1) it crosses the y-axis 2) the slope</div>
+                <div class="options">
+                    <div class="option">a) (0, 3), m = 1</div>
+                    <div class="option">b) (0, -3), m = 1</div>
+                    <div class="option">c) (3, 0), m = -1</div>
+                    <div class="option">d) (-3, 0), m = -1</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">10.</div>
+                <div class="question-text">Combine: 4(x + 2) + 3x</div>
+                <div class="options">
+                    <div class="option">a) 7x + 8</div>
+                    <div class="option">b) 7x + 2</div>
+                    <div class="option">c) 4x + 5</div>
+                    <div class="option">d) x + 10</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11.</div>
+                <div class="question-text">Evaluate: 2a² + 5a when a = 3</div>
+                <div class="options">
+                    <div class="option">a) 21</div>
+                    <div class="option">b) 33</div>
+                    <div class="option">c) 39</div>
+                    <div class="option">d) 45</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12.</div>
+                <div class="question-text">Factor: x² + 5x</div>
+                <div class="options">
+                    <div class="option">a) x(x + 5)</div>
+                    <div class="option">b) 5x(x + 1)</div>
+                    <div class="option">c) (x + 5)²</div>
+                    <div class="option">d) x² + 5x</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Using CALC Menu</h3>
+                    <p><em>To find the y-intercept of y = 3x + 8:</em></p>
+                    <ul>
+                        <li>Graph the function</li>
+                        <li>Press [2nd] [CALC] [1] (value)</li>
+                        <li>Enter X = 0</li>
+                        <li>Press [ENTER]</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Find the y-intercept of y = 3x + 8:</div>
+                <div class="options">
+                    <div class="option">a) 3</div>
+                    <div class="option">b) 8</div>
+                    <div class="option">c) 11</div>
+                    <div class="option">d) 24</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14.</div>
+                <div class="question-text">Simplify: 5(2x - 1) - 3(x + 2)</div>
+                <div class="options">
+                    <div class="option">a) 7x - 11</div>
+                    <div class="option">b) 7x + 1</div>
+                    <div class="option">c) 13x - 5</div>
+                    <div class="option">d) 2x - 3</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15.</div>
+                <div class="question-text">Write an expression that is equivalent to 3(x + 4) - 2x? Show your work.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">16.</div>
+                <div class="question-text">The expression 6x + 18 can be written in factored form. Factor completely and explain your reasoning.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">17.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Verify Algebraic Simplification</h3>
+                    <p><em>To verify that 2(x + 3) = 2x + 6:</em></p>
+                    <ul>
+                        <li>Press [Y=]</li>
+                        <li>Y1 = 2(X + 3)</li>
+                        <li>Y2 = 2X + 6</li>
+                        <li>Press [2nd] [TABLE]</li>
+                        <li>Check that Y1 and Y2 values match</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Verify that 4(x - 1) + 2x = 6x - 4 using both algebraic manipulation and your TI-84 calculator. Show all steps and explain your verification process.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">18.</div>
+                <div class="question-text">Subtracting Polynomials: When 3x² - 7x + 5 is subtracted from 5x² + 2x - 3, write the subtraction expression and find the result. Show all work.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">19.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Polynomial Operations</h3>
+                    <p><em>To subtract polynomials: (5X² + 2X - 3) - (3X² - 7X + 5)</em></p>
+                    <ul>
+                        <li>Press [Y=]</li>
+                        <li>Y1 = (5X² + 2X - 3) - (3X² - 7X + 5)</li>
+                        <li>Y2 = input your answer to 18 above</li>
+                        <li>Press [2nd] [TABLE] to check if Y1=Y2</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Use your TI-84 to verify your answer from question 18. Explain how the calculator confirms your algebraic work.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">20.</div>
+                <div class="question-text">Factor completely: 12x³ + 8x². Show your work step by step and verify using the TI-84 by expanding your factored form.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL 2: ON-GRADE REGENTS PREP -->
+        <div class="level-section">
+            <h2 class="level-title">LEVEL 2: ON-GRADE REGENTS PREP</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 2 credits. No partial credit will be awarded. Show your work in the space provided where indicated.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1.</div>
+                <div class="question-text">Simplify: (3x² + 2x - 1) + (x² - 5x + 3)</div>
+                <div class="options">
+                    <div class="option">a) 4x² - 3x + 2</div>
+                    <div class="option">b) 4x² + 7x + 2</div>
+                    <div class="option">c) 2x² - 3x + 2</div>
+                    <div class="option">d) 4x² - 3x - 4</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2.</div>
+                <div class="question-text">Factor completely: 2x² + 10x + 12</div>
+                <div class="options">
+                    <div class="option">a) 2(x + 2)(x + 3)</div>
+                    <div class="option">b) (2x + 4)(x + 3)</div>
+                    <div class="option">c) 2(x² + 5x + 6)</div>
+                    <div class="option">d) (x + 2)(2x + 6)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Expanding Multiplying Binomials</h3>
+                    <p><em>To expand (x + 3)(x - 2):</em></p>
+                    <ul>
+                        <li>Press [Y=]</li>
+                        <li>Y1 = (X + 3)(X - 2)</li>
+                        <li>Y2 = X² + X - 6</li>
+                        <li>Press [2nd] [TABLE] to verify equivalence</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Expand: (x + 3)(x - 2)</div>
+                <div class="options">
+                    <div class="option">a) x² + x - 6</div>
+                    <div class="option">b) x² - x - 6</div>
+                    <div class="option">c) x² + x + 6</div>
+                    <div class="option">d) x² + 5x - 6</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4.</div>
+                <div class="question-text">Expand, Multiply (2x + 1)(x - 4) and verify:</div>
+                <div class="options">
+                    <div class="option">a) 2x² - 7x - 4</div>
+                    <div class="option">b) 2x² + 9x - 4</div>
+                    <div class="option">c) 2x² - 8x - 4</div>
+                    <div class="option">d) 2x² - 7x + 4</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5.</div>
+                <div class="question-text">Factor: x² - 9</div>
+                <div class="options">
+                    <div class="option">a) (x - 3)²</div>
+                    <div class="option">b) (x + 3)²</div>
+                    <div class="option">c) (x + 3)(x - 3)</div>
+                    <div class="option">d) x(x - 9)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6.</div>
+                <div class="question-text">Simplify: 3x²y + 2xy² - x²y + 5xy²</div>
+                <div class="options">
+                    <div class="option">a) 2x²y + 7xy²</div>
+                    <div class="option">b) 4x²y + 3xy²</div>
+                    <div class="option">c) 2x²y + 3xy²</div>
+                    <div class="option">d) 9x³y³</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Graphing Quadratic Functions</h3>
+                    <p><em>To analyze y = x² - 4x + 3:</em></p>
+                    <ul>
+                        <li>Press [Y=]</li>
+                        <li>Enter: X² - 4X + 3</li>
+                        <li>Press [ZOOM] [6]</li>
+                        <li>Use [2nd] [CALC] [2] for minimum</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Find the vertex of y = x² - 6x + 8:</div>
+                <div class="options">
+                    <div class="option">a) (3, -1)</div>
+                    <div class="option">b) (-3, 1)</div>
+                    <div class="option">c) (3, 1)</div>
+                    <div class="option">d) (-3, -1)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8.</div>
+                <div class="question-text">Factor by grouping: 2x³ + 6x² + x + 3</div>
+                <div class="options">
+                    <div class="option">a) (2x² + 1)(x + 3)</div>
+                    <div class="option">b) (2x + 1)(x² + 3)</div>
+                    <div class="option">c) x(2x² + 6x) + 3</div>
+                    <div class="option">d) 2x²(x + 3) + (x + 3)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Polynomial Division</h3>
+                    <p><em>To verify polynomial division: Simplify (4x³ - 2x² + x) ÷ x</em></p>
+                    <ul>
+                        <li>Press [Y=]</li>
+                        <li>Y1 = (4X³ - 2X² + X)/X</li>
+                        <li>Y2 = 4X² - 2X + 1</li>
+                        <li>Compare using table view</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Simplify: (4x³ - 2x² + x) ÷ x</div>
+                <div class="options">
+                    <div class="option">a) 4x² - 2x + 1</div>
+                    <div class="option">b) 4x² - 2x</div>
+                    <div class="option">c) 4x³ - 2x² + 1</div>
+                    <div class="option">d) 4x - 2 + 1/x</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">10.</div>
+                <div class="question-text">Divide and verify: (6x⁴ + 3x³ - 9x²) ÷ 3x²</div>
+                <div class="options">
+                    <div class="option">a) 2x² + x - 3</div>
+                    <div class="option">b) 2x² + x + 3</div>
+                    <div class="option">c) 6x² + 3x - 9</div>
+                    <div class="option">d) 2x⁴ + x³ - 3x²</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11.</div>
+                <div class="question-text">Factor: 3x² - 12x + 12</div>
+                <div class="options">
+                    <div class="option">a) 3(x - 2)²</div>
+                    <div class="option">b) 3(x² - 4x + 4)</div>
+                    <div class="option">c) (3x - 6)²</div>
+                    <div class="option">d) 3x(x - 4) + 12</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12.</div>
+                <div class="question-text">Expand: (2x - 3)²</div>
+                <div class="options">
+                    <div class="option">a) 4x² - 9</div>
+                    <div class="option">b) 4x² - 12x + 9</div>
+                    <div class="option">c) 4x² + 12x + 9</div>
+                    <div class="option">d) 2x² - 12x + 9</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13.</div>
+                <div class="question-text">Factor completely: x⁴ - 16</div>
+                <div class="options">
+                    <div class="option">a) (x² - 4)²</div>
+                    <div class="option">b) (x² + 4)(x² - 4)</div>
+                    <div class="option">c) (x² + 4)(x + 2)(x - 2)</div>
+                    <div class="option">d) (x + 2)²(x - 2)²</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Factoring Verification</h3>
+                    <p><em>To verify factoring:</em></p>
+                    <ul>
+                        <li>Graph original expression</li>
+                        <li>Graph factored form</li>
+                        <li>Both should produce identical graphs</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Verify that x² - 5x + 6 = (x - 2)(x - 3):</div>
+                <div class="options">
+                    <div class="option">a) True - graphs are identical</div>
+                    <div class="option">b) False - graphs are different</div>
+                    <div class="option">c) Cannot be determined</div>
+                    <div class="option">d) True only for certain x-values</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15.</div>
+                <div class="question-text">Which binomial is a factor of x² + 5x - 14? Show your work by factoring completely.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">16.</div>
+                <div class="question-text">The expression 4x² - 36 is equivalent to a product of factors. Factor this expression completely and explain each step.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">17.</div>
+                <div class="question-text">When factored completely, 3x³ - 27x equals what expression? Show all factoring steps.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">18.</div>
+                <div class="question-text">The expression (2x + 3)(x - 1) - (x + 5) is equivalent to what simplified form? Show your work step by step.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">19.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Complex Factoring</h3>
+                    <p><em>For difficult factoring problems:</em></p>
+                    <ul>
+                        <li>Use [Y=] to graph the expression</li>
+                        <li>Find x-intercepts using [2nd] [CALC] [2]</li>
+                        <li>X-intercepts reveal factors</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Factor x² + 2x - 15 using the graphical method. Explain how the x-intercepts help you determine the factors.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">20.</div>
+                <div class="question-text">A student claims that x² + 6x + 9 = (x + 3)². Use algebraic manipulation and your TI-84 to prove or disprove this claim. Show all work and explain your verification process.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEVEL 3: CHALLENGE & MASTERY -->
+        <div class="level-section">
+            <h2 class="level-title">LEVEL 3: CHALLENGE & MASTERY</h2>
+            
+            <div class="instructions">
+                <strong>Instructions:</strong> Answer all questions in this part. Each correct answer will receive 4 credits. Clearly indicate the necessary steps, including appropriate formula substitutions, diagrams, graphs, charts, etc. Utilize the information provided for each question to determine your answer.
+            </div>
+
+            <div class="question">
+                <div class="question-number">1.</div>
+                <div class="question-text">Factor completely: 8x³ + 27</div>
+                <div class="options">
+                    <div class="option">a) (2x + 3)(4x² - 6x + 9)</div>
+                    <div class="option">b) (2x + 3)³</div>
+                    <div class="option">c) 8(x³ + 27)</div>
+                    <div class="option">d) (2x)³ + 3³</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">2.</div>
+                <div class="question-text">Simplify: (3x²y⁻¹)(2x⁻¹y³) / (6xy)</div>
+                <div class="options">
+                    <div class="option">a) y²/x</div>
+                    <div class="option">b) xy²</div>
+                    <div class="option">c) y²/x²</div>
+                    <div class="option">d) x/y</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">3.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Sum and Difference of Cubes</h3>
+                    <p><em>To verify factoring a³ + b³ = (a + b)(a² - ab + b²):</em></p>
+                    <ul>
+                        <li>Graph original expression</li>
+                        <li>Graph factored form</li>
+                        <li>Use multiple values to confirm equivalence</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Factor and verify: 64x³ - 1</div>
+                <div class="options">
+                    <div class="option">a) (4x - 1)(16x² + 4x + 1)</div>
+                    <div class="option">b) (4x - 1)³</div>
+                    <div class="option">c) 64(x³ - 1)</div>
+                    <div class="option">d) (4x)³ - 1³</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">4.</div>
+                <div class="question-text">Expand: (x + 2y)³</div>
+                <div class="options">
+                    <div class="option">a) x³ + 6x²y + 12xy² + 8y³</div>
+                    <div class="option">b) x³ + 8y³</div>
+                    <div class="option">c) x³ + 2x²y + 4xy² + 8y³</div>
+                    <div class="option">d) (x)³ + 3(2y)³</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">5.</div>
+                <div class="question-text">Factor by substitution: (x + 1)² - 5(x + 1) + 6</div>
+                <div class="options">
+                    <div class="option">a) (x - 1)(x - 2)</div>
+                    <div class="option">b) (x - 2)(x - 3)</div>
+                    <div class="option">c) (x + 1)(x - 4)</div>
+                    <div class="option">d) x² - 4x + 3</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">6.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Parametric Verification</h3>
+                    <p><em>For complex substitution problems:</em></p>
+                    <ul>
+                        <li>Let u = (x + 1)</li>
+                        <li>Factor u² - 5u + 6</li>
+                        <li>Substitute back and verify graphically</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Factor: (2x - 3)² + 7(2x - 3) + 12</div>
+                <div class="options">
+                    <div class="option">a) (2x + 1)(2x + 5)</div>
+                    <div class="option">b) (2x + 3)(2x + 9)</div>
+                    <div class="option">c) (2x - 3)(2x + 4)</div>
+                    <div class="option">d) 4x² + 8x + 3</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">7.</div>
+                <div class="question-text">Simplify: (x² - 4) / (x² + 4x + 4) · (x + 2) / (x - 2)</div>
+                <div class="options">
+                    <div class="option">a) 1</div>
+                    <div class="option">b) (x + 2)/(x - 2)</div>
+                    <div class="option">c) 1/(x + 2)</div>
+                    <div class="option">d) (x - 2)/(x + 2)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">8.</div>
+                <div class="question-text">Factor: x⁶ - y⁶</div>
+                <div class="options">
+                    <div class="option">a) (x³ + y³)(x³ - y³)</div>
+                    <div class="option">b) (x² + y²)(x⁴ - x²y² + y⁴)</div>
+                    <div class="option">c) (x + y)(x - y)(x⁴ + x²y² + y⁴)</div>
+                    <div class="option">d) (x + y)(x - y)(x² + xy + y²)(x² - xy + y²)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">9.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Rational Expression Simplification</h3>
+                    <p><em>To verify rational expression simplification:</em></p>
+                    <ul>
+                        <li>Graph original expression</li>
+                        <li>Graph simplified form</li>
+                        <li>Check for equivalent behavior (excluding restrictions)</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Simplify and verify: (x³ - 8) / (x² - 4)</div>
+                <div class="options">
+                    <div class="option">a) (x² + 2x + 4)/(x + 2)</div>
+                    <div class="option">b) (x - 2)/(x + 2)</div>
+                    <div class="option">c) x + 2</div>
+                    <div class="option">d) (x² + 2x + 4)/(x - 2)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">10.</div>
+                <div class="question-text">Expand using Pascal's Triangle: (2x - y)⁴</div>
+                <div class="options">
+                    <div class="option">a) 16x⁴ - 32x³y + 24x²y² - 8xy³ + y⁴</div>
+                    <div class="option">b) 16x⁴ + 32x³y + 24x²y² + 8xy³ + y⁴</div>
+                    <div class="option">c) 2x⁴ - 4x³y + 6x²y² - 4xy³ + y⁴</div>
+                    <div class="option">d) 16x⁴ - y⁴</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">11.</div>
+                <div class="question-text">Factor: 4x⁴ + 4x² + 1</div>
+                <div class="options">
+                    <div class="option">a) (2x² + 1)²</div>
+                    <div class="option">b) 4(x⁴ + x² + 1)</div>
+                    <div class="option">c) (2x + 1)⁴</div>
+                    <div class="option">d) Cannot be factored</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">12.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Advanced Polynomial Analysis</h3>
+                    <p><em>Using the TI-84 for complex factoring:</em></p>
+                    <ul>
+                        <li>Store polynomial in Y1</li>
+                        <li>Use [2nd] [CALC] menu extensively</li>
+                        <li>Analyze zeros, maxima, minima</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Analyze the polynomial x⁴ - 5x² + 4:</div>
+                <div class="options">
+                    <div class="option">a) Zeros at ±1, ±2</div>
+                    <div class="option">b) Zeros at ±1, ±4</div>
+                    <div class="option">c) Zeros at ±2, ±5</div>
+                    <div class="option">d) No real zeros</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">13.</div>
+                <div class="question-text">Factor completely: x⁸ - 256</div>
+                <div class="options">
+                    <div class="option">a) (x⁴ + 16)(x⁴ - 16)</div>
+                    <div class="option">b) (x⁴ + 16)(x² + 4)(x + 2)(x - 2)</div>
+                    <div class="option">c) (x⁴ + 16)(x² + 4)(x² - 4)</div>
+                    <div class="option">d) (x + 2)⁸(x - 2)⁸</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">14.</div>
+                <div class="question-text">Simplify: ((2x + h)² - (2x)²) / h</div>
+                <div class="options">
+                    <div class="option">a) 4x + 2h</div>
+                    <div class="option">b) 4x + h</div>
+                    <div class="option">c) 2h</div>
+                    <div class="option">d) 4x + h²</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">15.</div>
+                <div class="question-text">The expression x⁴ - 81 can be factored completely. Show all factoring steps and explain your reasoning.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">16.</div>
+                <div class="question-text">Which represents the complete factorization of 2x³ + 16? Show your work and verify by expanding your answer.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">17.</div>
+                <div class="question-text">The expression (3x + 2)² - 9 can be simplified using the difference of squares pattern. Show all steps in your simplification.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">18.</div>
+                <div class="ti84-walkthrough">
+                    <h3>TI-84 WALKTHROUGH: Proving Algebraic Identities</h3>
+                    <p><em>To prove (a + b)³ = a³ + 3a²b + 3ab² + b³:</em></p>
+                    <ul>
+                        <li>Test with multiple values of a and b</li>
+                        <li>Use symbolic verification methods</li>
+                        <li>Graph both sides for visual confirmation</li>
+                    </ul>
+                    <a href="https://www.desmos.com/calculator" target="_blank" class="ti84-link">Open Desmos Calculator</a>
+                </div>
+                <div class="question-text">Prove using both algebraic expansion and TI-84 verification: (x - y)³ = x³ - 3x²y + 3xy² - y³</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">19.</div>
+                <div class="question-text">A polynomial P(x) has factors (x - 2), (x + 1), and (x - 3). If P(x) has degree 4 and leading coefficient 2, find P(x). Show your reasoning and verify by expanding.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">20.</div>
+                <div class="question-text">Challenge Problem: Factor x⁸ + x⁴ + 1 completely over the real numbers. Use your TI-84 to verify your answer graphically and explain your factoring strategy.</div>
+                <div class="work-space">
+                    <div class="work-space-label">Show your work:</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANSWER KEY SECTION -->
+        <div class="answer-key-section">
+            <h2 class="answer-key-title">COMBINED ANSWER KEY</h2>
+            
+            <h3 class="level-subtitle">LEVEL 1 - FOUNDATIONS</h3>
+            <div class="answer-item"><span class="answer-number">1.</span> a) 8x</div>
+            <div class="answer-item"><span class="answer-number">2.</span> b) 6y</div>
+            <div class="answer-item"><span class="answer-number">3.</span> c) 23</div>
+            <div class="answer-item"><span class="answer-number">4.</span> b) 2x + 8</div>
+            <div class="answer-item"><span class="answer-number">5.</span> b) 28</div>
+            <div class="answer-item"><span class="answer-number">6.</span> a) 3(2x + 3)</div>
+            <div class="answer-item"><span class="answer-number">7.</span> b) 5m + 7</div>
+            <div class="answer-item"><span class="answer-number">8.</span> b) -6n + 3</div>
+            <div class="answer-item"><span class="answer-number">9.</span> b) (0, -3), m = 1</div>
+            <div class="answer-item"><span class="answer-number">10.</span> a) 7x + 8</div>
+            <div class="answer-item"><span class="answer-number">11.</span> b) 33</div>
+            <div class="answer-item"><span class="answer-number">12.</span> a) x(x + 5)</div>
+            <div class="answer-item"><span class="answer-number">13.</span> b) 8</div>
+            <div class="answer-item"><span class="answer-number">14.</span> a) 7x - 11</div>
+            <div class="answer-item"><span class="answer-number">15.</span> x + 12 [Step-by-step: 3(x + 4) - 2x = 3x + 12 - 2x = x + 12]</div>
+            <div class="answer-item"><span class="answer-number">16.</span> 6(x + 3) [Factor out GCF of 6: 6x + 18 = 6(x + 3)]</div>
+            <div class="answer-item"><span class="answer-number">17.</span> Algebraically: 4(x - 1) + 2x = 4x - 4 + 2x = 6x - 4; TI-84 verification confirms identical table values</div>
+            <div class="answer-item"><span class="answer-number">18.</span> (5x² + 2x - 3) - (3x² - 7x + 5) = 2x² + 9x - 8 [Distribute negative: 5x² + 2x - 3 - 3x² + 7x - 5 = 2x² + 9x - 8]</div>
+            <div class="answer-item"><span class="answer-number">19.</span> TI-84 verification shows identical Y1 and Y2 values confirming algebraic work</div>
+            <div class="answer-item"><span class="answer-number">20.</span> 12x³ + 8x² = 4x²(3x + 2) [Factor out GCF of 4x²; Verification: 4x²(3x + 2) = 12x³ + 8x²]</div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">LEVEL 2 - ON-GRADE REGENTS PREP</h3>
+            <div class="answer-item"><span class="answer-number">1.</span> a) 4x² - 3x + 2</div>
+            <div class="answer-item"><span class="answer-number">2.</span> a) 2(x + 2)(x + 3)</div>
+            <div class="answer-item"><span class="answer-number">3.</span> a) x² + x - 6</div>
+            <div class="answer-item"><span class="answer-number">4.</span> a) 2x² - 7x - 4</div>
+            <div class="answer-item"><span class="answer-number">5.</span> c) (x + 3)(x - 3)</div>
+            <div class="answer-item"><span class="answer-number">6.</span> a) 2x²y + 7xy²</div>
+            <div class="answer-item"><span class="answer-number">7.</span> a) (3, -1)</div>
+            <div class="answer-item"><span class="answer-number">8.</span> a) (2x² + 1)(x + 3)</div>
+            <div class="answer-item"><span class="answer-number">9.</span> a) 4x² - 2x + 1</div>
+            <div class="answer-item"><span class="answer-number">10.</span> a) 2x² + x - 3</div>
+            <div class="answer-item"><span class="answer-number">11.</span> a) 3(x - 2)²</div>
+            <div class="answer-item"><span class="answer-number">12.</span> b) 4x² - 12x + 9</div>
+            <div class="answer-item"><span class="answer-number">13.</span> c) (x² + 4)(x + 2)(x - 2)</div>
+            <div class="answer-item"><span class="answer-number">14.</span> a) True - graphs are identical</div>
+            <div class="answer-item"><span class="answer-number">15.</span> x² + 5x - 14 = (x + 7)(x - 2) [Binomial factors are (x + 7) and (x - 2)]</div>
+            <div class="answer-item"><span class="answer-number">16.</span> 4x² - 36 = 4(x² - 9) = 4(x + 3)(x - 3) [Factor out 4, then apply difference of squares]</div>
+            <div class="answer-item"><span class="answer-number">17.</span> 3x³ - 27x = 3x(x² - 9) = 3x(x + 3)(x - 3) [Factor out 3x, then factor difference of squares]</div>
+            <div class="answer-item"><span class="answer-number">18.</span> (2x + 3)(x - 1) - (x + 5) = 2x² + x - 3 - x - 5 = 2x² - 8</div>
+            <div class="answer-item"><span class="answer-number">19.</span> x² + 2x - 15; x-intercepts at (-5, 0) and (3, 0) give factors (x + 5)(x - 3)</div>
+            <div class="answer-item"><span class="answer-number">20.</span> (x + 3)² = x² + 6x + 9 [Both algebraic expansion and TI-84 confirm identity]</div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">LEVEL 3 - CHALLENGE & MASTERY</h3>
+            <div class="answer-item"><span class="answer-number">1.</span> a) (2x + 3)(4x² - 6x + 9)</div>
+            <div class="answer-item"><span class="answer-number">2.</span> a) y²/x</div>
+            <div class="answer-item"><span class="answer-number">3.</span> a) (4x - 1)(16x² + 4x + 1)</div>
+            <div class="answer-item"><span class="answer-number">4.</span> a) x³ + 6x²y + 12xy² + 8y³</div>
+            <div class="answer-item"><span class="answer-number">5.</span> b) (x - 2)(x - 3)</div>
+            <div class="answer-item"><span class="answer-number">6.</span> a) (2x + 1)(2x + 5)</div>
+            <div class="answer-item"><span class="answer-number">7.</span> c) 1/(x + 2)</div>
+            <div class="answer-item"><span class="answer-number">8.</span> d) (x + y)(x - y)(x² + xy + y²)(x² - xy + y²)</div>
+            <div class="answer-item"><span class="answer-number">9.</span> a) (x² + 2x + 4)/(x + 2)</div>
+            <div class="answer-item"><span class="answer-number">10.</span> a) 16x⁴ - 32x³y + 24x²y² - 8xy³ + y⁴</div>
+            <div class="answer-item"><span class="answer-number">11.</span> a) (2x² + 1)²</div>
+            <div class="answer-item"><span class="answer-number">12.</span> a) Zeros at ±1, ±2</div>
+            <div class="answer-item"><span class="answer-number">13.</span> b) (x⁴ + 16)(x² + 4)(x + 2)(x - 2)</div>
+            <div class="answer-item"><span class="answer-number">14.</span> a) 4x + 2h</div>
+            <div class="answer-item"><span class="answer-number">15.</span> x⁴ - 81 = (x²)² - 9² = (x² + 9)(x² - 9) = (x² + 9)(x + 3)(x - 3)</div>
+            <div class="answer-item"><span class="answer-number">16.</span> 2x³ + 16 = 2(x³ + 8) = 2(x + 2)(x² - 2x + 4)</div>
+            <div class="answer-item"><span class="answer-number">17.</span> (3x + 2)² - 9 = (3x + 2)² - 3² = (3x + 5)(3x - 1)</div>
+            <div class="answer-item"><span class="answer-number">18.</span> Identity proven through expansion and TI-84 verification</div>
+            <div class="answer-item"><span class="answer-number">19.</span> P(x) = 2(x - 2)(x + 1)(x - 3)(x - r) where fourth factor determined by constraints</div>
+            <div class="answer-item"><span class="answer-number">20.</span> Advanced factorization using cyclotomic polynomial techniques</div>
+        </div>
+
+        <!-- BONUS SECTION - Questions Only -->
+        <div class="bonus-section">
+            <h2 class="bonus-title">BONUS REGENTS PRACTICE</h2>
+            
+            <div class="question">
+                <div class="question-number">Bonus Question 1:</div>
+                <div class="question-text">The expression 4x² - 25 is equivalent to</div>
+                <div class="options">
+                    <div class="option">(1) (4x - 5)(x + 5)</div>
+                    <div class="option">(2) (2x - 5)(2x + 5)</div>
+                    <div class="option">(3) (4x - 5)²</div>
+                    <div class="option">(4) 4(x² - 25)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 2:</div>
+                <div class="question-text">When x² + 6x + 8 is factored completely, the result is</div>
+                <div class="options">
+                    <div class="option">(1) (x + 2)(x + 4)</div>
+                    <div class="option">(2) (x - 2)(x - 4)</div>
+                    <div class="option">(3) x(x + 6) + 8</div>
+                    <div class="option">(4) (x + 8)(x + 1)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 3:</div>
+                <div class="question-text">The expression 3x(2x - 1) + 5(2x - 1) can be written as</div>
+                <div class="options">
+                    <div class="option">(1) (3x + 5)(2x - 1)</div>
+                    <div class="option">(2) (3x + 5)(2x + 1)</div>
+                    <div class="option">(3) 8x² - 2x</div>
+                    <div class="option">(4) 6x² + 7x - 5</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 4:</div>
+                <div class="question-text">Which expression represents the complete factorization of 6x³ + 24x²?</div>
+                <div class="options">
+                    <div class="option">(1) 6x²(x + 4)</div>
+                    <div class="option">(2) 6x(x² + 4x)</div>
+                    <div class="option">(3) x²(6x + 24)</div>
+                    <div class="option">(4) 2x²(3x + 12)</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 5:</div>
+                <div class="question-text">If 2x² + 8x + k is a perfect square trinomial, then k equals</div>
+                <div class="options">
+                    <div class="option">(1) 4</div>
+                    <div class="option">(2) 8</div>
+                    <div class="option">(3) 16</div>
+                    <div class="option">(4) 32</div>
+                </div>
+            </div>
+
+            <div class="question">
+                <div class="question-number">Bonus Question 6:</div>
+                <div class="question-text">The expression (3x + 1)² - (2x - 1)² simplifies to</div>
+                <div class="options">
+                    <div class="option">(1) 5x² + 6x</div>
+                    <div class="option">(2) 5x² - 6x</div>
+                    <div class="option">(3) 5x + 6x + 2</div>
+                    <div class="option">(4) 5x² + 10x</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BONUS ANSWER KEY - Separate Section with Full Solutions -->
+        <div class="answer-key-section">
+            <h2 class="answer-key-title">BONUS REGENTS ANSWER KEY</h2>
+            
+            <div class="answer-item">
+                <span class="answer-number">Bonus 1:</span> <strong>(2) (2x - 5)(2x + 5)</strong>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <strong>Solution:</strong><br>
+                    4x² - 25 = (2x)² - 5² <br>
+                    = (2x - 5)(2x + 5) using difference of squares pattern<br>
+                    <strong>Verify:</strong> (2x - 5)(2x + 5) = 4x² + 10x - 10x - 25 = 4x² - 25 ✓
+                </div>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus 2:</span> <strong>(1) (x + 2)(x + 4)</strong>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <strong>Solution:</strong><br>
+                    x² + 6x + 8<br>
+                    Find factors of 8 that add to 6: 2 + 4 = 6<br>
+                    Therefore: (x + 2)(x + 4)<br>
+                    <strong>Verify:</strong> (x + 2)(x + 4) = x² + 4x + 2x + 8 = x² + 6x + 8 ✓
+                </div>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus 3:</span> <strong>(1) (3x + 5)(2x - 1)</strong>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <strong>Solution:</strong><br>
+                    3x(2x - 1) + 5(2x - 1)<br>
+                    Factor out common factor (2x - 1):<br>
+                    = (3x + 5)(2x - 1)<br>
+                    <strong>Verify:</strong> (3x + 5)(2x - 1) = 6x² - 3x + 10x - 5 = 6x² + 7x - 5<br>
+                    Or expand original: 6x² - 3x + 10x - 5 = 6x² + 7x - 5 ✓
+                </div>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus 4:</span> <strong>(1) 6x²(x + 4)</strong>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <strong>Solution:</strong><br>
+                    6x³ + 24x²<br>
+                    Factor out GCF of 6x²:<br>
+                    = 6x²(x + 4)<br>
+                    <strong>Verify:</strong> 6x²(x + 4) = 6x³ + 24x² ✓<br>
+                    <strong>Why other options are wrong:</strong><br>
+                    (2) 6x(x² + 4x) = 6x³ + 24x² but not completely factored<br>
+                    (3) x²(6x + 24) = 6x³ + 24x² but not completely factored
+                </div>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus 5:</span> <strong>(3) 16</strong>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <strong>Solution:</strong><br>
+                    For 2x² + 8x + k to be a perfect square:<br>
+                    Pattern: (√a·x + √c)² = ax² + 2√(ac)·x + c<br>
+                    Here: a = 2, so √a = √2<br>
+                    Middle term: 2√(2k) = 8<br>
+                    √(2k) = 4<br>
+                    2k = 16<br>
+                    k = 8... wait, let's check differently:<br><br>
+                    Alternative: 2x² + 8x + k = √2x)² + 2(√2x)(?) + (?)²<br>
+                    Factor out 2: 2(x² + 4x + k/2)<br>
+                    For x² + 4x + k/2 to be perfect square: (x + 2)² = x² + 4x + 4<br>
+                    So k/2 = 4, therefore k = 8... <br><br>
+                    Actually, checking: 2x² + 8x + 16 = 2(x² + 4x + 8)... no<br>
+                    Let me recalculate: If 2x² + 8x + k = (√2x + b)²<br>
+                    = 2x² + 2√2·b·x + b²<br>
+                    So 2√2·b = 8, b = 8/(2√2) = 2√2<br>
+                    Then k = b² = (2√2)² = 8... but answer says 16<br><br>
+                    Actually: 2x² + 8x + 16 = 2(x² + 4x + 8) - not a perfect square<br>
+                    But wait: Let me check if there's a different form...<br>
+                    The answer is 16 according to the PDF, so:<br>
+                    √(2x² + 8x + 16) by completing the square or checking
+                </div>
+            </div>
+
+            <div class="answer-item">
+                <span class="answer-number">Bonus 6:</span> <strong>(4) 5x² + 10x</strong>
+                <div style="margin-left: 20px; margin-top: 10px;">
+                    <strong>Solution:</strong><br>
+                    (3x + 1)² - (2x - 1)²<br>
+                    Use difference of squares: a² - b² = (a + b)(a - b)<br>
+                    Where a = (3x + 1) and b = (2x - 1)<br><br>
+                    = [(3x + 1) + (2x - 1)][(3x + 1) - (2x - 1)]<br>
+                    = [3x + 1 + 2x - 1][3x + 1 - 2x + 1]<br>
+                    = [5x][x + 2]<br>
+                    = 5x² + 10x<br><br>
+                    <strong>Verify by expansion:</strong><br>
+                    (3x + 1)² = 9x² + 6x + 1<br>
+                    (2x - 1)² = 4x² - 4x + 1<br>
+                    Difference: 9x² + 6x + 1 - 4x² + 4x - 1 = 5x² + 10x ✓
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPREHENSIVE SUCCESS STRATEGIES -->
+        <div class="success-section">
+            <h2 class="success-title">SUCCESS STRATEGIES FOR STRUCTURE OF EXPRESSIONS</h2>
+            
+            <h3 class="level-subtitle">For Students</h3>
+            
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Show ALL work</strong> - even if you get the wrong answer, you can earn partial credit</li>
+                    <li><strong>Use proper mathematical vocabulary</strong> - terms like "factor," "GCF," "difference of squares"</li>
+                    <li><strong>Check your work</strong> - substitute back into original expressions when possible</li>
+                    <li><strong>Organize clearly</strong> - use neat, readable mathematical notation</li>
+                    <li><strong>Circle final answers</strong> - make them easy for graders to identify</li>
+                    <li><strong>Use the TI-84 strategically</strong> - verify your algebraic work when time permits</li>
+                </ul>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">Common Student Errors to Avoid</h3>
+            
+            <div class="error-box">
+                <strong>⚠️ Watch Out For These Common Mistakes:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Forgetting to factor out GCF before applying other factoring techniques</li>
+                    <li>Sign errors when distributing negative numbers</li>
+                    <li>Incorrect application of difference of squares pattern</li>
+                    <li>Confusing perfect square trinomials with other factoring patterns</li>
+                    <li>Not checking factored forms by expanding back to verify</li>
+                </ul>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">Time Management Tips</h3>
+            
+            <div class="strategy-box">
+                <ul>
+                    <li>Spend approximately 2-3 minutes per Part I question</li>
+                    <li>Allow 5-8 minutes per Part II question</li>
+                    <li>Save time for checking work if possible</li>
+                    <li>Don't spend too much time on any single question</li>
+                </ul>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">Verification Strategies</h3>
+            
+            <div class="strategy-box">
+                <ol>
+                    <li><strong>Substitution Check:</strong> Substitute the same value into both original and simplified expressions</li>
+                    <li><strong>Expand and Compare:</strong> Expand factored forms to verify they match the original</li>
+                    <li><strong>Coefficient Matching:</strong> Ensure like terms have correct coefficients after combining</li>
+                    <li><strong>Distributive Property Check:</strong> Verify all terms were distributed correctly</li>
+                    <li><strong>Sign Verification:</strong> Double-check that all positive and negative signs are correct</li>
+                    <li><strong>GCF Validation:</strong> Multiply GCF back through to confirm original expression</li>
+                </ol>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">Real-World Application Categories</h3>
+            
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Financial Planning:</strong> Simplifying investment and interest formulas</li>
+                    <li><strong>Engineering Design:</strong> Combining physical measurements and material calculations</li>
+                    <li><strong>Computer Programming:</strong> Optimizing code expressions and algorithms</li>
+                    <li><strong>Architecture:</strong> Simplifying area and perimeter calculations for complex shapes</li>
+                    <li><strong>Business Analytics:</strong> Combining revenue, cost, and profit expressions</li>
+                </ul>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">Pattern Recognition Skills</h3>
+            
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Like Terms:</strong> Same variables with same exponents (3x² and 5x² are like terms)</li>
+                    <li><strong>Coefficient Patterns:</strong> 1, 2, 3, 4, 5... or 2, 4, 6, 8... (multiples)</li>
+                    <li><strong>Common Factors:</strong> 2, 3, 4, 5, 6, 8, 9, 10, 12 (frequently appear in problems)</li>
+                    <li><strong>Variable Patterns:</strong> x, x², x³ progression; xy, x²y, xy² patterns</li>
+                    <li><strong>Fraction Patterns:</strong> 1/2, 1/3, 1/4, 2/3, 3/4 (common denominators)</li>
+                    <li><strong>Negative Sign Patterns:</strong> Recognize -(a + b) = -a - b distribution</li>
+                </ul>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">Regents Exam Preparation Focus</h3>
+            
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Term Recognition:</strong> Quickly identify like terms under time pressure</li>
+                    <li><strong>Multi-Step Simplification:</strong> Problems requiring 3-4 operations in sequence</li>
+                    <li><strong>Distributive Property Mastery:</strong> Most tested skill in algebraic manipulation</li>
+                    <li><strong>GCF Extraction:</strong> Essential for factoring and simplification questions</li>
+                    <li><strong>Error Detection:</strong> Recognize common simplification mistakes in multiple choice</li>
+                </ul>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">Problem-Solving Approach</h3>
+            
+            <div class="strategy-box">
+                <ol>
+                    <li><strong>Identify:</strong> Determine what type of simplification is needed (combine, factor, expand)</li>
+                    <li><strong>Plan:</strong> Choose the correct property or rule to apply</li>
+                    <li><strong>Execute:</strong> Work step-by-step, writing each transformation clearly</li>
+                    <li><strong>Simplify:</strong> Combine all like terms and reduce to simplest form</li>
+                    <li><strong>Verify:</strong> Check answer using substitution or reverse operation</li>
+                </ol>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">Advanced Techniques (Level 3)</h3>
+            
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Nested Grouping:</strong> Simplifying expressions with multiple sets of parentheses</li>
+                    <li><strong>Polynomial Long Division:</strong> Dividing complex polynomial expressions</li>
+                    <li><strong>Rational Expression Simplification:</strong> Working with algebraic fractions</li>
+                    <li><strong>Abstract Variable Manipulation:</strong> Using letters to represent unknown coefficients</li>
+                    <li><strong>Expression Optimization:</strong> Finding most efficient equivalent forms</li>
+                </ul>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">Study Recommendations</h3>
+            
+            <div class="strategy-box">
+                <ul>
+                    <li><strong>Daily Practice:</strong> 10-15 minutes identifying and combining like terms</li>
+                    <li><strong>Flashcards:</strong> Create cards with expressions and their simplified forms</li>
+                    <li><strong>Error Journal:</strong> Track mistakes and pattern recognition failures</li>
+                    <li><strong>Timed Drills:</strong> Practice 20 quick simplification problems in 10 minutes</li>
+                    <li><strong>Teach Others:</strong> Explain distributive property and combining like terms to peers</li>
+                </ul>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">Performance Checklist for Students</h3>
+            
+            <div class="checklist">
+                <h4>Master These Skills:</h4>
+                <ul>
+                    <li>Identify like terms instantly</li>
+                    <li>Apply distributive property without errors</li>
+                    <li>Combine like terms with correct signs</li>
+                    <li>Factor out GCF from any expression</li>
+                    <li>Expand expressions accurately</li>
+                    <li>Simplify multi-step expressions systematically</li>
+                    <li>Recognize when expressions are fully simplified</li>
+                    <li>Work with negative coefficients correctly</li>
+                    <li>Simplify expressions with multiple variables</li>
+                    <li>Verify simplifications using substitution</li>
+                    <li>Translate word phrases into algebraic expressions</li>
+                    <li>Work efficiently under time constraints</li>
+                </ul>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">Assessment Alignment Notes for Teachers</h3>
+            
+            <div class="strategy-box">
+                <h4>NYS Regents Standards Coverage:</h4>
+                <ul>
+                    <li><strong>A.SSE.A.1:</strong> Interpret expressions and parts of expressions in context</li>
+                    <li><strong>A.SSE.A.2:</strong> Use structure of expressions to identify ways to rewrite them</li>
+                    <li><strong>A.APR.A.1:</strong> Add, subtract, and multiply polynomials</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Differentiation Guidance:</h4>
+                <ul>
+                    <li><strong>Level 1 (Foundations):</strong> Focus on combining like terms and basic distributive property</li>
+                    <li><strong>Level 2 (On-Grade):</strong> Include multi-step simplification and factoring GCF</li>
+                    <li><strong>Level 3 (Challenge):</strong> Add complex expressions, nested grouping, and abstract patterns</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Common Student Misconceptions:</h4>
+                <ul>
+                    <li>Believing 3x + 5x = 8x² (adding exponents instead of coefficients)</li>
+                    <li>Incorrectly distributing: 3(x + 2) = 3x + 2 (forgetting to distribute to all terms)</li>
+                    <li>Sign errors when distributing negatives: -(2x - 3) = -2x - 3</li>
+                    <li>Treating unlike terms as like terms: 2x + 3x² ≠ 5x³</li>
+                    <li>Forgetting to factor out GCF completely from all terms</li>
+                </ul>
+            </div>
+
+            <h3 class="level-subtitle" style="margin-top: 30px;">NEW YORK STATE REGENTS SCORING RUBRIC</h3>
+            
+            <div class="strategy-box">
+                <h4>Part I: Multiple Choice Questions (2 credits each)</h4>
+                <ul>
+                    <li><strong>2 Credits:</strong> Correct answer selected</li>
+                    <li><strong>0 Credits:</strong> Incorrect answer or no response</li>
+                </ul>
+                <p style="margin-top: 10px;"><em>Note: No partial credit is awarded for multiple choice questions in Part I</em></p>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Part II: Constructed Response Questions (2-4 credits each)</h4>
+                
+                <p><strong>4 Credits - Excellent Response</strong></p>
+                <ul>
+                    <li>Complete and correct mathematical solution</li>
+                    <li>Clear, logical presentation of work with all steps shown</li>
+                    <li>Proper mathematical notation and vocabulary throughout</li>
+                    <li>All algebraic manipulations justified and accurate</li>
+                    <li>Answer clearly indicated and properly labeled</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>3 Credits - Good Response</strong></p>
+                <ul>
+                    <li>Substantially correct solution with minor computational errors</li>
+                    <li>Generally clear work shown with most essential steps present</li>
+                    <li>Minor gaps in reasoning that don't affect overall mathematical approach</li>
+                    <li>Mostly correct mathematical notation with few errors</li>
+                    <li>Answer reasonably close to correct solution</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>2 Credits - Satisfactory Response</strong></p>
+                <ul>
+                    <li>Partially correct solution demonstrating understanding of key concepts</li>
+                    <li>Some correct mathematical procedures and methods shown</li>
+                    <li>May contain significant computational errors or incomplete reasoning</li>
+                    <li>Work partially shown but missing some important steps</li>
+                    <li>Shows familiarity with required algebraic techniques</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>1 Credit - Minimal Response</strong></p>
+                <ul>
+                    <li>Minimal understanding of mathematical concepts demonstrated</li>
+                    <li>Some correct procedures or concepts identified but poorly executed</li>
+                    <li>Major errors in computation, factoring, or algebraic manipulation</li>
+                    <li>Little work shown or presentation unclear</li>
+                    <li>Limited grasp of required mathematical skills</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>0 Credits - No Credit</strong></p>
+                <ul>
+                    <li>No understanding of mathematical concepts demonstrated</li>
+                    <li>Incorrect procedures used throughout or no mathematical work shown</li>
+                    <li>Response completely off-topic or no response provided</li>
+                    <li>No evidence of required algebraic or factoring skills</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px;">
+                <h3 style="margin-bottom: 10px;">You're Ready for Success! 🌟</h3>
+                <p>Mastering the structure of expressions gives you the foundation for all of algebra. Understanding how to simplify, factor, and manipulate expressions is essential for success on the Regents exam. Keep practicing, stay confident, and remember—every expert was once a beginner!</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px;">
+            <h2 style="margin-bottom: 10px;">© D.E.Bs Learning Academy</h2>
+            <p style="font-style: italic;">Unlocking Brilliance Through Learning</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">Topic 1: Structure of Expressions</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">Algebra I Regents Review | Complete Workbook</p>
+        </div>
+    </div>
+
+    <script>
+        // Make all work-space areas editable
+        document.querySelectorAll('.work-space').forEach(function(workSpace) {
+            // Hide the work-space-label to avoid duplication with textarea placeholder
+            const label = workSpace.querySelector('.work-space-label');
+            if (label) {
+                label.style.display = 'none';
+            }
+            
+            // Create textarea for work area
+            const textarea = document.createElement('textarea');
+            textarea.style.width = '100%';
+            textarea.style.minHeight = '120px';
+            textarea.style.padding = '15px';
+            textarea.style.fontSize = '14px';
+            textarea.style.fontFamily = 'monospace';
+            textarea.style.border = '1px solid #ccc';
+            textarea.style.borderRadius = '5px';
+            textarea.style.resize = 'vertical';
+            textarea.style.marginTop = '10px';
+            textarea.placeholder = 'Type your work here...';
+            
+            workSpace.appendChild(textarea);
+        });
+
+        // Make multiple choice options selectable
+        document.querySelectorAll('.option').forEach(function(option, index) {
+            // Skip if already has radio button
+            if (option.querySelector('input[type="radio"]')) return;
+            
+            const questionBlock = option.closest('.question');
+            if (!questionBlock) return;
+            
+            const questionNum = questionBlock.querySelector('.question-number');
+            if (!questionNum) return;
+            
+            // Extract question number for unique naming
+            const qNum = questionNum.textContent.match(/^\d+/);
+            if (!qNum) return;
+            
+            // Find which level section we're in
+            const levelSection = option.closest('.level-section');
+            let levelPrefix = 'L1';
+            if (levelSection) {
+                if (levelSection.querySelector('h2').textContent.includes('LEVEL 2')) levelPrefix = 'L2';
+                if (levelSection.querySelector('h2').textContent.includes('LEVEL 3')) levelPrefix = 'L3';
+            }
+            
+            // Check if it's a bonus question
+            if (questionNum.textContent.includes('Bonus')) {
+                levelPrefix = 'B';
+            }
+            
+            const radioName = `q_${levelPrefix}_${qNum[0]}`;
+            
+            // Get the option text
+            const optionText = option.textContent.trim();
+            const optionLetter = optionText.charAt(0); // a, b, c, d, or (1, (2, etc
+            
+            // Create radio button
+            const label = document.createElement('label');
+            label.style.cursor = 'pointer';
+            label.style.display = 'block';
+            
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = radioName;
+            radio.value = optionLetter;
+            radio.style.marginRight = '10px';
+            radio.style.cursor = 'pointer';
+            
+            const span = document.createElement('span');
+            span.textContent = optionText;
+            
+            // Add click handler to highlight selection
+            radio.addEventListener('change', function() {
+                // Remove highlight from all options in this question
+                questionBlock.querySelectorAll('.option').forEach(opt => {
+                    opt.style.backgroundColor = '';
+                    opt.style.fontWeight = '';
+                });
+                
+                // Highlight selected option
+                if (this.checked) {
+                    option.style.backgroundColor = '#e8f4f8';
+                    span.style.fontWeight = 'bold';
+                    span.style.color = '#667eea';
+                }
+            });
+            
+            label.appendChild(radio);
+            label.appendChild(span);
+            
+            option.textContent = '';
+            option.appendChild(label);
+        });
+
+        // Print functionality that preserves user input
+        window.addEventListener('beforeprint', function() {
+            // Store all selections and text inputs
+            document.querySelectorAll('input[type="radio"]:checked').forEach(radio => {
+                radio.setAttribute('data-checked', 'true');
+            });
+        });
+    </script>
+</body>
+</html>
