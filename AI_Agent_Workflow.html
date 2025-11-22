@@ -1,0 +1,358 @@
+<nav>
+  <p>
+    <a href="index.html">Home</a> |
+    <a href="Topic_2_Interactive.html">Topic 2</a> |
+    <a href="Topic_3_Interactive.html">Topic 3</a> |
+    <a href="Topic_4_Interactive.html">Topic 4</a> |
+    <a href="Topic_5_Interactive.html">Topic 5</a> |
+    <a href="Topic_6_Exponential_Functions_Complete.html">Topic 6</a> |
+    <a href="Topic_7_Quadratic_Functions_Equations_Complete.html">Topic 7</a> |
+    <a href="Topic_8_Inequalities_Absolute_Value_Corrected.html">Topic 8</a> |
+    <a href="AI_Agent_Workflow.html">AI Agent Workflow</a>
+  </p>
+</nav>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent Workflow</title>
+  <style>
+    :root {
+      --primary: #0f6ba8;
+      --secondary: #38a3d1;
+      --accent: #f9b934;
+      --card-bg: #f7fbff;
+      --text: #1b1b1f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e8f3ff 0%, #f5f7fb 100%);
+      color: var(--text);
+      padding: 20px;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 12px 35px rgba(15, 107, 168, 0.12);
+      overflow: hidden;
+    }
+
+    header {
+      background: linear-gradient(120deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 40px 36px;
+    }
+
+    header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.4rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 1.1rem;
+      opacity: 0.92;
+    }
+
+    .content {
+      padding: 32px 36px 40px;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-top: 32px;
+      border-left: 6px solid var(--accent);
+      padding-left: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin: 16px 0;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid #e3eef8;
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+      margin: 12px 0 4px;
+    }
+
+    .step {
+      border-left: 4px solid var(--secondary);
+      padding: 10px 12px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    ul {
+      padding-left: 18px;
+      line-height: 1.45;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .flow span {
+      background: #0f6ba810;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px dashed var(--primary);
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+    }
+
+    .table th, .table td {
+      border: 1px solid #dbe8f5;
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .table th {
+      background: #eff6fd;
+      color: var(--primary);
+    }
+
+    .highlight {
+      background: #fff8e6;
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 640px) {
+      header, .content {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>AI Agent Workflow</h1>
+      <p>End-to-end flow for automating requests, decisions, and actions across your system using a multi-agent pattern.</p>
+    </header>
+
+    <div class="content">
+      <div class="highlight">
+        <strong>Goal:</strong> reliably turn human intents or system events into safe, auditable actions by chaining specialized AI agents with strong guardrails and monitoring.
+      </div>
+
+      <h2>Architecture at a Glance</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1. Ingestion & Understanding</h3>
+          <ul>
+            <li>Collect intents from UI, APIs, tickets, or sensors.</li>
+            <li>Normalize context (user, SLA, resource state, constraints).</li>
+            <li>Classify request type and priority.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>2. Planning Agent</h3>
+          <ul>
+            <li>Creates a step-by-step plan with explicit preconditions and success criteria.</li>
+            <li>Chooses tools (APIs, scripts, connectors) and required approvals.</li>
+            <li>Splits concurrent tasks for efficiency.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>3. Execution Agents</h3>
+          <ul>
+            <li>Specialized workers (ops, data, comms) execute individual steps.</li>
+            <li>Sandbox risky actions; dry-run before commit.</li>
+            <li>Auto-rollbacks on detected regressions.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>4. Verification & Handoff</h3>
+          <ul>
+            <li>Assertions against metrics/logs confirm success.</li>
+            <li>Summaries posted to chat, tickets, and dashboards.</li>
+            <li>Escalations routed with full context if confidence is low.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Core Workflow</h2>
+      <div class="steps">
+        <div class="step"><span class="badge">Intake</span>Capture intent → expand with recent telemetry/config snapshots.</div>
+        <div class="step"><span class="badge">Plan</span>Generate tasks, dependencies, and guardrails; request approvals if required.</div>
+        <div class="step"><span class="badge">Execute</span>Run tool calls with idempotent commands and side-effect logs.</div>
+        <div class="step"><span class="badge">Validate</span>Check metrics/logs against SLOs; revert if deltas breach thresholds.</div>
+        <div class="step"><span class="badge">Report</span>Send concise summary, artifacts, and next steps to stakeholders.</div>
+      </div>
+
+      <h2>Roles & Responsibilities</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Orchestrator</h3>
+          <ul>
+            <li>Routes requests to planners and workers.</li>
+            <li>Enforces rate limits, auth, and step timeouts.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Planner</h3>
+          <ul>
+            <li>Builds verified plans with tool selections and fallbacks.</li>
+            <li>Simulates risky changes using read-only probes.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Operators</h3>
+          <ul>
+            <li>Execute domain tasks (infrastructure, data, comms).</li>
+            <li>Return structured results, diffs, and traces.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Guardian</h3>
+          <ul>
+            <li>Policy engine for approvals, blast-radius checks, and PII handling.</li>
+            <li>Blocks or downgrades plans that violate constraints.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Safety & Governance</h2>
+      <ul>
+        <li><strong>Pre-flight:</strong> dry-run and validate against schemas; require approval for high-impact changes.</li>
+        <li><strong>Runtime guardrails:</strong> circuit breakers, step-level timeouts, and automatic retries with jitter.</li>
+        <li><strong>Data boundaries:</strong> redact secrets, encrypt transcripts, and isolate tenants.</li>
+        <li><strong>Auditability:</strong> immutable logs linking intent → plan → actions → results.</li>
+      </ul>
+
+      <h2>Tooling Layer</h2>
+      <div class="flow">
+        <span>Observability APIs</span>
+        <span>Change Management / ITSM</span>
+        <span>CI/CD & IaC</span>
+        <span>Database/Data Lake Connectors</span>
+        <span>Messaging (Slack/Teams/Email)</span>
+        <span>RPA/Browser Automation</span>
+        <span>Feature Flags & LaunchDarkly</span>
+      </div>
+
+      <h2>Example Playbook: Auto-Resolve Service Alert</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Trigger</h3>
+          <ul>
+            <li>Alert: latency SLO breach for service X.</li>
+            <li>Context: recent deploy hash, top queries, node health.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Plan</h3>
+          <ul>
+            <li>Validate alert → compare to prior baseline.</li>
+            <li>Roll back last deploy <em>or</em> scale target ASG.</li>
+            <li>Run synthetic check; gate production rollout.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Execution</h3>
+          <ul>
+            <li>Dry-run rollback; if safe, execute and monitor.</li>
+            <li>Patch auto-scaling policy if rollback blocked.</li>
+            <li>Notify on-call with findings and ETA.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Verification</h3>
+          <ul>
+            <li>Check latency/err rate 5m/15m post-change.</li>
+            <li>Close alert & ticket with evidence snapshots.</li>
+            <li>Escalate if metrics degrade or confidence < 0.7.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Operational Checklist</h2>
+      <table class="table">
+        <tr>
+          <th>Stage</th>
+          <th>Required Evidence</th>
+          <th>Owner</th>
+        </tr>
+        <tr>
+          <td>Plan Ready</td>
+          <td>Tasks, dependencies, risk score, approvals</td>
+          <td>Planner</td>
+        </tr>
+        <tr>
+          <td>Execution</td>
+          <td>Command logs, tool responses, traces</td>
+          <td>Operators</td>
+        </tr>
+        <tr>
+          <td>Validation</td>
+          <td>Metric snapshots, log excerpts, assertions</td>
+          <td>Guardian</td>
+        </tr>
+        <tr>
+          <td>Closure</td>
+          <td>Summary, remediation notes, next actions</td>
+          <td>Orchestrator</td>
+        </tr>
+      </table>
+
+      <h2>Metrics to Track</h2>
+      <ul>
+        <li><strong>MTTR reduction</strong> (by scenario) and percentage auto-resolved without human intervention.</li>
+        <li><strong>Change success rate</strong> with post-change error budgets and rollbacks avoided.</li>
+        <li><strong>Plan accuracy</strong>: steps executed without correction and approval turnaround time.</li>
+        <li><strong>User trust</strong>: satisfaction scores and false-positive escalations.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
